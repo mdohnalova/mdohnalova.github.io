@@ -330,6 +330,11 @@
             border-radius: 2px;
         }
 
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
         .logo {
             font-weight: 700;
             font-size: 1.2rem;
@@ -809,16 +814,18 @@
 
     <header>
         <div class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Martina .</div>
-        <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mainNav">
-            <span></span><span></span><span></span>
-        </button>
-        <nav id="mainNav">
-            <a href="#sluzby">Služby</a>
-            <a href="#nastroje">Projekty</a>
-            <a href="#muj-pribeh">O mně</a>
-            <a href="#konzultace">Konzultace</a>
+        <div class="header-right">
+            <nav id="mainNav">
+                <a href="#sluzby">Služby</a>
+                <a href="#nastroje">Projekty</a>
+                <a href="#muj-pribeh">O mně</a>
+                <a href="#konzultace">Konzultace</a>
+            </nav>
             <a href="./en/index.html" class="lang-switcher">EN</a>
-        </nav>
+            <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mainNav">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </header>
 
     <main>
