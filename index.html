@@ -21,6 +21,7 @@
 
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         body {
@@ -652,7 +653,12 @@
             }
             .hero {
                 width: 100%;
+                min-width: 0;
                 text-align: left;
+            }
+            .subtitle-typewriter {
+                white-space: normal;
+                overflow-wrap: break-word;
             }
             body.cookies-visible .ai-assistant-launcher {
                 bottom: 160px !important;
@@ -674,7 +680,7 @@
         .about-text p { margin-top: 1rem; color: #444; line-height: 1.75; font-size: 1rem; }
         .signature { font-family: Georgia, serif; font-style: italic; font-size: 1.5rem; color: var(--accent-color); margin-top: 2rem; display: block; }
         /* KOLOBOŽNÝ PÁS VÝBĚRU FOTEK */
-        .infinite-gallery { width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; background: #fff; padding: 2rem 0; overflow: hidden; border-top: 1px solid #e8e4e0; margin-top: 5rem; }
+        .infinite-gallery { width: calc(100% + 4rem); position: relative; margin-left: -2rem; margin-right: -2rem; background: #fff; padding: 2rem 0; overflow: hidden; border-top: 1px solid #e8e4e0; margin-top: 5rem; }
         .marquee-track { display: flex; width: max-content; gap: 1.5rem; animation: scroll 30s linear infinite; will-change: transform; }
         .marquee-track img { width: 250px; height: 180px; object-fit: cover; border-radius: 6px; flex-shrink: 0; }
 
