@@ -116,7 +116,13 @@
             border-radius: 50px;
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(169, 93, 69, 0.25);
-            transition: bottom 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+            transition: bottom 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease,
+                opacity 0.25s ease, transform 0.25s ease;
+        }
+        .ai-assistant-launcher.is-hidden {
+            opacity: 0;
+            transform: scale(0.8);
+            pointer-events: none;
         }
         body.cookies-visible .ai-assistant-launcher {
             bottom: 90px !important;
@@ -184,6 +190,31 @@
             justify-content: space-between;
             font-weight: 600;
             color: #2c2a29;
+        }
+        .ai-chat-head-title {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+        }
+        .ai-chat-icon-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: linear-gradient(160deg, #a95d45, #b57963);
+            color: #fff;
+        }
+        .ai-chat-icon-badge svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
         .ai-chat-close {
             border: none;
@@ -915,7 +946,12 @@
 
     <aside class="ai-chat-panel" id="aiChatPanel" aria-live="polite">
         <div class="ai-chat-head">
-            <span>AI Assistant</span>
+            <div class="ai-chat-head-title">
+                <span class="ai-chat-icon-badge" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </span>
+                <span>AI Assistant</span>
+            </div>
             <button class="ai-chat-close" id="aiChatClose" type="button" aria-label="Close AI assistant">×</button>
         </div>
         <div class="ai-chat-messages" id="aiChatMessages">
@@ -1301,6 +1337,8 @@
             if (!aiPanel || !aiLauncher) return;
             const open = typeof forceState === 'boolean' ? forceState : !aiPanel.classList.contains('open');
             aiPanel.classList.toggle('open', open);
+            // Launcher hides when the panel opens (the icon "moves" into the panel header instead).
+            aiLauncher.classList.toggle('is-hidden', open);
             aiLauncher.setAttribute('aria-expanded', String(open));
             if (open) {
                 const input = document.getElementById('aiChatInput');
