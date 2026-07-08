@@ -200,6 +200,81 @@
             font-size: 0.95rem;
             line-height: 1.6;
         }
+        .ai-chat-messages {
+            max-height: 340px;
+            overflow-y: auto;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+        .ai-chat-msg {
+            padding: 0.55rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            max-width: 85%;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        .ai-chat-msg.user {
+            align-self: flex-end;
+            background: #a95d45;
+            color: #fff;
+            border-bottom-right-radius: 3px;
+        }
+        .ai-chat-msg.assistant {
+            align-self: flex-start;
+            background: #f6f3f0;
+            color: #2c2a29;
+            border-bottom-left-radius: 3px;
+        }
+        .ai-chat-msg.assistant a {
+            color: #a95d45;
+        }
+        .ai-chat-msg.assistant.loading {
+            color: #8a8580;
+            font-style: italic;
+        }
+        .ai-chat-input-row {
+            display: flex;
+            align-items: flex-end;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-top: 1px solid #e8e4e0;
+        }
+        .ai-chat-input {
+            flex: 1;
+            border: 1px solid #e0dad3;
+            border-radius: 8px;
+            padding: 0.5rem 0.65rem;
+            font-size: 0.9rem;
+            font-family: inherit;
+            resize: none;
+            max-height: 90px;
+        }
+        .ai-chat-input:focus {
+            outline: none;
+            border-color: #a95d45;
+        }
+        .ai-chat-send {
+            border: none;
+            background: #a95d45;
+            color: #fff;
+            border-radius: 8px;
+            padding: 0.55rem 0.9rem;
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        .ai-chat-send:hover {
+            background: #8f4f3b;
+        }
+        .ai-chat-send:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
 
         .cookies-banner {
             position: fixed;
@@ -843,7 +918,13 @@
             <span>AI Asistent</span>
             <button class="ai-chat-close" id="aiChatClose" type="button" aria-label="Zavřít AI asistenta">×</button>
         </div>
-        <div class="ai-chat-body">AI Asistent se připravuje... Brzy vám pomohu s výběrem systému.</div>
+        <div class="ai-chat-messages" id="aiChatMessages">
+            <div class="ai-chat-msg assistant">Ahoj! Jsem AI asistent Martiny. Zeptejte se mě na cokoliv o jejích službách, projektech nebo jak s ní navázat spolupráci.</div>
+        </div>
+        <form class="ai-chat-input-row" id="aiChatForm">
+            <textarea class="ai-chat-input" id="aiChatInput" placeholder="Napište zprávu..." rows="1" maxlength="500" required></textarea>
+            <button type="submit" class="ai-chat-send" id="aiChatSend">Odeslat</button>
+        </form>
     </aside>
 
     <header>
@@ -1211,7 +1292,7 @@
             currentToolSlide(nextIdx);
         }
 
-        // 4. AI asistent UI placeholder
+        // 4. AI asistent - otevírání/zavírání panelu
         const aiLauncher = document.getElementById('aiAssistantLauncher');
         const aiPanel = document.getElementById('aiChatPanel');
         const aiClose = document.getElementById('aiChatClose');
@@ -1221,6 +1302,10 @@
             const open = typeof forceState === 'boolean' ? forceState : !aiPanel.classList.contains('open');
             aiPanel.classList.toggle('open', open);
             aiLauncher.setAttribute('aria-expanded', String(open));
+            if (open) {
+                const input = document.getElementById('aiChatInput');
+                if (input) input.focus();
+            }
         }
 
         if (aiLauncher) {
@@ -1237,6 +1322,99 @@
             if (aiPanel.contains(target) || aiLauncher.contains(target)) return;
             toggleAiPanel(false);
         });
+
+        // 4a. AI asistent - chatovací logika napojená na backend
+        // Lokálně (localhost) míří na lokální backend, jinak na produkční URL na Renderu.
+        const AI_BACKEND_URL = ['localhost', '127.0.0.1'].includes(window.location.hostname)
+            ? 'http://127.0.0.1:8000/chat'
+            : 'https://mdohnalova-ai-asistent.onrender.com/chat';
+
+        const aiChatMessages = document.getElementById('aiChatMessages');
+        const aiChatForm = document.getElementById('aiChatForm');
+        const aiChatInput = document.getElementById('aiChatInput');
+        const aiChatSend = document.getElementById('aiChatSend');
+        let aiChatHistory = [];
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Bezpečně vyrenderuje odpověď asistenta: nejdřív escapuje HTML (ochrana proti XSS),
+        // pak teprve doplní jednoduché formátování (tučně, odkazy), které model občas použije.
+        function formatAssistantText(text) {
+            let safe = escapeHtml(text);
+            safe = safe.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+            safe = safe.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>');
+            return safe.replace(/\n/g, '<br>');
+        }
+
+        function appendAiMessage(role, text, isLoading) {
+            if (!aiChatMessages) return null;
+            const bubble = document.createElement('div');
+            bubble.className = 'ai-chat-msg ' + role + (isLoading ? ' loading' : '');
+            if (role === 'assistant' && !isLoading) {
+                bubble.innerHTML = formatAssistantText(text);
+            } else {
+                bubble.textContent = text;
+            }
+            aiChatMessages.appendChild(bubble);
+            aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+            return bubble;
+        }
+
+        if (aiChatInput) {
+            aiChatInput.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' && !event.shiftKey) {
+                    event.preventDefault();
+                    aiChatForm.requestSubmit();
+                }
+            });
+        }
+
+        if (aiChatForm) {
+            aiChatForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                const message = aiChatInput.value.trim();
+                if (!message) return;
+
+                aiChatInput.value = '';
+                aiChatInput.disabled = true;
+                aiChatSend.disabled = true;
+
+                appendAiMessage('user', message);
+                const historyForRequest = aiChatHistory.slice(-12);
+                aiChatHistory.push({ role: 'user', content: message });
+
+                const loadingBubble = appendAiMessage('assistant', 'Přemýšlím...', true);
+                const wakeupTimer = setTimeout(() => {
+                    if (loadingBubble) loadingBubble.textContent = 'Server se probouzí (bezplatný hosting), může to chvíli trvat…';
+                }, 4000);
+
+                try {
+                    const response = await fetch(AI_BACKEND_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ message: message, history: historyForRequest })
+                    });
+                    if (!response.ok) throw new Error('Server vrátil chybu: ' + response.status);
+                    const data = await response.json();
+                    clearTimeout(wakeupTimer);
+                    loadingBubble.remove();
+                    appendAiMessage('assistant', data.reply, false);
+                    aiChatHistory.push({ role: 'assistant', content: data.reply });
+                } catch (error) {
+                    clearTimeout(wakeupTimer);
+                    loadingBubble.remove();
+                    appendAiMessage('assistant', 'Omlouvám se, asistent momentálně neodpovídá. Zkuste to prosím za chvíli znovu, nebo mě kontaktujte přímo přes konzultaci zdarma.', false);
+                } finally {
+                    aiChatInput.disabled = false;
+                    aiChatSend.disabled = false;
+                    aiChatInput.focus();
+                }
+            });
+        }
 
         // 4b. Cookies banner persistence
         const cookiesBanner = document.getElementById('cookiesBanner');
