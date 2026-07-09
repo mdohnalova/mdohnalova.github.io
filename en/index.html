@@ -607,18 +607,54 @@
         .story-actions .cta-btn { padding: 1rem 2rem; }
         @media (max-width: 900px) { .story-section { grid-template-columns: 1fr; } }
 
-        /* Service cards grid */
+        /* Cesta ke spolupráci — interaktivní mapa kroků */
         .services-section { margin-top: 4rem; }
         .services-section h2 { font-size: 2.4rem; margin-bottom: 0.5rem; }
         .services-section p.subheading { color: #555; margin-bottom: 1.5rem; max-width: 760px; font-size: 1.05rem; }
-        .services-grid { display: grid; grid-template-columns: repeat(5, minmax(220px,1fr)); gap: 1.5rem; margin-top: 2rem; }
-        .service-card { background: #fff; border: 1px solid #e8e4e0; border-radius: 18px; padding: 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1rem; min-height: 320px; box-shadow: 0 12px 35px rgba(0,0,0,0.05); }
-        .service-card .card-icon { width: 72px; height: 72px; border-radius: 50%; background: rgba(122, 154, 130, 0.15); border: 1px solid rgba(122, 154, 130, 0.2); display: flex; align-items: center; justify-content: center; }
-        .service-card .card-icon svg { width: 34px; height: 34px; stroke: #7A9A82; stroke-width: 1.8; fill: none; }
-        .service-card h3 { margin: 0; font-size: 1.15rem; line-height: 1.3; }
-        .service-card p { color: #555; line-height: 1.6; }
-        @media (max-width: 1100px) { .services-grid { grid-template-columns: repeat(2, minmax(220px,1fr)); } }
-        @media (max-width: 760px) { .services-grid { grid-template-columns: 1fr; } .story-section { grid-template-columns: 1fr; } }
+        .journey-map { position: relative; max-width: 720px; margin: 2.5rem auto 0; }
+        .journey-node { position: relative; padding-left: 2.75rem; padding-bottom: 2.25rem; opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .journey-node.is-visible { opacity: 1; transform: translateY(0); }
+        .journey-node:last-child { padding-bottom: 0; }
+        .journey-dot { position: absolute; left: 0; top: 0.35rem; width: 18px; height: 18px; border-radius: 50%; background: #fff; border: 2px solid #e8e4e0; z-index: 2; transition: border-color 0.4s ease, background 0.4s ease; }
+        .journey-node.is-visible .journey-dot { border-color: var(--accent-color); background: var(--accent-color); }
+        .journey-line-track, .journey-line-fill { position: absolute; left: 8px; top: 1.6rem; bottom: -0.5rem; width: 2px; }
+        .journey-line-track { background: #e8e4e0; }
+        .journey-line-fill { background: var(--accent-color); transform: scaleY(0); transform-origin: top; transition: transform 0.7s ease 0.1s; }
+        .journey-node.is-visible .journey-line-fill { transform: scaleY(1); }
+        .journey-node:last-child .journey-line-track, .journey-node:last-child .journey-line-fill { display: none; }
+        .journey-card { background: #fff; border: 1px solid #e8e4e0; border-radius: 14px; overflow: hidden; }
+        .journey-card-toggle { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.1rem 1.4rem; background: none; border: none; cursor: pointer; text-align: left; font-family: inherit; -webkit-tap-highlight-color: transparent; }
+        .journey-card-toggle h3 { font-size: 1.05rem; font-weight: 600; margin: 0; color: var(--text-color); }
+        .journey-chevron { flex-shrink: 0; width: 20px; height: 20px; stroke: #8a8580; stroke-width: 2; fill: none; transition: transform 0.3s ease; }
+        .journey-card-toggle[aria-expanded="true"] .journey-chevron { transform: rotate(180deg); }
+        .journey-card-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.35s ease; }
+        .journey-card-body-inner { overflow: hidden; }
+        .journey-card-body-inner p { padding: 0 1.4rem 1.2rem; margin: 0; color: #555; line-height: 1.6; font-size: 0.95rem; }
+        .journey-card.is-open .journey-card-body { grid-template-rows: 1fr; }
+        .journey-branch-question { padding-left: 2.75rem; margin-bottom: 0.9rem; font-weight: 600; color: var(--text-color); font-size: 1.02rem; }
+        .journey-toggle { display: flex; gap: 0.75rem; padding-left: 2.75rem; flex-wrap: wrap; }
+        .journey-toggle-btn { min-height: 44px; padding: 0.6rem 1.3rem; border-radius: 999px; border: 2px solid #e8e4e0; background: #fff; font-family: inherit; font-size: 0.9rem; font-weight: 600; color: #555; cursor: pointer; transition: all 0.25s ease; }
+        .journey-toggle-btn:hover { border-color: var(--accent-color); }
+        .journey-toggle-btn:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 2px; }
+        .journey-toggle-btn.active { border-color: var(--accent-color); background: var(--accent-color); color: #fff; }
+        .journey-branch-panels { display: grid; margin-top: 1.25rem; }
+        .journey-branch-panel { grid-area: 1 / 1; opacity: 0; transform: translateY(6px); pointer-events: none; transition: opacity 0.35s ease, transform 0.35s ease; }
+        .journey-branch-panel.active { opacity: 1; transform: translateY(0); pointer-events: auto; }
+        .journey-subcards { display: grid; gap: 0.8rem; padding: 0 1.4rem 1.3rem; margin-top: -0.3rem; }
+        .journey-subcard { background: #f6f3f0; border-radius: 10px; padding: 0.9rem 1.1rem; }
+        .journey-subcard h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--accent-color); }
+        .journey-subcard p { padding: 0; margin: 0; font-size: 0.9rem; color: #555; line-height: 1.5; }
+        .journey-transition-label { display: inline-block; font-size: 0.78rem; font-weight: 600; color: #7A9A82; text-transform: uppercase; letter-spacing: 0.04em; padding-left: 2.75rem; margin-bottom: 0.6rem; }
+        .journey-pair { display: grid; gap: 1.1rem; }
+        .journey-note { max-width: 720px; margin: 2.5rem auto 0; padding: 1.1rem 1.4rem; background: #f6f3f0; border-left: 3px solid #7A9A82; border-radius: 0 8px 8px 0; color: #3f3d3b; font-size: 0.92rem; line-height: 1.6; }
+        @media (min-width: 640px) {
+            .journey-pair { grid-template-columns: 1fr 1fr; }
+            .journey-subcards { grid-template-columns: 1fr 1fr; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .journey-node { transition: opacity 0.3s ease; transform: none; }
+            .journey-line-fill { transition: none; }
+        }
 
         /* Badge pro přidanou hodnotu u systémů */
         .tool-badge {
@@ -1028,34 +1064,142 @@
         <!-- SLUŽBY -->
         <section id="sluzby" class="services-section">
             <h2>From Modern Websites to Smart AI Automation</h2>
-            <p class="subheading">Choose the area we can elevate together.</p>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg></div>
-                    <h3>Websites &amp; E-commerce</h3>
-                    <p>Design and implementation of internal company systems, client zones, and web applications that unify your data under one roof and simplify daily operations.</p>
+            <p class="subheading">Follow the path we can take together — from the first conversation to AI running in your day-to-day operations.</p>
+
+            <div class="journey-map" id="journeyMap">
+                <div class="journey-node">
+                    <span class="journey-dot"></span>
+                    <div class="journey-line-track"></div>
+                    <div class="journey-line-fill"></div>
+                    <div class="journey-card is-open">
+                        <button class="journey-card-toggle" aria-expanded="true" aria-controls="jbody-0">
+                            <h3>0. Free consultation (30 min)</h3>
+                            <svg class="journey-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+                        </button>
+                        <div class="journey-card-body" id="jbody-0">
+                            <div class="journey-card-body-inner">
+                                <p>We'll go through your business processes, plan the steps, and set goals — so I know exactly where I can help most.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" /></svg></div>
-                    <h3>AI Tools &amp; Systems</h3>
-                    <p>Deployment of intelligent assistants and automations into your workflow. I automate email communication, order data processing, or customer support to free up your team's hands.</p>
+
+                <div class="journey-node">
+                    <span class="journey-dot"></span>
+                    <div class="journey-line-track"></div>
+                    <div class="journey-line-fill"></div>
+                    <p class="journey-branch-question">Do you already have a website or online store?</p>
+                    <div class="journey-toggle" role="group" aria-label="Do you already have a website or online store?">
+                        <button class="journey-toggle-btn active" data-branch="has" aria-pressed="true">Yes, I do</button>
+                        <button class="journey-toggle-btn" data-branch="none" aria-pressed="false">No, I don't</button>
+                    </div>
+                    <div class="journey-branch-panels">
+                        <div class="journey-branch-panel active" data-branch-panel="has">
+                            <div class="journey-card is-open">
+                                <button class="journey-card-toggle" aria-expanded="true" aria-controls="jbody-1a">
+                                    <h3>1a. Analysis of your current setup</h3>
+                                    <svg class="journey-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+                                </button>
+                                <div class="journey-card-body" id="jbody-1a">
+                                    <div class="journey-card-body-inner">
+                                        <p>I'll look at how your website or store performs today and find where you're losing customers or time.</p>
+                                        <div class="journey-subcards">
+                                            <div class="journey-subcard">
+                                                <h4>Outdated / slow</h4>
+                                                <p>I'll design how to modernize and speed it up.</p>
+                                            </div>
+                                            <div class="journey-subcard">
+                                                <h4>Modern, working well</h4>
+                                                <p>Your foundation is solid — let's move straight to automation and AI.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="journey-branch-panel" data-branch-panel="none">
+                            <div class="journey-card is-open">
+                                <button class="journey-card-toggle" aria-expanded="true" aria-controls="jbody-1b">
+                                    <h3>1b. We'll build it from scratch</h3>
+                                    <svg class="journey-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+                                </button>
+                                <div class="journey-card-body" id="jbody-1b">
+                                    <div class="journey-card-body-inner">
+                                        <p>I'll build a Shoptet store, or a fast website using AI tools — whatever your business needs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h8M8 20h8M5 8l3 3-3 3M19 8l-3 3 3 3" /></svg></div>
-                    <h3>Process Automation</h3>
-                    <p>Development of single-purpose, fast tools and data bridges (APIs) that efficiently connect your existing programs and solve specific software gaps without expensive overhauls.</p>
+
+                <div class="journey-node">
+                    <span class="journey-dot"></span>
+                    <div class="journey-line-track"></div>
+                    <div class="journey-line-fill"></div>
+                    <span class="journey-transition-label">Let's clean up the mess</span>
+                    <div class="journey-card">
+                        <button class="journey-card-toggle" aria-expanded="false" aria-controls="jbody-2c">
+                            <h3>2. A modern, working foundation</h3>
+                            <svg class="journey-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+                        </button>
+                        <div class="journey-card-body" id="jbody-2c">
+                            <div class="journey-card-body-inner">
+                                <p>Whether we got here by modernizing or building from scratch, we now have a solid foundation ready for automation and AI.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19l16-8-16-8v16zM12 4v16" /></svg></div>
-                    <h3>AI Web Applications</h3>
-                    <p>Interactive web applications with built-in AI for instant data analysis, text generation, or clear one-click reports.</p>
+
+                <div class="journey-node">
+                    <span class="journey-dot"></span>
+                    <div class="journey-line-track"></div>
+                    <div class="journey-line-fill"></div>
+                    <div class="journey-pair">
+                        <div class="journey-card">
+                            <button class="journey-card-toggle" aria-expanded="false" aria-controls="jbody-2a">
+                                <h3>Process Automation</h3>
+                                <svg class="journey-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+                            </button>
+                            <div class="journey-card-body" id="jbody-2a">
+                                <div class="journey-card-body-inner">
+                                    <p>I'll connect your systems, remove manual work, and bring order to your data and routine tasks.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="journey-card">
+                            <button class="journey-card-toggle" aria-expanded="false" aria-controls="jbody-2b">
+                                <h3>Web AI Applications</h3>
+                                <svg class="journey-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+                            </button>
+                            <div class="journey-card-body" id="jbody-2b">
+                                <div class="journey-card-body-inner">
+                                    <p>I'll add smart features straight into your website — reports, text generation, one-click data analysis.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8h10M7 12h6M7 16h8M6 4h12v16H6z" /></svg></div>
-                    <h3>Strategic Consulting</h3>
-                    <p>Individual analysis of your current processes. We'll find where you're unnecessarily losing money and time, and design a meaningful way to bring in AI.</p>
+
+                <div class="journey-node">
+                    <span class="journey-dot"></span>
+                    <div class="journey-line-track"></div>
+                    <div class="journey-line-fill"></div>
+                    <div class="journey-card">
+                        <button class="journey-card-toggle" aria-expanded="false" aria-controls="jbody-3">
+                            <h3>3. AI Tools &amp; Systems</h3>
+                            <svg class="journey-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+                        </button>
+                        <div class="journey-card-body" id="jbody-3">
+                            <div class="journey-card-body-inner">
+                                <p>I'll deploy AI assistants and automations directly into your daily operations.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <p class="journey-note">Every business is at a different stage — some only need step 1, others can jump straight to step 3. These aren't a mandatory sequence, just a map of how we could work together. We can start wherever makes sense for you.</p>
         </section>
 
         <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0;">
@@ -1354,6 +1498,55 @@
     </div>
 
     <script>
+        // 0z. Path to collaboration — interactive step map
+        (function () {
+            const map = document.getElementById('journeyMap');
+            if (!map) return;
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // Accordion cards
+            map.querySelectorAll('.journey-card-toggle').forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const card = btn.closest('.journey-card');
+                    const isOpen = card.classList.toggle('is-open');
+                    btn.setAttribute('aria-expanded', String(isOpen));
+                });
+            });
+
+            // Yes / No branch toggle
+            const toggleBtns = map.querySelectorAll('.journey-toggle-btn');
+            toggleBtns.forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const branch = btn.dataset.branch;
+                    toggleBtns.forEach((b) => {
+                        b.classList.toggle('active', b === btn);
+                        b.setAttribute('aria-pressed', String(b === btn));
+                    });
+                    map.querySelectorAll('.journey-branch-panel').forEach((panel) => {
+                        const active = panel.dataset.branchPanel === branch;
+                        panel.classList.toggle('active', active);
+                        panel.setAttribute('aria-hidden', String(!active));
+                    });
+                });
+            });
+
+            // Scroll reveal (IntersectionObserver)
+            const nodes = map.querySelectorAll('.journey-node');
+            if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+                nodes.forEach((node) => node.classList.add('is-visible'));
+            } else {
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.25, rootMargin: '0px 0px -10% 0px' });
+                nodes.forEach((node) => revealObserver.observe(node));
+            }
+        })();
+
         // 0a. Mobile hamburger menu
         const navToggle = document.getElementById('navToggle');
         const mainNav = document.getElementById('mainNav');
