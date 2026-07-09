@@ -928,9 +928,10 @@
         .case-studies-section h2 { font-size: 2rem; font-weight: 400; margin-bottom: 0.35rem; }
         .case-studies-section .subheading { color: #444; max-width: 700px; margin-top: 0.6rem; margin-bottom: 2rem; }
         .case-slide { flex: 0 0 100%; }
-        .case-slide-inner { position: relative; height: 420px; border-radius: 14px; overflow: hidden; background: #f6f3f0; }
-        .case-slide-inner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-        .case-slide-text { position: relative; z-index: 2; max-width: 46%; height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 2.5rem 3rem 2.5rem 2.5rem; background: linear-gradient(90deg, #fcfbfa 0%, #fcfbfa 55%, rgba(252, 251, 250, 0.85) 75%, transparent 100%); }
+        .case-slide-inner { display: flex; align-items: stretch; height: 420px; border-radius: 14px; overflow: hidden; border: 1px solid #e8e4e0; background: #fff; }
+        .case-slide-text { flex: 0 0 42%; max-width: 42%; display: flex; flex-direction: column; justify-content: center; padding: 2.5rem 2.2rem; background: #fff; }
+        .case-slide-photo { flex: 1; min-width: 0; background: #f6f3f0; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .case-slide-photo img { width: 100%; height: 100%; object-fit: contain; display: block; }
         .case-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.9rem; }
         .case-category { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #7A9A82; background: rgba(122, 154, 130, 0.14); padding: 3px 10px; border-radius: 999px; }
         .case-status { font-size: 0.7rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; }
@@ -938,15 +939,15 @@
         .case-status.dev { color: #8a5a12; background: #fdf1de; }
         .case-status.concept { color: #5a4a8a; background: #efeaf7; }
         .case-slide-text h3 { font-size: 1.4rem; margin-bottom: 0.6rem; }
-        .case-slide-text p { font-size: 0.95rem; color: #494644; line-height: 1.55; max-width: 34ch; }
+        .case-slide-text p { font-size: 0.95rem; color: #494644; line-height: 1.55; }
         .case-dots { display: flex; justify-content: center; gap: 0.75rem; margin-top: 2rem; }
         .case-dot { width: 14px; height: 14px; border-radius: 50%; background: #ddd; cursor: pointer; transition: background 0.25s ease, transform 0.25s ease; border: none; }
         .case-dot.active { background: var(--accent-color); transform: scale(1.1); }
         @media (max-width: 768px) {
-            .case-slide-inner { height: auto; display: flex; flex-direction: column; }
-            .case-slide-inner img { position: static; width: 100%; height: 200px; }
-            .case-slide-text { position: static; max-width: 100%; width: 100%; height: auto; background: #fcfbfa; padding: 1.5rem; }
-            .case-slide-text p { max-width: 100%; }
+            .case-slide-inner { height: auto; flex-direction: column; }
+            .case-slide-text { flex: none; max-width: 100%; width: 100%; padding: 1.5rem; }
+            .case-slide-photo { flex: none; width: 100%; height: 200px; }
+            .case-slide-photo img { object-fit: cover; }
         }
     </style>
 </head>
@@ -1096,66 +1097,76 @@
                     <div class="tools-slider-track" id="caseSliderTrack">
                         <div class="case-slide">
                             <div class="case-slide-inner">
-                                <img src="foto/luckyskorts-1.png" alt="Lucky Skorts – úvodní stránka e-shopu">
                                 <div class="case-slide-text">
                                     <div class="case-tags">
                                         <span class="case-category">E-shop</span>
                                         <span class="case-status live">🟢 Živý e-shop</span>
                                     </div>
                                     <h3>Lucky Skorts</h3>
-                                    <p>Sportovní móda, která nedělá kompromisy: e-shop od prvního draftu po první objednávku. Ukazuje, že umím dotáhnout projekt až k reálným tržbám, ne jen k designu.</p>
+                                    <p>Od prázdné domény po první objednávku. Postavila jsem e-shop, který prodává, ne jen vypadá hezky — jasná nabídka, důvěryhodné detaily, žádné zbytečné kroky mezi zákazníkem a košíkem.</p>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="foto/luckyskorts-1.png" alt="Lucky Skorts – úvodní stránka e-shopu">
                                 </div>
                             </div>
                         </div>
                         <div class="case-slide">
                             <div class="case-slide-inner">
-                                <img src="foto/autemdochorvatska-1.jpg" alt="Autem do Chorvatska – úvodní stránka">
                                 <div class="case-slide-text">
                                     <div class="case-tags">
                                         <span class="case-category">Cestovní portál</span>
                                         <span class="case-status dev">🚧 Ve vývoji</span>
                                     </div>
                                     <h3>Autem do Chorvatska</h3>
-                                    <p>Kompletní průvodce cestou k moři — trasy, ubytování i tipy na jednom místě, přehledně a bez zbytečného scrollování. Typický obsahový projekt, kde SEO a UX rozhodují o návštěvnosti.</p>
+                                    <p>Web, který musí přesvědčit hned na první scroll, jinak návštěvník zavře kartu a jede jinam. Trasy, ubytování i tipy přehledně na jednom místě, stavěné tak, aby na ně dobře sedlo i vyhledávání.</p>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="foto/autemdochorvatska-1.jpg" alt="Autem do Chorvatska – úvodní stránka">
                                 </div>
                             </div>
                         </div>
                         <div class="case-slide">
                             <div class="case-slide-inner">
-                                <img src="foto/atelier27-1.jpg" alt="Atelier 27 – úvodní stránka restaurace">
                                 <div class="case-slide-text">
                                     <div class="case-tags">
                                         <span class="case-category">Gastronomie</span>
                                         <span class="case-status concept">💡 Koncepční návrh</span>
                                     </div>
                                     <h3>Atelier 27</h3>
-                                    <p>Restaurace, která umí být business obědem i romantickým večerem — a web to musí zvládnout stejně plynule. Tmavá, luxusní estetika prodává atmosféru dřív, než host vůbec dorazí.</p>
+                                    <p>Restaurace, kam lidé chodí na drahé večeře, potřebuje web, který vypadá stejně draze. Tmavá, elegantní atmosféra prodává zážitek dřív, než host vůbec usedne ke stolu.</p>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="foto/atelier27-1.jpg" alt="Atelier 27 – úvodní stránka restaurace">
                                 </div>
                             </div>
                         </div>
                         <div class="case-slide">
                             <div class="case-slide-inner">
-                                <img src="foto/horskalhota.jpg" alt="Horská Lhota – web obce">
                                 <div class="case-slide-text">
                                     <div class="case-tags">
                                         <span class="case-category">Veřejná správa</span>
                                         <span class="case-status concept">💡 Koncepční návrh</span>
                                     </div>
                                     <h3>Horská Lhota</h3>
-                                    <p>Web obce, kde občan najde úřední hodiny, hlášení rozhlasu i formulář na dva kliky — bez bludiště odkazů, na které jsme si u úřadů zvykli.</p>
+                                    <p>Obecní web, který nefrustruje. Úřední hodiny, hlášení rozhlasu i formulář najde občan na dva kliky — místo bludiště podstránek, na které jsme si u úřadů bohužel zvykli.</p>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="foto/horskalhota.jpg" alt="Horská Lhota – web obce">
                                 </div>
                             </div>
                         </div>
                         <div class="case-slide">
                             <div class="case-slide-inner">
-                                <img src="foto/vltavaclinic.jpg" alt="Vltava Clinic – úvodní stránka ordinace">
                                 <div class="case-slide-text">
                                     <div class="case-tags">
                                         <span class="case-category">Zdravotnictví</span>
                                         <span class="case-status concept">💡 Koncepční návrh</span>
                                     </div>
                                     <h3>Vltava Clinic</h3>
-                                    <p>Soukromá ordinace, která dává najevo, že má na pacienta čas — klidná paleta, jasná nabídka péče, snadné objednání.</p>
+                                    <p>Web, který má pacienta uklidnit ještě dřív, než vejde do dveří. Klidná paleta, jasně popsaná péče a objednání na pár kliknutí — přesně to, co soukromá ordinace potřebuje k důvěře.</p>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="foto/vltavaclinic.jpg" alt="Vltava Clinic – úvodní stránka ordinace">
                                 </div>
                             </div>
                         </div>
