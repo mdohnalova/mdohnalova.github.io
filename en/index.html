@@ -923,6 +923,25 @@
                 justify-content: center;
             }
         }
+        /* UKÁZKA PRÁCE napříč obory */
+        .case-studies-section { margin-top: 4rem; }
+        .case-studies-section h2 { font-size: 2rem; font-weight: 400; margin-bottom: 0.35rem; }
+        .case-studies-section .subheading { color: #444; max-width: 700px; margin-top: 0.6rem; margin-bottom: 2rem; }
+        .case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .case-card { background: #fff; border: 1px solid #e8e4e0; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+        .case-media { display: flex; gap: 4px; height: 160px; background: #f6f3f0; }
+        .case-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .case-media-large { flex: 1.6; }
+        .case-media-small { flex: 1; }
+        .case-content { padding: 1.3rem 1.4rem; }
+        .case-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.7rem; }
+        .case-category { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #7A9A82; background: rgba(122, 154, 130, 0.12); padding: 3px 10px; border-radius: 999px; }
+        .case-status { font-size: 0.7rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; }
+        .case-status.live { color: #2f6b3a; background: #e4f2e6; }
+        .case-status.dev { color: #8a5a12; background: #fdf1de; }
+        .case-status.concept { color: #5a4a8a; background: #efeaf7; }
+        .case-card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+        .case-card p { font-size: 0.92rem; color: #555; line-height: 1.55; }
     </style>
 </head>
 <body>
@@ -1054,6 +1073,87 @@
                 <div class="story-actions">
                     <a href="https://calendly.com/martina-dohnalova/30min" class="cta-btn" target="_blank" rel="noopener noreferrer">Book a Consultation</a>
                 </div>
+            </div>
+        </section>
+
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0;">
+
+        <!-- UKÁZKA PRÁCE NAPŘÍČ OBORY -->
+        <section id="ukazka-prace" class="case-studies-section">
+            <span class="lab-badge">PORTFOLIO</span>
+            <h2>Work across industries</h2>
+            <p class="subheading">E-commerce, travel, gastronomy, public administration, and healthcare — different briefs, the same focus on clarity and results.</p>
+            <div class="case-grid">
+                <article class="case-card">
+                    <div class="case-media">
+                        <img class="case-media-large" src="../case-studies/luckyskorts-1.jpg" alt="Lucky Skorts – e-shop homepage">
+                        <img class="case-media-small" src="../case-studies/luckyskorts-2.jpg" alt="Lucky Skorts – product page">
+                    </div>
+                    <div class="case-content">
+                        <div class="case-tags">
+                            <span class="case-category">E-commerce</span>
+                            <span class="case-status live">🟢 Live e-shop</span>
+                        </div>
+                        <h3>Lucky Skorts</h3>
+                        <p>Sportswear that doesn't compromise: an e-shop from first draft to first order. Shows I can carry a project all the way to real revenue, not just design.</p>
+                    </div>
+                </article>
+                <article class="case-card">
+                    <div class="case-media">
+                        <img class="case-media-large" src="../case-studies/autemdochorvatska-1.jpg" alt="Autem do Chorvatska – homepage">
+                        <img class="case-media-small" src="../case-studies/autemdochorvatska-2.jpg" alt="Autem do Chorvatska – route overview">
+                    </div>
+                    <div class="case-content">
+                        <div class="case-tags">
+                            <span class="case-category">Travel portal</span>
+                            <span class="case-status dev">🚧 In development</span>
+                        </div>
+                        <h3>Autem do Chorvatska</h3>
+                        <p>A complete guide to the coast — routes, accommodation, and tips in one place, clear and free of endless scrolling. A typical content project where SEO and UX decide traffic.</p>
+                    </div>
+                </article>
+                <article class="case-card">
+                    <div class="case-media">
+                        <img class="case-media-large" src="../case-studies/atelier27-1.jpg" alt="Atelier 27 – restaurant homepage">
+                        <img class="case-media-small" src="../case-studies/atelier27-2.jpg" alt="Atelier 27 – interior and atmosphere">
+                    </div>
+                    <div class="case-content">
+                        <div class="case-tags">
+                            <span class="case-category">Gastronomy</span>
+                            <span class="case-status concept">💡 Concept design</span>
+                        </div>
+                        <h3>Atelier 27</h3>
+                        <p>A restaurant that can be a business lunch or a romantic dinner — the site has to shift just as smoothly. Dark, luxurious styling sells the atmosphere before the guest even arrives.</p>
+                    </div>
+                </article>
+                <article class="case-card">
+                    <div class="case-media">
+                        <img class="case-media-large" src="../case-studies/horskalhota-1.jpg" alt="Horská Lhota – municipal website">
+                        <img class="case-media-small" src="../case-studies/horskalhota-2.jpg" alt="Horská Lhota – contact and map">
+                    </div>
+                    <div class="case-content">
+                        <div class="case-tags">
+                            <span class="case-category">Public administration</span>
+                            <span class="case-status concept">💡 Concept design</span>
+                        </div>
+                        <h3>Horská Lhota</h3>
+                        <p>A municipal website where residents find office hours, announcements, and a form in two clicks — no link-maze like most town-hall sites.</p>
+                    </div>
+                </article>
+                <article class="case-card">
+                    <div class="case-media">
+                        <img class="case-media-large" src="../case-studies/vltavaclinic-1.jpg" alt="Vltava Clinic – clinic homepage">
+                        <img class="case-media-small" src="../case-studies/vltavaclinic-2.jpg" alt="Vltava Clinic – care team">
+                    </div>
+                    <div class="case-content">
+                        <div class="case-tags">
+                            <span class="case-category">Healthcare</span>
+                            <span class="case-status concept">💡 Concept design</span>
+                        </div>
+                        <h3>Vltava Clinic</h3>
+                        <p>A private clinic that signals it has time for the patient — calm palette, clear care packages, easy booking.</p>
+                    </div>
+                </article>
             </div>
         </section>
 

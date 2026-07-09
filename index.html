@@ -923,6 +923,25 @@
                 justify-content: center;
             }
         }
+        /* UKÁZKA PRÁCE napříč obory */
+        .case-studies-section { margin-top: 4rem; }
+        .case-studies-section h2 { font-size: 2rem; font-weight: 400; margin-bottom: 0.35rem; }
+        .case-studies-section .subheading { color: #444; max-width: 700px; margin-top: 0.6rem; margin-bottom: 2rem; }
+        .case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .case-card { background: #fff; border: 1px solid #e8e4e0; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+        .case-media { display: flex; gap: 4px; height: 160px; background: #f6f3f0; }
+        .case-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .case-media-large { flex: 1.6; }
+        .case-media-small { flex: 1; }
+        .case-content { padding: 1.3rem 1.4rem; }
+        .case-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.7rem; }
+        .case-category { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #7A9A82; background: rgba(122, 154, 130, 0.12); padding: 3px 10px; border-radius: 999px; }
+        .case-status { font-size: 0.7rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; }
+        .case-status.live { color: #2f6b3a; background: #e4f2e6; }
+        .case-status.dev { color: #8a5a12; background: #fdf1de; }
+        .case-status.concept { color: #5a4a8a; background: #efeaf7; }
+        .case-card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+        .case-card p { font-size: 0.92rem; color: #555; line-height: 1.55; }
     </style>
 </head>
 <body>
@@ -1054,6 +1073,87 @@
                 <div class="story-actions">
                     <a href="https://calendly.com/martina-dohnalova/30min" class="cta-btn" target="_blank" rel="noopener noreferrer">Rezervovat konzultaci</a>
                 </div>
+            </div>
+        </section>
+
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0;">
+
+        <!-- UKÁZKA PRÁCE NAPŘÍČ OBORY -->
+        <section id="ukazka-prace" class="case-studies-section">
+            <span class="lab-badge">PORTFOLIO</span>
+            <h2>Ukázka práce napříč obory</h2>
+            <p class="subheading">E-shop, cestování, gastronomie, veřejná správa i zdravotnictví — různá zadání, stejný důraz na jasnost a výsledek.</p>
+            <div class="case-grid">
+                <article class="case-card">
+                    <div class="case-media">
+                        <img class="case-media-large" src="case-studies/luckyskorts-1.jpg" alt="Lucky Skorts – úvodní stránka e-shopu">
+                        <img class="case-media-small" src="case-studies/luckyskorts-2.jpg" alt="Lucky Skorts – produktová stránka">
+                    </div>
+                    <div class="case-content">
+                        <div class="case-tags">
+                            <span class="case-category">E-shop</span>
+                            <span class="case-status live">🟢 Živý e-shop</span>
+                        </div>
+                        <h3>Lucky Skorts</h3>
+                        <p>Sportovní móda, která nedělá kompromisy: e-shop od prvního draftu po první objednávku. Ukazuje, že umím dotáhnout projekt až k reálným tržbám, ne jen k designu.</p>
+                    </div>
+                </article>
+                <article class="case-card">
+                    <div class="case-media">
+                        <img class="case-media-large" src="case-studies/autemdochorvatska-1.jpg" alt="Autem do Chorvatska – úvodní stránka">
+                        <img class="case-media-small" src="case-studies/autemdochorvatska-2.jpg" alt="Autem do Chorvatska – přehled tras">
+                    </div>
+                    <div class="case-content">
+                        <div class="case-tags">
+                            <span class="case-category">Cestovní portál</span>
+                            <span class="case-status dev">🚧 Ve vývoji</span>
+                        </div>
+                        <h3>Autem do Chorvatska</h3>
+                        <p>Kompletní průvodce cestou k moři — trasy, ubytování i tipy na jednom místě, přehledně a bez zbytečného scrollování. Typický obsahový projekt, kde SEO a UX rozhodují o návštěvnosti.</p>
+                    </div>
+                </article>
+                <article class="case-card">
+                    <div class="case-media">
+                        <img class="case-media-large" src="case-studies/atelier27-1.jpg" alt="Atelier 27 – úvodní stránka restaurace">
+                        <img class="case-media-small" src="case-studies/atelier27-2.jpg" alt="Atelier 27 – interiér a atmosféra">
+                    </div>
+                    <div class="case-content">
+                        <div class="case-tags">
+                            <span class="case-category">Gastronomie</span>
+                            <span class="case-status concept">💡 Koncepční návrh</span>
+                        </div>
+                        <h3>Atelier 27</h3>
+                        <p>Restaurace, která umí být business obědem i romantickým večerem — a web to musí zvládnout stejně plynule. Tmavá, luxusní estetika prodává atmosféru dřív, než host vůbec dorazí.</p>
+                    </div>
+                </article>
+                <article class="case-card">
+                    <div class="case-media">
+                        <img class="case-media-large" src="case-studies/horskalhota-1.jpg" alt="Horská Lhota – web obce">
+                        <img class="case-media-small" src="case-studies/horskalhota-2.jpg" alt="Horská Lhota – kontakt a mapa">
+                    </div>
+                    <div class="case-content">
+                        <div class="case-tags">
+                            <span class="case-category">Veřejná správa</span>
+                            <span class="case-status concept">💡 Koncepční návrh</span>
+                        </div>
+                        <h3>Horská Lhota</h3>
+                        <p>Web obce, kde občan najde úřední hodiny, hlášení rozhlasu i formulář na dva kliky — bez bludiště odkazů, na které jsme si u úřadů zvykli.</p>
+                    </div>
+                </article>
+                <article class="case-card">
+                    <div class="case-media">
+                        <img class="case-media-large" src="case-studies/vltavaclinic-1.jpg" alt="Vltava Clinic – úvodní stránka ordinace">
+                        <img class="case-media-small" src="case-studies/vltavaclinic-2.jpg" alt="Vltava Clinic – tým lékařů">
+                    </div>
+                    <div class="case-content">
+                        <div class="case-tags">
+                            <span class="case-category">Zdravotnictví</span>
+                            <span class="case-status concept">💡 Koncepční návrh</span>
+                        </div>
+                        <h3>Vltava Clinic</h3>
+                        <p>Soukromá ordinace, která dává najevo, že má na pacienta čas — klidná paleta, jasná nabídka péče, snadné objednání.</p>
+                    </div>
+                </article>
             </div>
         </section>
 
