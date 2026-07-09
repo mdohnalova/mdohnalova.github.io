@@ -929,10 +929,10 @@
         .case-studies-section .subheading { color: #444; max-width: 700px; margin-top: 0.6rem; margin-bottom: 2rem; }
         .case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
         .case-card { background: #fff; border: 1px solid #e8e4e0; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
-        .case-media { display: flex; gap: 4px; height: 160px; background: #f6f3f0; }
-        .case-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .case-media-large { flex: 1.6; }
-        .case-media-small { flex: 1; }
+        .case-media { position: relative; height: 190px; background: #f6f3f0; overflow: hidden; }
+        .case-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+        .case-media img.case-img-2 { opacity: 0; transition: opacity 0.5s ease; }
+        .case-card:hover .case-media img.case-img-2 { opacity: 1; }
         .case-content { padding: 1.3rem 1.4rem; }
         .case-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.7rem; }
         .case-category { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #7A9A82; background: rgba(122, 154, 130, 0.12); padding: 3px 10px; border-radius: 999px; }
@@ -1056,7 +1056,7 @@
         <!-- O MNĚ -->
         <section id="muj-pribeh" class="story-section">
             <div class="story-image">
-                <img src="../linkedin-profile.png" alt="Profilová fotka" />
+                <img src="../foto/linkedin-profile.png" alt="Profilová fotka" />
             </div>
             <div class="story-copy">
                 <h2>I come from marketing, not engineering — and that's my edge</h2>
@@ -1086,8 +1086,8 @@
             <div class="case-grid">
                 <article class="case-card">
                     <div class="case-media">
-                        <img class="case-media-large" src="../case-studies/luckyskorts-1.jpg" alt="Lucky Skorts – e-shop homepage">
-                        <img class="case-media-small" src="../case-studies/luckyskorts-2.jpg" alt="Lucky Skorts – product page">
+                        <img src="../foto/luckyskorts-1.png" alt="Lucky Skorts – e-shop homepage">
+                        <img class="case-img-2" src="../foto/luckyskorts-2.png" alt="Lucky Skorts – product page">
                     </div>
                     <div class="case-content">
                         <div class="case-tags">
@@ -1100,8 +1100,8 @@
                 </article>
                 <article class="case-card">
                     <div class="case-media">
-                        <img class="case-media-large" src="../case-studies/autemdochorvatska-1.jpg" alt="Autem do Chorvatska – homepage">
-                        <img class="case-media-small" src="../case-studies/autemdochorvatska-2.jpg" alt="Autem do Chorvatska – route overview">
+                        <img src="../foto/autemdochorvatska-1.jpg" alt="Autem do Chorvatska – homepage">
+                        <img class="case-img-2" src="../foto/autemdochorvatska-2.jpg" alt="Autem do Chorvatska – route overview">
                     </div>
                     <div class="case-content">
                         <div class="case-tags">
@@ -1114,8 +1114,8 @@
                 </article>
                 <article class="case-card">
                     <div class="case-media">
-                        <img class="case-media-large" src="../case-studies/atelier27-1.jpg" alt="Atelier 27 – restaurant homepage">
-                        <img class="case-media-small" src="../case-studies/atelier27-2.jpg" alt="Atelier 27 – interior and atmosphere">
+                        <img src="../foto/atelier27-1.jpg" alt="Atelier 27 – restaurant homepage">
+                        <img class="case-img-2" src="../foto/atelier27-2.jpg" alt="Atelier 27 – interior and atmosphere">
                     </div>
                     <div class="case-content">
                         <div class="case-tags">
@@ -1128,8 +1128,7 @@
                 </article>
                 <article class="case-card">
                     <div class="case-media">
-                        <img class="case-media-large" src="../case-studies/horskalhota-1.jpg" alt="Horská Lhota – municipal website">
-                        <img class="case-media-small" src="../case-studies/horskalhota-2.jpg" alt="Horská Lhota – contact and map">
+                        <img src="../foto/horskalhota.jpg" alt="Horská Lhota – municipal website">
                     </div>
                     <div class="case-content">
                         <div class="case-tags">
@@ -1142,8 +1141,7 @@
                 </article>
                 <article class="case-card">
                     <div class="case-media">
-                        <img class="case-media-large" src="../case-studies/vltavaclinic-1.jpg" alt="Vltava Clinic – clinic homepage">
-                        <img class="case-media-small" src="../case-studies/vltavaclinic-2.jpg" alt="Vltava Clinic – care team">
+                        <img src="../foto/vltavaclinic.jpg" alt="Vltava Clinic – clinic homepage">
                     </div>
                     <div class="case-content">
                         <div class="case-tags">
@@ -1272,20 +1270,20 @@
 
         <div class="infinite-gallery">
             <div class="marquee-track">
-                <img src="../duna.JPG" alt="Dune photo">
-                <img src="../hora.JPG" alt="Mountain photo">
-                <img src="../les.JPG" alt="Forest photo">
-                <img src="../moře.JPG" alt="Sea photo">
-                <img src="../řeka.JPG" alt="River photo">
-                <img src="../jezero.JPG" alt="Lake photo">
-                <img src="../lodě.JPG" alt="Boats photo">
-                <img src="../duna.JPG" alt="Dune photo">
-                <img src="../hora.JPG" alt="Mountain photo">
-                <img src="../les.JPG" alt="Forest photo">
-                <img src="../moře.JPG" alt="Sea photo">
-                <img src="../řeka.JPG" alt="River photo">
-                <img src="../jezero.JPG" alt="Lake photo">
-                <img src="../lodě.JPG" alt="Boats photo">
+                <img src="../foto/duna.JPG" alt="Dune photo">
+                <img src="../foto/hora.JPG" alt="Mountain photo">
+                <img src="../foto/les.JPG" alt="Forest photo">
+                <img src="../foto/moře.JPG" alt="Sea photo">
+                <img src="../foto/řeka.JPG" alt="River photo">
+                <img src="../foto/jezero.JPG" alt="Lake photo">
+                <img src="../foto/lodě.JPG" alt="Boats photo">
+                <img src="../foto/duna.JPG" alt="Dune photo">
+                <img src="../foto/hora.JPG" alt="Mountain photo">
+                <img src="../foto/les.JPG" alt="Forest photo">
+                <img src="../foto/moře.JPG" alt="Sea photo">
+                <img src="../foto/řeka.JPG" alt="River photo">
+                <img src="../foto/jezero.JPG" alt="Lake photo">
+                <img src="../foto/lodě.JPG" alt="Boats photo">
             </div>
         </div>
     </main>
