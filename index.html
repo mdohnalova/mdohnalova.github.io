@@ -631,6 +631,8 @@
         .journey-card-body-inner { overflow: hidden; }
         .journey-card-body-inner p { padding: 0 1.4rem 1.2rem; margin: 0; color: #555; line-height: 1.6; font-size: 0.95rem; }
         .journey-card.is-open .journey-card-body { grid-template-rows: 1fr; }
+        .journey-card-static h3 { margin: 0; padding: 1.1rem 1.4rem 0.4rem; font-size: 1.05rem; font-weight: 600; color: var(--text-color); }
+        .journey-card-static p { margin: 0; padding: 0 1.4rem 1.2rem; color: #555; line-height: 1.6; font-size: 0.95rem; }
         .journey-branch-question { padding-left: 2.75rem; margin-bottom: 0.9rem; font-weight: 600; color: var(--text-color); font-size: 1.02rem; }
         .journey-toggle { display: flex; gap: 0.75rem; padding-left: 2.75rem; flex-wrap: wrap; }
         .journey-toggle-btn { min-height: 44px; padding: 0.6rem 1.3rem; border-radius: 999px; border: 2px solid #e8e4e0; background: #fff; font-family: inherit; font-size: 0.9rem; font-weight: 600; color: #555; cursor: pointer; transition: all 0.25s ease; }
@@ -1071,16 +1073,9 @@
                     <span class="journey-dot"></span>
                     <div class="journey-line-track"></div>
                     <div class="journey-line-fill"></div>
-                    <div class="journey-card is-open">
-                        <button class="journey-card-toggle" aria-expanded="true" aria-controls="jbody-0">
-                            <h3>0. Konzultace zdarma (30 min)</h3>
-                            <svg class="journey-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
-                        </button>
-                        <div class="journey-card-body" id="jbody-0">
-                            <div class="journey-card-body-inner">
-                                <p>Probereme vaše firemní procesy, naplánujeme kroky a stanovíme cíle — abych přesně věděla, kde vám můžu nejvíc pomoct.</p>
-                            </div>
-                        </div>
+                    <div class="journey-card journey-card-static">
+                        <h3>0. Konzultace zdarma (30 min)</h3>
+                        <p>Probereme vaše firemní procesy, naplánujeme kroky a stanovíme cíle — abych přesně věděla, kde vám můžu nejvíc pomoct.</p>
                     </div>
                 </div>
 
@@ -1138,16 +1133,9 @@
                     <div class="journey-line-track"></div>
                     <div class="journey-line-fill"></div>
                     <span class="journey-transition-label">Uklidíme nepořádek</span>
-                    <div class="journey-card">
-                        <button class="journey-card-toggle" aria-expanded="false" aria-controls="jbody-2c">
-                            <h3>2. Moderní, funkční základ</h3>
-                            <svg class="journey-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
-                        </button>
-                        <div class="journey-card-body" id="jbody-2c">
-                            <div class="journey-card-body-inner">
-                                <p>Ať jsme se k němu dostali modernizací, nebo stavbou od nuly, teď máme pevný základ, na který půjde nasadit automatizaci a AI.</p>
-                            </div>
-                        </div>
+                    <div class="journey-card journey-card-static">
+                        <h3>2. Moderní, funkční základ</h3>
+                        <p>Ať jsme se k němu dostali modernizací, nebo stavbou od nuly, teď máme pevný základ, na který půjde nasadit automatizaci a AI.</p>
                     </div>
                 </div>
 
@@ -1156,27 +1144,13 @@
                     <div class="journey-line-track"></div>
                     <div class="journey-line-fill"></div>
                     <div class="journey-pair">
-                        <div class="journey-card">
-                            <button class="journey-card-toggle" aria-expanded="false" aria-controls="jbody-2a">
-                                <h3>Automatizace procesů</h3>
-                                <svg class="journey-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
-                            </button>
-                            <div class="journey-card-body" id="jbody-2a">
-                                <div class="journey-card-body-inner">
-                                    <p>Propojím systémy, odstraním ruční práci a zavedu pořádek do dat a rutinních úkolů.</p>
-                                </div>
-                            </div>
+                        <div class="journey-card journey-card-static">
+                            <h3>Automatizace procesů</h3>
+                            <p>Propojím systémy, odstraním ruční práci a zavedu pořádek do dat a rutinních úkolů.</p>
                         </div>
-                        <div class="journey-card">
-                            <button class="journey-card-toggle" aria-expanded="false" aria-controls="jbody-2b">
-                                <h3>Webové AI aplikace</h3>
-                                <svg class="journey-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
-                            </button>
-                            <div class="journey-card-body" id="jbody-2b">
-                                <div class="journey-card-body-inner">
-                                    <p>Přidám chytré funkce přímo do vašeho webu — reporty, generování textů, analýzu dat na jedno kliknutí.</p>
-                                </div>
-                            </div>
+                        <div class="journey-card journey-card-static">
+                            <h3>Webové AI aplikace</h3>
+                            <p>Přidám chytré funkce přímo do vašeho webu — reporty, generování textů, analýzu dat na jedno kliknutí.</p>
                         </div>
                     </div>
                 </div>
@@ -1185,16 +1159,9 @@
                     <span class="journey-dot"></span>
                     <div class="journey-line-track"></div>
                     <div class="journey-line-fill"></div>
-                    <div class="journey-card">
-                        <button class="journey-card-toggle" aria-expanded="false" aria-controls="jbody-3">
-                            <h3>3. AI nástroje &amp; systémy</h3>
-                            <svg class="journey-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
-                        </button>
-                        <div class="journey-card-body" id="jbody-3">
-                            <div class="journey-card-body-inner">
-                                <p>Nasadím AI asistenty a automatizace přímo do vašeho každodenního provozu.</p>
-                            </div>
-                        </div>
+                    <div class="journey-card journey-card-static">
+                        <h3>3. AI nástroje &amp; systémy</h3>
+                        <p>Nasadím AI asistenty a automatizace přímo do vašeho každodenního provozu.</p>
                     </div>
                 </div>
             </div>
