@@ -997,6 +997,11 @@
 
     <div id="scroll-indicator"></div>
 
+    <!-- PLOVOUCÍ TLAČÍTKA -->
+    <a href="https://calendly.com/martina-dohnalova/30min" class="sticky-consultation-right" target="_blank" rel="noopener noreferrer" aria-label="Konzultace zdarma">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="btn-label">Konzultace zdarma</span>
+    </a>
 
     <button class="ai-assistant-launcher" id="aiAssistantLauncher" type="button" aria-label="Otevřít AI asistenta" aria-expanded="false" aria-controls="aiChatPanel">
         <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -1014,7 +1019,7 @@
             <button class="ai-chat-close" id="aiChatClose" type="button" aria-label="Zavřít AI asistenta">×</button>
         </div>
         <div class="ai-chat-messages" id="aiChatMessages">
-            <div class="ai-chat-msg assistant">Ahoj! Jsem AI asistent Martiny. Zeptejte se mě na cokoliv o jejích zkušenostech, dovednostech nebo projektech.</div>
+            <div class="ai-chat-msg assistant">Ahoj! Jsem AI asistent Martiny. Zeptejte se mě na cokoliv o jejích službách, projektech nebo jak s ní navázat spolupráci.</div>
         </div>
         <form class="ai-chat-input-row" id="aiChatForm">
             <textarea class="ai-chat-input" id="aiChatInput" placeholder="Napište zprávu..." rows="1" maxlength="500" required></textarea>
@@ -1026,9 +1031,10 @@
         <div class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Martina .</div>
         <div class="header-right">
             <nav id="mainNav">
+                <a href="#sluzby">Služby</a>
                 <a href="#nastroje">Projekty</a>
                 <a href="#muj-pribeh">O mně</a>
-                <a href="#konzultace">Kontakt</a>
+                <a href="#konzultace">Konzultace</a>
             </nav>
             <a href="./en/index.html" class="lang-switcher">EN</a>
             <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mainNav">
@@ -1041,13 +1047,13 @@
         <!-- HERO SEKCE (DVOU-SLOUPCOVÁ S MINIMALISTICKOU AI NEURONOVOU SÍTÍ) -->
         <section class="hero-container">
             <div class="hero">
-                <h1>Vidím problém, naučím se ho vyřešit, postavím nástroj.</h1>
-                <div class="subtitle-typewriter" style="white-space: normal;">
-                    Marketing zevnitř + AI nástroje, které si sama stavím a nasazuju.
+                <h1>Šetřím váš čas, kapacitu a peníze.</h1>
+                <div class="subtitle-typewriter">
+                    Navrhuji a kóduji pro vás <span class="typewriter" id="typewriter-text"></span>
                 </div>
-                <p>Roky jsem dělala e-commerce a marketing zevnitř — a přesně proto vím, kde firmám nejvíc uniká čas: komunikace se zahraničními dodavateli, ruční práce s daty, sledování zásilek. Poslední rok se učím tyhle problémy řešit sama — stavím a nasazuju AI nástroje, které je řeší. Nejrychleji se učím tam, kde vidím reálný problém, ne v kurzu.</p>
+                <p>Navrhuji a vyvíjím webové aplikace, e-shopy a AI automatizace — nejdřív jako marketingová specialistka, která roky řešila e-commerce zevnitř, teď i jako člověk, co si tyhle nástroje umí sama naprogramovat a nasadit. Propojuji nový software s tím, co už firma používá, a odstraňuji zdlouhavé rutinní procesy.</p>
                 <div>
-                    <a href="#konzultace" class="cta-btn">NAPIŠTE MI</a>
+                    <a href="#konzultace" class="cta-btn">CHCI ŘEŠENÍ NA MÍRU</a>
                 </div>
             </div>
             
@@ -1056,6 +1062,114 @@
                 <canvas id="ai-canvas"></canvas>
             </div>
         </section>
+
+        <!-- SLUŽBY -->
+        <section id="sluzby" class="services-section">
+            <h2>Od moderního webu po chytrou AI automatizaci</h2>
+            <p class="subheading">Projděte si cestu, kterou spolu můžeme jít — od prvního rozhovoru po AI nasazené přímo ve vašem provozu.</p>
+
+            <div class="journey-map" id="journeyMap">
+                <div class="journey-node">
+                    <span class="journey-dot"></span>
+                    <div class="journey-line-track"></div>
+                    <div class="journey-line-fill"></div>
+                    <div class="journey-card journey-card-static">
+                        <h3>0. Konzultace zdarma (30 min)</h3>
+                        <p>Probereme vaše firemní procesy, naplánujeme kroky a stanovíme cíle — abych přesně věděla, kde vám můžu nejvíc pomoct.</p>
+                    </div>
+                </div>
+
+                <div class="journey-node">
+                    <span class="journey-dot"></span>
+                    <div class="journey-line-track"></div>
+                    <div class="journey-line-fill"></div>
+                    <p class="journey-branch-question">Máte už web nebo e-shop?</p>
+                    <div class="journey-toggle" role="group" aria-label="Máte už web nebo e-shop?">
+                        <button class="journey-toggle-btn active" data-branch="has" aria-pressed="true">Ano, mám</button>
+                        <button class="journey-toggle-btn" data-branch="none" aria-pressed="false">Ne, nemám</button>
+                    </div>
+                    <div class="journey-branch-panels">
+                        <div class="journey-branch-panel active" data-branch-panel="has">
+                            <div class="journey-card is-open">
+                                <button class="journey-card-toggle" aria-expanded="true" aria-controls="jbody-1a">
+                                    <h3>1a. Analýza stávajícího řešení</h3>
+                                    <svg class="journey-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+                                </button>
+                                <div class="journey-card-body" id="jbody-1a">
+                                    <div class="journey-card-body-inner">
+                                        <p>Podívám se, jak váš web nebo e-shop funguje teď, a najdu místa, kde ztrácíte zákazníky nebo čas.</p>
+                                        <div class="journey-subcards">
+                                            <div class="journey-subcard">
+                                                <h4>Zastaralý / pomalý</h4>
+                                                <p>Navrhnu, jak ho zmodernizovat a zrychlit.</p>
+                                            </div>
+                                            <div class="journey-subcard">
+                                                <h4>Moderní, funkční</h4>
+                                                <p>Základ máte dobrý, jdeme rovnou na automatizaci a AI.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="journey-branch-panel" data-branch-panel="none">
+                            <div class="journey-card is-open">
+                                <button class="journey-card-toggle" aria-expanded="true" aria-controls="jbody-1b">
+                                    <h3>1b. Postavíme ho od nuly</h3>
+                                    <svg class="journey-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+                                </button>
+                                <div class="journey-card-body" id="jbody-1b">
+                                    <div class="journey-card-body-inner">
+                                        <p>Vytvořím e-shop na Shoptetu, nebo rychlý web pomocí AI nástrojů — podle toho, co váš byznys potřebuje.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journey-node">
+                    <span class="journey-dot"></span>
+                    <div class="journey-line-track"></div>
+                    <div class="journey-line-fill"></div>
+                    <span class="journey-transition-label">Uklidíme nepořádek</span>
+                    <div class="journey-card journey-card-static">
+                        <h3>2. Moderní, funkční základ</h3>
+                        <p>Ať jsme se k němu dostali modernizací, nebo stavbou od nuly, teď máme pevný základ, na který půjde nasadit automatizaci a AI.</p>
+                    </div>
+                </div>
+
+                <div class="journey-node">
+                    <span class="journey-dot"></span>
+                    <div class="journey-line-track"></div>
+                    <div class="journey-line-fill"></div>
+                    <div class="journey-pair">
+                        <div class="journey-card journey-card-static">
+                            <h3>Automatizace procesů</h3>
+                            <p>Propojím systémy, odstraním ruční práci a zavedu pořádek do dat a rutinních úkolů.</p>
+                        </div>
+                        <div class="journey-card journey-card-static">
+                            <h3>Webové AI aplikace</h3>
+                            <p>Přidám chytré funkce přímo do vašeho webu — reporty, generování textů, analýzu dat na jedno kliknutí.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journey-node">
+                    <span class="journey-dot"></span>
+                    <div class="journey-line-track"></div>
+                    <div class="journey-line-fill"></div>
+                    <div class="journey-card journey-card-static">
+                        <h3>3. AI nástroje &amp; systémy</h3>
+                        <p>Nasadím AI asistenty a automatizace přímo do vašeho každodenního provozu.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="journey-note">Každá firma je jinde — někdo potřebuje jen krok 1, jiný rovnou krok 3. Kroky nejsou povinná sekvence, ale mapa toho, jak spolu můžeme jít. Klidně začneme tam, kde to dává smysl vám.</p>
+        </section>
+
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0;">
 
         <!-- O MNĚ -->
         <section id="muj-pribeh" class="story-section">
@@ -1067,8 +1181,15 @@
                 <div class="about-grid">
                     <div class="about-card">
                         <h3>Přicházím z marketingu, ne z inženýrství — a to je moje síla</h3>
-                        <p>Roky jsem řešila e-commerce a marketing zevnitř, teď k tomu umím sama naprogramovat a nasadit AI nástroje a jednoduché weby. Moje řešení jsou zatím ověřené koncepty (PoC) a menší nasazení pro vlastní workflow — přesně to, co jsem potřebovala k rychlému řešení reálných problémů, ne teoretická cvičení.</p>
+                        <p>Roky jsem řešila e-commerce a marketing zevnitř, teď k tomu umím sama naprogramovat a nasadit AI nástroje a jednoduché weby. Moje řešení jsou zatím ověřené koncepty (PoC) a menší nasazení pro vlastní workflow — přesně to, co potřebuje menší firma nebo tým, který chce rychle vidět výsledek, ne čekat měsíce na enterprise implementaci.</p>
                     </div>
+                    <div class="about-card">
+                        <h3>S čím vám pomůžu?</h3>
+                        <p>Ať už potřebujete rychlou validaci nápadu (MVP), automatizaci rutinní administrativy, propojení systémů přes API nebo chytrý web, který generuje výsledky. Navrhuji řešení, která jsou uživatelsky jednoduchá, ale technologicky připravená na budoucí růst vaší firmy.</p>
+                    </div>
+                </div>
+                <div class="story-actions">
+                    <a href="https://calendly.com/martina-dohnalova/30min" class="cta-btn" target="_blank" rel="noopener noreferrer">Rezervovat konzultaci</a>
                 </div>
             </div>
         </section>
@@ -1194,7 +1315,6 @@
                         <div class="tool-copy project-content">
                             <h3>AI Logistics Data Engine (Scalable PoC)</h3>
                             <p class="subtitle">Funkční technologický koncept logistického dispečinku navržený pro eliminaci finančních ztrát ze zpožděných zásilek.</p>
-                            <p>Roky jsem stála za marketingovými kampaněmi od nápadu po spuštění — plánování, kreativa, focení, reklamy. Jenže sebelepší kampaň je k ničemu, když si zákazník balíček nakonec nevyzvedne, nebo se vrácená zásilka odhalí až pozdě. Do každého balíčku jsme dávali kuponovou kartičku s 10% slevou v naději, že se zákazník vrátí — stálo to tisk i čas, a často to přišlo vniveč, protože balíček stejně nikdo nevyzvedl. Došlo mi, že je chytřejší zachytit problém dřív: když balíček leží na výdejním místě moc dlouho nevyzvednutý, poslat zákazníkovi připomínku s menší pobídkou, než na něj úplně zapomene; a když dopravce nahlásí poškození zásilky, vědět to okamžitě, aby mohl jít nový balíček a omluva dřív, než si zákazník začne stěžovat. Na téhle logice stojí dashboard, který jsem postavila.</p>
                             <p>Funkční technologický koncept logistického dispečinku navržený pro eliminaci finančních ztrát ze zpožděných zásilek. Tento mikro-systém funguje samostatně pro menší e-shopy (sledování balíků, detekce poškození, automatické notifikace), ale jeho architektura je plně připravena na enterprise integraci s podnikovým ERP (Helios) a pokročilé krizové scénáře.</p>
                             <ul class="project-features">
                                 <li>🎯 Včas odhalím rizikové objednávky.</li>
@@ -1269,9 +1389,9 @@
 
         <!-- REZERVAČNÍ BLOK -->
         <section id="konzultace" class="reservation-section">
-            <h2>Pojďme se spojit</h2>
-            <p style="color: #555; margin-bottom: 2rem; font-size: 1.1rem;">Hledáte někoho, kdo umí propojit marketing s AI a automatizací? Ráda si promluvím o otevřené pozici.</p>
-            <a href="mailto:martina.dohnalova@centrum.cz" class="cta-btn">Napište mi</a>
+            <h2>Pojďme probrat váš byznys</h2>
+            <p style="color: #555; margin-bottom: 2rem; font-size: 1.1rem;">Máte proces, který vás brzdí? Potřebujete postavit web, naprogramovat mikro-aplikaci nebo zapojit AI parťáka? Vyberte si termín nezávazné konzultace, kde se podíváme na možnosti zefektivnění.</p>
+            <a href="https://calendly.com/martina-dohnalova/30min" class="cta-btn" target="_blank" rel="noopener noreferrer">Rezervovat konzultaci</a>
         </section>
 
         <hr>
@@ -1345,6 +1465,55 @@
     </div>
 
     <script>
+        // 0z. Cesta ke spolupráci — interaktivní mapa kroků
+        (function () {
+            const map = document.getElementById('journeyMap');
+            if (!map) return;
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // Accordion karty
+            map.querySelectorAll('.journey-card-toggle').forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const card = btn.closest('.journey-card');
+                    const isOpen = card.classList.toggle('is-open');
+                    btn.setAttribute('aria-expanded', String(isOpen));
+                });
+            });
+
+            // Přepínač Mám / Nemám web
+            const toggleBtns = map.querySelectorAll('.journey-toggle-btn');
+            toggleBtns.forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const branch = btn.dataset.branch;
+                    toggleBtns.forEach((b) => {
+                        b.classList.toggle('active', b === btn);
+                        b.setAttribute('aria-pressed', String(b === btn));
+                    });
+                    map.querySelectorAll('.journey-branch-panel').forEach((panel) => {
+                        const active = panel.dataset.branchPanel === branch;
+                        panel.classList.toggle('active', active);
+                        panel.setAttribute('aria-hidden', String(!active));
+                    });
+                });
+            });
+
+            // Scroll reveal (IntersectionObserver)
+            const nodes = map.querySelectorAll('.journey-node');
+            if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+                nodes.forEach((node) => node.classList.add('is-visible'));
+            } else {
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.25, rootMargin: '0px 0px -10% 0px' });
+                nodes.forEach((node) => revealObserver.observe(node));
+            }
+        })();
+
         // 0a. Mobilní hamburger menu
         const navToggle = document.getElementById('navToggle');
         const mainNav = document.getElementById('mainNav');
@@ -1387,6 +1556,40 @@
             document.getElementById("scroll-indicator").style.width = scrolled + "%";
         };
 
+        // 2. Typewriter efekt
+        const words = ["webové stránky.", "firemní systémy.", "webové aplikace.", "AI automatizace.", "mikro systémy."];
+        let i = 0; let timer;
+
+        function typingEffect() {
+            let word = words[i].split("");
+            var loopTyping = function() {
+                if (word.length > 0) {
+                    document.getElementById('typewriter-text').innerHTML += word.shift();
+                } else {
+                    setTimeout(deletingEffect, 2000);
+                    return false;
+                }
+                timer = setTimeout(loopTyping, 80);
+            };
+            loopTyping();
+        }
+
+        function deletingEffect() {
+            let word = words[i].split("");
+            var loopDeleting = function() {
+                if (word.length > 0) {
+                    word.pop();
+                    document.getElementById('typewriter-text').innerHTML = word.join("");
+                } else {
+                    if (words.length > (i + 1)) { i++; } else { i = 0; }
+                    setTimeout(typingEffect, 500);
+                    return false;
+                }
+                timer = setTimeout(loopDeleting, 40);
+            };
+            loopDeleting();
+        }
+        typingEffect();
 
         // 3b. Slider AI nástrojů
         let currentToolIdx = 0;
