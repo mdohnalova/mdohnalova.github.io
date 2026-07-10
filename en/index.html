@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martina | Websites, AI &amp; Micro Systems</title>
+    <title>Martina | Websites, AI & Micro Systems</title>
     <style>
         :root {
             --bg-color: #fcfbfa;
@@ -987,6 +987,30 @@
             .case-slide-photo { flex: none; width: 100%; height: 200px; }
             .case-slide-photo img { object-fit: cover; }
         }
+
+        /* Hero – sekundarni odkazy (ne CTA tlacitko) */
+        .hero-links { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 0.5rem; }
+        .hero-link-line { color: #555; font-size: 1rem; }
+        .hero-links a { color: var(--accent-color); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(169,93,69,0.35); padding-bottom: 1px; }
+        .hero-links a:hover { border-bottom-color: var(--accent-color); }
+
+        /* AI nastroje - O me */
+        .ai-tools-section { margin-top: 4rem; }
+        .ai-tools-section h2 { font-size: 2rem; font-weight: 400; margin: 0.5rem 0 1.5rem; }
+        .ai-tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; }
+        .ai-tool-chip { background: #fff; border: 1px solid #e8e4e0; border-radius: 12px; padding: 1.1rem 1.2rem; font-weight: 600; text-align: center; color: #2c2a29; }
+        .ai-tool-chip .note { display: block; margin-top: 0.4rem; font-weight: 400; font-size: 0.78rem; color: #8a8580; }
+
+        /* Kontakt - rozdeleni na dve cilove skupiny */
+        .contact-split { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1rem; }
+        .contact-card { background: #fff; border: 1px solid #e8e4e0; border-radius: 14px; padding: 2.5rem; }
+        .contact-card h2 { font-size: 1.5rem; margin: 0.8rem 0 1rem; font-weight: 600; }
+        .contact-card p { color: #555; margin-bottom: 1.5rem; }
+        @media (max-width: 900px) { .contact-split { grid-template-columns: 1fr; } }
+
+        /* Projekty - story odstavec u AI Logistics karty + poznamka pod tlacitky */
+        .project-story { background: #f6f3f0; border-left: 3px solid var(--accent-color); padding: 1rem 1.2rem; border-radius: 0 8px 8px 0; margin-bottom: 1.3rem; font-size: 0.92rem; line-height: 1.6; color: #3f3d3b; }
+        .project-note { font-size: 0.85rem; color: #7f7b78; margin-top: 0.8rem; }
     </style>
 </head>
 <body>
@@ -996,12 +1020,6 @@
     </div>
 
     <div id="scroll-indicator"></div>
-
-    <!-- PLOVOUCÍ TLAČÍTKA -->
-    <a href="https://calendly.com/martina-dohnalova/30min" class="sticky-consultation-right" target="_blank" rel="noopener noreferrer" aria-label="Free Consultation">
-        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span class="btn-label">Free Consultation</span>
-    </a>
 
     <button class="ai-assistant-launcher" id="aiAssistantLauncher" type="button" aria-label="Open AI assistant" aria-expanded="false" aria-controls="aiChatPanel">
         <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -1019,7 +1037,7 @@
             <button class="ai-chat-close" id="aiChatClose" type="button" aria-label="Close AI assistant">×</button>
         </div>
         <div class="ai-chat-messages" id="aiChatMessages">
-            <div class="ai-chat-msg assistant">Hi! I'm Martina's AI assistant. Ask me anything about her services, projects, or how to start working together.</div>
+            <div class="ai-chat-msg assistant">Hi! I'm Martina's AI assistant. Ask me anything about her experience, skills, or projects.</div>
         </div>
         <form class="ai-chat-input-row" id="aiChatForm">
             <textarea class="ai-chat-input" id="aiChatInput" placeholder="Type a message..." rows="1" maxlength="500" required></textarea>
@@ -1028,13 +1046,13 @@
     </aside>
 
     <header>
-        <div class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Martina .</div>
+        <a href="index.html" class="logo">Martina .</a>
         <div class="header-right">
             <nav id="mainNav">
-                <a href="#sluzby">Home</a>
-                <a href="#o-mne">About</a>
-                <a href="#nastroje">Laboratory</a>
-                <a href="#konzultace">Contact</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
             </nav>
             <a href="../index.html" class="lang-switcher">CZ</a>
             <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
@@ -1049,381 +1067,21 @@
             <div class="hero">
                 <h1>I save you time, capacity, and money.</h1>
                 <div class="subtitle-typewriter">
-                    I design and build <span class="typewriter" id="typewriter-text"></span>
+                    I design and code for you <span class="typewriter" id="typewriter-text"></span>
                 </div>
-                <p>I design and build web apps, online stores, and AI automations — first as a marketing specialist who spent years running e-commerce from the inside, and now as someone who can also code and deploy these tools herself. I connect new software with what your business already uses and cut out slow, repetitive processes.</p>
-                <div>
-                    <a href="#konzultace" class="cta-btn">GET A TAILORED SOLUTION</a>
+                <p>Marketing from the inside + AI tools I build and deploy myself. Take a look at what I've built, or get in touch.</p>
+                <div class="hero-links">
+                    <p class="hero-link-line">Here as a recruiter? Check out <a href="projects.html">Projects</a> and <a href="about.html">About me</a>.</p>
+                    <p class="hero-link-line">Looking for a business solution? See <a href="services.html">Services</a>.</p>
                 </div>
             </div>
-            
+
             <!-- MINIMALISTICKÁ REAKTIVNÍ ANIMACE -->
             <div class="hero-animation-wrapper">
                 <canvas id="ai-canvas"></canvas>
             </div>
         </section>
 
-        <!-- SLUŽBY -->
-        <section id="sluzby" class="services-section">
-            <h2>From Modern Websites to Smart AI Automation</h2>
-            <p class="subheading">Follow the path we can take together — from the first conversation to AI running in your day-to-day operations.</p>
-
-            <div class="journey-map" id="journeyMap">
-                <div class="journey-node">
-                    <span class="journey-dot"></span>
-                    <div class="journey-line-track"></div>
-                    <div class="journey-line-fill"></div>
-                    <div class="journey-card journey-card-static">
-                        <h3>0. Free consultation (30 min)</h3>
-                        <p>We'll go through your business processes, plan the steps, and set goals — so I know exactly where I can help most.</p>
-                    </div>
-                </div>
-
-                <div class="journey-node">
-                    <span class="journey-dot"></span>
-                    <div class="journey-line-track"></div>
-                    <div class="journey-line-fill"></div>
-                    <p class="journey-branch-question">Do you already have a website or online store?</p>
-                    <div class="journey-toggle" role="group" aria-label="Do you already have a website or online store?">
-                        <button class="journey-toggle-btn active" data-branch="has" aria-pressed="true">Yes, I do</button>
-                        <button class="journey-toggle-btn" data-branch="none" aria-pressed="false">No, I don't</button>
-                    </div>
-                    <div class="journey-branch-panels">
-                        <div class="journey-branch-panel active" data-branch-panel="has">
-                            <div class="journey-card is-open">
-                                <button class="journey-card-toggle" aria-expanded="true" aria-controls="jbody-1a">
-                                    <h3>1a. Analysis of your current setup</h3>
-                                    <svg class="journey-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
-                                </button>
-                                <div class="journey-card-body" id="jbody-1a">
-                                    <div class="journey-card-body-inner">
-                                        <p>I'll look at how your website or store performs today and find where you're losing customers or time.</p>
-                                        <div class="journey-subcards">
-                                            <div class="journey-subcard">
-                                                <h4>Outdated / slow</h4>
-                                                <p>I'll design how to modernize and speed it up.</p>
-                                            </div>
-                                            <div class="journey-subcard">
-                                                <h4>Modern, working well</h4>
-                                                <p>Your foundation is solid — let's move straight to automation and AI.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="journey-branch-panel" data-branch-panel="none">
-                            <div class="journey-card is-open">
-                                <button class="journey-card-toggle" aria-expanded="true" aria-controls="jbody-1b">
-                                    <h3>1b. We'll build it from scratch</h3>
-                                    <svg class="journey-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
-                                </button>
-                                <div class="journey-card-body" id="jbody-1b">
-                                    <div class="journey-card-body-inner">
-                                        <p>I'll build a Shoptet store, or a fast website using AI tools — whatever your business needs.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="journey-node">
-                    <span class="journey-dot"></span>
-                    <div class="journey-line-track"></div>
-                    <div class="journey-line-fill"></div>
-                    <span class="journey-transition-label">Let's clean up the mess</span>
-                    <div class="journey-card journey-card-static">
-                        <h3>2. A modern, working foundation</h3>
-                        <p>Whether we got here by modernizing or building from scratch, we now have a solid foundation ready for automation and AI.</p>
-                    </div>
-                </div>
-
-                <div class="journey-node">
-                    <span class="journey-dot"></span>
-                    <div class="journey-line-track"></div>
-                    <div class="journey-line-fill"></div>
-                    <div class="journey-pair">
-                        <div class="journey-card journey-card-static">
-                            <h3>Process Automation</h3>
-                            <p>I'll connect your systems, remove manual work, and bring order to your data and routine tasks.</p>
-                        </div>
-                        <div class="journey-card journey-card-static">
-                            <h3>Web AI Applications</h3>
-                            <p>I'll add smart features straight into your website — reports, text generation, one-click data analysis.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="journey-node">
-                    <span class="journey-dot"></span>
-                    <div class="journey-line-track"></div>
-                    <div class="journey-line-fill"></div>
-                    <div class="journey-card journey-card-static">
-                        <h3>3. AI Tools &amp; Systems</h3>
-                        <p>I'll deploy AI assistants and automations directly into your daily operations.</p>
-                    </div>
-                </div>
-            </div>
-
-            <p class="journey-note">Every business is at a different stage — some only need step 1, others can jump straight to step 3. These aren't a mandatory sequence, just a map of how we could work together. We can start wherever makes sense for you.</p>
-        </section>
-
-        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0;">
-
-        <!-- O MNĚ -->
-        <section id="muj-pribeh" class="story-section">
-            <div class="story-image">
-                <img src="../foto/linkedin-profile.png" alt="Profilová fotka" />
-            </div>
-            <div class="story-copy">
-                <h2>I come from marketing, not engineering — and that's my edge</h2>
-                <div class="about-grid">
-                    <div class="about-card">
-                        <h3>I come from marketing, not engineering — and that's my edge</h3>
-                        <p>For years I ran e-commerce and marketing from the inside; now I can also code and deploy AI tools and simple websites myself. My solutions today are proven concepts (PoCs) and smaller deployments built for my own workflow — exactly what a smaller business or team needs when they want to see results fast, not wait months for an enterprise rollout.</p>
-                    </div>
-                    <div class="about-card">
-                        <h3>How I Can Help You</h3>
-                        <p>Whether you need quick MVP validation, automation of routine admin work, API connections between systems, or a smart website that drives results. I design solutions that are simple to use but technically ready to grow with your business.</p>
-                    </div>
-                </div>
-                <div class="story-actions">
-                    <a href="https://calendly.com/martina-dohnalova/30min" class="cta-btn" target="_blank" rel="noopener noreferrer">Book a Consultation</a>
-                </div>
-            </div>
-        </section>
-
-        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0;">
-
-        <!-- UKÁZKA PRÁCE NAPŘÍČ OBORY -->
-        <section id="ukazka-prace" class="case-studies-section">
-            <span class="lab-badge">PORTFOLIO</span>
-            <h2>Work across industries</h2>
-            <p class="subheading">E-commerce, travel, gastronomy, public administration, and healthcare — different briefs, the same focus on clarity and results.</p>
-            <div class="tools-slider-wrapper">
-                <button class="slider-arrow slider-arrow-prev" onclick="moveCaseSlider(-1)" aria-label="Previous case study">&#8249;</button>
-                <button class="slider-arrow slider-arrow-next" onclick="moveCaseSlider(1)" aria-label="Next case study">&#8250;</button>
-                <div class="tools-slider">
-                    <div class="tools-slider-track" id="caseSliderTrack">
-                        <div class="case-slide">
-                            <div class="case-slide-inner">
-                                <div class="case-slide-text">
-                                    <div class="case-tags">
-                                        <span class="case-category">E-commerce</span>
-                                        <span class="case-status live">🟢 Live e-shop</span>
-                                    </div>
-                                    <h3>Lucky Skorts</h3>
-                                    <p>From empty domain to first order. I built an e-shop that sells, not just looks good — a clear offer, trustworthy details, and no unnecessary steps between the customer and checkout.</p>
-                                </div>
-                                <div class="case-slide-photo">
-                                    <img src="../foto/luckyskorts-1.png" alt="Lucky Skorts – e-shop homepage">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="case-slide">
-                            <div class="case-slide-inner">
-                                <div class="case-slide-text">
-                                    <div class="case-tags">
-                                        <span class="case-category">Travel portal</span>
-                                        <span class="case-status dev">🚧 In development</span>
-                                    </div>
-                                    <h3>Autem do Chorvatska</h3>
-                                    <p>A site that has to convince on the first scroll, or the visitor closes the tab and moves on. Routes, accommodation, and tips in one clear place, built to work well with search too.</p>
-                                </div>
-                                <div class="case-slide-photo">
-                                    <img src="../foto/autemdochorvatska-1.jpg" alt="Autem do Chorvatska – homepage">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="case-slide">
-                            <div class="case-slide-inner">
-                                <div class="case-slide-text">
-                                    <div class="case-tags">
-                                        <span class="case-category">Gastronomy</span>
-                                        <span class="case-status concept">💡 Concept design</span>
-                                    </div>
-                                    <h3>Atelier 27</h3>
-                                    <p>A restaurant where people go for expensive dinners needs a website that looks just as expensive. Dark, elegant styling sells the experience before the guest even sits down.</p>
-                                </div>
-                                <div class="case-slide-photo">
-                                    <img src="../foto/atelier27-1.jpg" alt="Atelier 27 – restaurant homepage">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="case-slide">
-                            <div class="case-slide-inner">
-                                <div class="case-slide-text">
-                                    <div class="case-tags">
-                                        <span class="case-category">Public administration</span>
-                                        <span class="case-status concept">💡 Concept design</span>
-                                    </div>
-                                    <h3>Horská Lhota</h3>
-                                    <p>A municipal website that doesn't frustrate. Office hours, announcements, and a form in two clicks — instead of the link-maze we've all come to expect from town-hall sites.</p>
-                                </div>
-                                <div class="case-slide-photo">
-                                    <img src="../foto/horskalhota.jpg" alt="Horská Lhota – municipal website">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="case-slide">
-                            <div class="case-slide-inner">
-                                <div class="case-slide-text">
-                                    <div class="case-tags">
-                                        <span class="case-category">Healthcare</span>
-                                        <span class="case-status concept">💡 Concept design</span>
-                                    </div>
-                                    <h3>Vltava Clinic</h3>
-                                    <p>A website meant to calm the patient before they even walk through the door. A calm palette, clearly described care, and booking in a few clicks — exactly what a private clinic needs to build trust.</p>
-                                </div>
-                                <div class="case-slide-photo">
-                                    <img src="../foto/vltavaclinic.jpg" alt="Vltava Clinic – clinic homepage">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="case-dots">
-                <button class="case-dot active" data-index="0" onclick="currentCaseSlide(0)" aria-label="Slide 1"></button>
-                <button class="case-dot" data-index="1" onclick="currentCaseSlide(1)" aria-label="Slide 2"></button>
-                <button class="case-dot" data-index="2" onclick="currentCaseSlide(2)" aria-label="Slide 3"></button>
-                <button class="case-dot" data-index="3" onclick="currentCaseSlide(3)" aria-label="Slide 4"></button>
-                <button class="case-dot" data-index="4" onclick="currentCaseSlide(4)" aria-label="Slide 5"></button>
-            </div>
-        </section>
-
-        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0;">
-
-        <!-- PROJEKTY / PORTFOLIO -->
-        <section id="nastroje" class="tools-section">
-            <span class="lab-badge">PROJECTS &amp; DEVELOPMENT</span>
-            <h2>My Internal AI Laboratory</h2>
-            <p class="sekce-laborator-podnadpis" style="color: #444; max-width: 700px;">
-                Demos of systems and automations I built for my own efficiency, saving me hours of work every day.
-            </p>
-            <p style="margin-top: 1rem; padding: 1rem 1.2rem; border-left: 3px solid #7A9A82; background: #f6f3f0; border-radius: 0 8px 8px 0; color: #3f3d3b; max-width: 950px;">
-                💡 Architecture note: The apps shown here are functional proof-of-concept demos built on sample data, not real client data. They demonstrate the underlying principles and architecture — AI output validation, prompt-injection protection, GDPR anonymization — that I would build on for larger solutions, including integration with company systems like an ERP, if a specific project required it.
-            </p>
-
-            <div class="tools-slider-wrapper">
-                <button class="slider-arrow slider-arrow-prev" onclick="moveSlider(-1)" aria-label="Previous project">&#8249;</button>
-                <button class="slider-arrow slider-arrow-next" onclick="moveSlider(1)" aria-label="Next project">&#8250;</button>
-                <div class="tools-slider">
-                <div class="tools-slider-track" id="toolsSliderTrack">
-                    <article class="tool-slide project-card">
-                        <div class="tool-copy project-content">
-                            <h3>AI Logistics Data Engine (Scalable PoC)</h3>
-                            <p class="subtitle">A functional technology concept for a logistics dispatch system, designed to eliminate financial losses from delayed shipments.</p>
-                            <p>A functional technology concept for a logistics dispatch system, designed to eliminate financial losses from delayed shipments. This micro-system works standalone for smaller e-shops (package tracking, damage detection, automatic notifications), but its architecture is fully prepared for enterprise integration with a company ERP (Helios) and advanced crisis scenarios.</p>
-                            <ul class="project-features">
-                                <li>🎯 Flags risky orders early.</li>
-                                <li>💰 Gives visibility into potential losses.</li>
-                                <li>📢 Automates customer notifications for return or damage risk.</li>
-                            </ul>
-                            <div class="tool-actions">
-                                <a href="https://ai-logistics-command-center-7pl2ctmvivxpmldjafhh3x.streamlit.app/" target="_blank" rel="noopener noreferrer" class="cta-btn">Open Live Demo (PoC)</a>
-                                <a href="https://github.com/mdohnalova/ai-logistics-command-center" target="_blank" rel="noopener noreferrer" class="outline-btn">View Code on GitHub</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="tool-slide project-card">
-                        <div class="tool-copy project-content">
-                            <h3>AI E-Commerce Enricher</h3>
-                            <p class="subtitle">Speeds up my work with product data and SEO copy.</p>
-                            <p>I built this tool for my own e-shop workflow, to quickly clean up product data and prepare it for sale and search.</p>
-                            <ul class="project-features">
-                                <li>🧹 Cleans up clutter and messy data almost automatically.</li>
-                                <li>✍️ Generates descriptions and SEO copy in seconds.</li>
-                                <li>🔍 Has keywords ready for immediate use.</li>
-                            </ul>
-                            <div class="tool-actions">
-                                <a href="https://ai-ecommerce-enricher-2vwepjcswpw9rkxmjnvugo.streamlit.app/" target="_blank" rel="noopener noreferrer" class="cta-btn">Open Live Demo (PoC)</a>
-                                <a href="https://github.com/mdohnalova/ai-ecommerce-enricher" target="_blank" rel="noopener noreferrer" class="outline-btn">View Code on GitHub</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="tool-slide project-card">
-                        <div class="tool-copy project-content">
-                            <h3>Magyar Mail Automation App (PoC)</h3>
-                            <p class="subtitle">Automated agile solution for e-shops expanding into foreign markets.</p>
-                            <p>Automated agile solution for e-shops expanding into foreign markets. Removes the customer-support barrier without needing to hire expensive native speakers right away. Combines LLM sentiment analysis with accurate translation and full operator control (human-in-the-loop).</p>
-                            <ul class="project-features">
-                                <li>🇭🇺 Reads and summarizes every message in one place.</li>
-                                <li>🎛️ Drafts replies in different tones, saving tedious rewriting.</li>
-                                <li>📧 Instant access to send the message by email.</li>
-                            </ul>
-                            <div class="tool-actions">
-                                <a href="https://magyar-mail-automation.vercel.app" target="_blank" rel="noopener noreferrer" class="cta-btn">Open Live Demo (PoC)</a>
-                                <a href="https://github.com/mdohnalova/magyar-mail-automation" target="_blank" rel="noopener noreferrer" class="outline-btn">View Code on GitHub</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="tool-slide project-card">
-                        <div class="tool-copy project-content">
-                            <h3>AI Helpdesk Copilot</h3>
-                            <p class="subtitle">🚧 In development — a smart customer service assistant for ticket sorting and urgent complaint detection.</p>
-                            <p>A concept assistant that will sort incoming tickets by priority and customer mood and suggest a ready-made reply. Currently fine-tuning before deployment — working code is on GitHub.</p>
-                            <ul class="project-features">
-                                <li>🎯 Goal: process incoming messages within seconds.</li>
-                                <li>🚨 Goal: detect critical tickets faster.</li>
-                                <li>💼 Goal: consistent tone of communication across the team.</li>
-                            </ul>
-                            <div class="tool-actions">
-                                <a href="https://github.com/mdohnalova/helpdesk-copilot" target="_blank" rel="noopener noreferrer" class="outline-btn">View Code on GitHub</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                </div>
-            </div>
-            <div class="tools-dots">
-                <button class="tool-dot active" data-index="0" onclick="currentToolSlide(0)" aria-label="Slide 1"></button>
-                <button class="tool-dot" data-index="1" onclick="currentToolSlide(1)" aria-label="Slide 2"></button>
-                <button class="tool-dot" data-index="2" onclick="currentToolSlide(2)" aria-label="Slide 3"></button>
-                <button class="tool-dot" data-index="3" onclick="currentToolSlide(3)" aria-label="Slide 4"></button>
-            </div>
-        </section>
-
-        <hr>
-
-        <!-- REZERVAČNÍ BLOK -->
-        <section id="konzultace" class="reservation-section">
-            <h2>Let's discuss your business</h2>
-            <p style="color: #555; margin-bottom: 2rem; font-size: 1.1rem;">Is there a process slowing you down? Need a website, a micro-app, or an AI partner? Pick a time for a no-obligation consultation and let's look at how to make things more efficient.</p>
-            <a href="https://calendly.com/martina-dohnalova/30min" class="cta-btn" target="_blank" rel="noopener noreferrer">Book a Consultation</a>
-        </section>
-
-        <hr>
-
-        <!-- ZA OBJEKTIVEM -->
-        <section id="o-mne" class="about-section">
-            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <h2>Behind the Lens</h2>
-                <p style="font-weight: 600; margin-bottom: 2rem;">"Photography taught me to look at the world from different angles and notice details others often miss. With a camera in hand, I discover new places and draw inspiration from them."</p>
-                <p style="margin-bottom: 1.5rem;">I bring that same perspective into technology. Every line of code and automation is like image composition: it must be balanced, coherent, and purpose-driven.</p>
-                <p style="color: #A95D45; font-family: Georgia, serif; font-style: italic; font-size: 1.5rem;">Martina.</p>
-            </div>
-        </section>
-
-        <div class="infinite-gallery">
-            <div class="marquee-track">
-                <img src="../foto/duna.JPG" alt="Dune photo">
-                <img src="../foto/hora.JPG" alt="Mountain photo">
-                <img src="../foto/les.JPG" alt="Forest photo">
-                <img src="../foto/moře.JPG" alt="Sea photo">
-                <img src="../foto/řeka.JPG" alt="River photo">
-                <img src="../foto/jezero.JPG" alt="Lake photo">
-                <img src="../foto/lodě.JPG" alt="Boats photo">
-                <img src="../foto/duna.JPG" alt="Dune photo">
-                <img src="../foto/hora.JPG" alt="Mountain photo">
-                <img src="../foto/les.JPG" alt="Forest photo">
-                <img src="../foto/moře.JPG" alt="Sea photo">
-                <img src="../foto/řeka.JPG" alt="River photo">
-                <img src="../foto/jezero.JPG" alt="Lake photo">
-                <img src="../foto/lodě.JPG" alt="Boats photo">
-            </div>
-        </div>
     </main>
 
     <footer>
@@ -1454,7 +1112,7 @@
             <p style="font-size: 0.95rem; color: #494644; margin-bottom: 1rem; line-height: 1.6;">Data protection and information security are core principles of the services and solutions provided. This policy explains how information is collected, processed, and protected when visiting and using this website.</p>
             <ul style="display: flex; flex-direction: column; gap: 0.8rem; margin: 1rem 0; padding-left: 1.2rem; font-size: 0.92rem; color: #494644;">
                 <li><strong>Data Controller:</strong> Martina Dohnalová, website operator based in the Czech Republic. Contact email: martina.dohnalova@centrum.cz.</li>
-                <li><strong>Purpose of Processing:</strong> Data submitted through contact forms or the external booking system Calendly (name, email, request details) is processed solely to handle inquiries, prepare technical proposals, or deliver a non-binding consultation.</li>
+                <li><strong>Purpose of Processing:</strong> Data (name, email, request details) submitted via the contact email (Contact page) or the external booking system Calendly (Services and Contact pages) is processed solely to handle inquiries, prepare technical proposals, or deliver a non-binding consultation.</li>
                 <li><strong>Legal Basis:</strong> Personal data is processed based on legitimate interest for communication with prospective clients and to take pre-contractual steps at the data subject's request.</li>
                 <li><strong>Retention and Data Sharing:</strong> Contact data is retained only for the time necessary to handle communication, for a maximum of 6 months from the last contact unless cooperation is established. Data is treated as confidential, is not shared with third parties, and is not used for mass marketing campaigns.</li>
                 <li><strong>Cookies:</strong> The website primarily uses technical cookies required for core functionality (for example, saving the state of this cookie banner). Advanced analytics tools are activated only with explicit user consent.</li>
@@ -1557,7 +1215,7 @@
         };
 
         // 2. Typewriter efekt
-        const words = ["websites.", "business systems.", "web applications.", "AI automation.", "micro systems."];
+        const words = ["AI automation.", "websites and e-shops.", "AI apps.", "micro-systems.", "AI agents."];
         let i = 0; let timer;
 
         function typingEffect() {
@@ -1589,7 +1247,7 @@
             };
             loopDeleting();
         }
-        typingEffect();
+        if (document.getElementById('typewriter-text')) { typingEffect(); }
 
         // 3b. Slider AI nástrojů
         let currentToolIdx = 0;
@@ -1848,6 +1506,7 @@
 
         // 5. INTERAKTIVNÍ MINIMALISTICKÁ AI ANIMACE SÍTĚ
         const canvas = document.getElementById('ai-canvas');
+        if (canvas) {
         const ctx = canvas.getContext('2d');
         let width = canvas.width = canvas.parentElement.clientWidth;
         let height = canvas.height = canvas.parentElement.clientHeight;
@@ -1914,6 +1573,9 @@
                 initNodes();
             }
         });
+        initNodes();
+        animateNodes();
+        }
 
         // Keep sliders correctly positioned on resize
         window.addEventListener('resize', () => {
@@ -1931,8 +1593,6 @@
             }
         });
 
-        initNodes();
-        animateNodes();
     </script>
 </body>
 </html>

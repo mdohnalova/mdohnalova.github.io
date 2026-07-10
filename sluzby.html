@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martina | Webové stránky, AI & Mikro systémy</title>
+    <title>Martina | Služby — weby, AI automatizace & mikro systémy</title>
     <style>
         :root {
             --bg-color: #fcfbfa;
@@ -1021,6 +1021,13 @@
 
     <div id="scroll-indicator"></div>
 
+    <!-- PLOVOUCÍ TLAČÍTKA -->
+    <!-- PLOVOUCÍ TLAČÍTKA -->
+    <a href="https://calendly.com/martina-dohnalova/30min" class="sticky-consultation-right" target="_blank" rel="noopener noreferrer" aria-label="Konzultace zdarma">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="btn-label">Konzultace zdarma</span>
+    </a>
+
     <button class="ai-assistant-launcher" id="aiAssistantLauncher" type="button" aria-label="Otevřít AI asistenta" aria-expanded="false" aria-controls="aiChatPanel">
         <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         <span class="btn-label">Poradí vám AI asistent</span>
@@ -1054,7 +1061,7 @@
                 <a href="o-mne.html">O mě</a>
                 <a href="kontakt.html">Kontakt</a>
             </nav>
-            <a href="en/index.html" class="lang-switcher">EN</a>
+            <a href="en/services.html" class="lang-switcher">EN</a>
             <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mainNav">
                 <span></span><span></span><span></span>
             </button>
@@ -1062,24 +1069,138 @@
     </header>
 
     <main>
-        <!-- HERO SEKCE (DVOU-SLOUPCOVÁ S MINIMALISTICKOU AI NEURONOVOU SÍTÍ) -->
-        <section class="hero-container">
-            <div class="hero">
-                <h1>Šetřím váš čas, kapacitu a peníze.</h1>
-                <div class="subtitle-typewriter">
-                    Navrhuji a kóduji pro vás <span class="typewriter" id="typewriter-text"></span>
+        <section class="story-section">
+            <div class="story-image">
+                <img src="foto/linkedin-profile.png" alt="Profilová fotka" />
+            </div>
+            <div class="story-copy">
+                <h2>Kódování očima marketéra</h2>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <h3>S čím vám pomůžu?</h3>
+                        <p>Ať už potřebujete rychlou validaci nápadu (MVP), automatizaci rutinní administrativy, propojení systémů přes API nebo chytrý web, který generuje výsledky. Navrhuji řešení, která jsou uživatelsky jednoduchá, ale technologicky připravená na budoucí růst vaší firmy.</p>
+                    </div>
                 </div>
-                <p>Marketing zevnitř + AI nástroje, které si sama stavím a nasazuju. Podívejte se, co jsem postavila, nebo mi napište.</p>
-                <div class="hero-links">
-                    <p class="hero-link-line">Jste náborář? Mrkněte na <a href="projekty.html">Projekty</a> a <a href="o-mne.html">O mě</a>.</p>
-                    <p class="hero-link-line">Hledáte řešení pro firmu? Podívejte se na <a href="sluzby.html">Služby</a>.</p>
+                <div class="story-actions">
+                    <a href="https://calendly.com/martina-dohnalova/30min" class="cta-btn" target="_blank" rel="noopener noreferrer">Rezervovat konzultaci</a>
+                </div>
+            </div>
+        </section>
+
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0;">
+
+        <section id="sluzby" class="services-section">
+            <h2>Od moderního webu po chytrou AI automatizaci</h2>
+            <p class="subheading">Projděte si cestu, kterou spolu můžeme jít — od prvního rozhovoru po AI nasazené přímo ve vašem provozu.</p>
+
+            <div class="journey-map" id="journeyMap">
+                <div class="journey-node">
+                    <span class="journey-dot"></span>
+                    <div class="journey-line-track"></div>
+                    <div class="journey-line-fill"></div>
+                    <div class="journey-card journey-card-static">
+                        <h3>0. Konzultace zdarma (30 min)</h3>
+                        <p>Probereme vaše firemní procesy, naplánujeme kroky a stanovíme cíle — abych přesně věděla, kde vám můžu nejvíc pomoct.</p>
+                    </div>
+                </div>
+
+                <div class="journey-node">
+                    <span class="journey-dot"></span>
+                    <div class="journey-line-track"></div>
+                    <div class="journey-line-fill"></div>
+                    <p class="journey-branch-question">Máte už web nebo e-shop?</p>
+                    <div class="journey-toggle" role="group" aria-label="Máte už web nebo e-shop?">
+                        <button class="journey-toggle-btn active" data-branch="has" aria-pressed="true">Ano, mám</button>
+                        <button class="journey-toggle-btn" data-branch="none" aria-pressed="false">Ne, nemám</button>
+                    </div>
+                    <div class="journey-branch-panels">
+                        <div class="journey-branch-panel active" data-branch-panel="has">
+                            <div class="journey-card is-open">
+                                <button class="journey-card-toggle" aria-expanded="true" aria-controls="jbody-1a">
+                                    <h3>1a. Analýza stávajícího řešení</h3>
+                                    <svg class="journey-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+                                </button>
+                                <div class="journey-card-body" id="jbody-1a">
+                                    <div class="journey-card-body-inner">
+                                        <p>Podívám se, jak váš web nebo e-shop funguje teď, a najdu místa, kde ztrácíte zákazníky nebo čas.</p>
+                                        <div class="journey-subcards">
+                                            <div class="journey-subcard">
+                                                <h4>Zastaralý / pomalý</h4>
+                                                <p>Navrhnu, jak ho zmodernizovat a zrychlit.</p>
+                                            </div>
+                                            <div class="journey-subcard">
+                                                <h4>Moderní, funkční</h4>
+                                                <p>Základ máte dobrý, jdeme rovnou na automatizaci a AI.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="journey-branch-panel" data-branch-panel="none">
+                            <div class="journey-card is-open">
+                                <button class="journey-card-toggle" aria-expanded="true" aria-controls="jbody-1b">
+                                    <h3>1b. Postavíme ho od nuly</h3>
+                                    <svg class="journey-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+                                </button>
+                                <div class="journey-card-body" id="jbody-1b">
+                                    <div class="journey-card-body-inner">
+                                        <p>Vytvořím e-shop na Shoptetu, nebo rychlý web pomocí AI nástrojů — podle toho, co váš byznys potřebuje.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journey-node">
+                    <span class="journey-dot"></span>
+                    <div class="journey-line-track"></div>
+                    <div class="journey-line-fill"></div>
+                    <span class="journey-transition-label">Uklidíme nepořádek</span>
+                    <div class="journey-card journey-card-static">
+                        <h3>2. Moderní, funkční základ</h3>
+                        <p>Ať jsme se k němu dostali modernizací, nebo stavbou od nuly, teď máme pevný základ, na který půjde nasadit automatizaci a AI.</p>
+                    </div>
+                </div>
+
+                <div class="journey-node">
+                    <span class="journey-dot"></span>
+                    <div class="journey-line-track"></div>
+                    <div class="journey-line-fill"></div>
+                    <div class="journey-pair">
+                        <div class="journey-card journey-card-static">
+                            <h3>Automatizace procesů</h3>
+                            <p>Propojím systémy, odstraním ruční práci a zavedu pořádek do dat a rutinních úkolů.</p>
+                        </div>
+                        <div class="journey-card journey-card-static">
+                            <h3>Webové AI aplikace</h3>
+                            <p>Přidám chytré funkce přímo do vašeho webu — reporty, generování textů, analýzu dat na jedno kliknutí.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journey-node">
+                    <span class="journey-dot"></span>
+                    <div class="journey-line-track"></div>
+                    <div class="journey-line-fill"></div>
+                    <div class="journey-card journey-card-static">
+                        <h3>3. AI nástroje &amp; systémy</h3>
+                        <p>Nasadím AI asistenty a automatizace přímo do vašeho každodenního provozu.</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- MINIMALISTICKÁ REAKTIVNÍ ANIMACE -->
-            <div class="hero-animation-wrapper">
-                <canvas id="ai-canvas"></canvas>
-            </div>
+            <p class="journey-note">Každá firma je jinde — někdo potřebuje jen krok 1, jiný rovnou krok 3. Kroky nejsou povinná sekvence, ale mapa toho, jak spolu můžeme jít. Klidně začneme tam, kde to dává smysl vám.</p>
+        </section>
+
+
+        <hr>
+
+        <section id="konzultace" class="reservation-section">
+            <h2>Pojďme probrat váš byznys</h2>
+            <p style="color: #555; margin-bottom: 2rem; font-size: 1.1rem;">Máte proces, který vás brzdí? Potřebujete postavit web, naprogramovat mikro-aplikaci nebo zapojit AI parťáka? Vyberte si termín nezávazné konzultace, kde se podíváme na možnosti zefektivnění.</p>
+            <a href="https://calendly.com/martina-dohnalova/30min" class="cta-btn" target="_blank" rel="noopener noreferrer">Rezervovat konzultaci</a>
         </section>
 
     </main>

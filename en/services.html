@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martina | Webové stránky, AI & Mikro systémy</title>
+    <title>Martina | Services — websites, AI automation & micro systems</title>
     <style>
         :root {
             --bg-color: #fcfbfa;
@@ -1021,9 +1021,16 @@
 
     <div id="scroll-indicator"></div>
 
-    <button class="ai-assistant-launcher" id="aiAssistantLauncher" type="button" aria-label="Otevřít AI asistenta" aria-expanded="false" aria-controls="aiChatPanel">
+    <!-- PLOVOUCÍ TLAČÍTKA -->
+    <!-- PLOVOUCÍ TLAČÍTKA -->
+    <a href="https://calendly.com/martina-dohnalova/30min" class="sticky-consultation-right" target="_blank" rel="noopener noreferrer" aria-label="Free Consultation">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="btn-label">Free Consultation</span>
+    </a>
+
+    <button class="ai-assistant-launcher" id="aiAssistantLauncher" type="button" aria-label="Open AI assistant" aria-expanded="false" aria-controls="aiChatPanel">
         <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        <span class="btn-label">Poradí vám AI asistent</span>
+        <span class="btn-label">AI Assistant</span>
     </button>
 
     <aside class="ai-chat-panel" id="aiChatPanel" aria-live="polite">
@@ -1032,16 +1039,16 @@
                 <span class="ai-chat-icon-badge" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                 </span>
-                <span>AI Asistent</span>
+                <span>AI Assistant</span>
             </div>
-            <button class="ai-chat-close" id="aiChatClose" type="button" aria-label="Zavřít AI asistenta">×</button>
+            <button class="ai-chat-close" id="aiChatClose" type="button" aria-label="Close AI assistant">×</button>
         </div>
         <div class="ai-chat-messages" id="aiChatMessages">
-            <div class="ai-chat-msg assistant">Ahoj! Jsem AI asistent Martiny. Zeptejte se mě na cokoliv o jejích zkušenostech, dovednostech nebo projektech.</div>
+            <div class="ai-chat-msg assistant">Hi! I'm Martina's AI assistant. Ask me anything about her experience, skills, or projects.</div>
         </div>
         <form class="ai-chat-input-row" id="aiChatForm">
-            <textarea class="ai-chat-input" id="aiChatInput" placeholder="Napište zprávu..." rows="1" maxlength="500" required></textarea>
-            <button type="submit" class="ai-chat-send" id="aiChatSend">Odeslat</button>
+            <textarea class="ai-chat-input" id="aiChatInput" placeholder="Type a message..." rows="1" maxlength="500" required></textarea>
+            <button type="submit" class="ai-chat-send" id="aiChatSend">Send</button>
         </form>
     </aside>
 
@@ -1049,58 +1056,172 @@
         <a href="index.html" class="logo">Martina .</a>
         <div class="header-right">
             <nav id="mainNav">
-                <a href="sluzby.html">Služby</a>
-                <a href="projekty.html">Projekty</a>
-                <a href="o-mne.html">O mě</a>
-                <a href="kontakt.html">Kontakt</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
             </nav>
-            <a href="en/index.html" class="lang-switcher">EN</a>
-            <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mainNav">
+            <a href="../sluzby.html" class="lang-switcher">CZ</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </header>
 
     <main>
-        <!-- HERO SEKCE (DVOU-SLOUPCOVÁ S MINIMALISTICKOU AI NEURONOVOU SÍTÍ) -->
-        <section class="hero-container">
-            <div class="hero">
-                <h1>Šetřím váš čas, kapacitu a peníze.</h1>
-                <div class="subtitle-typewriter">
-                    Navrhuji a kóduji pro vás <span class="typewriter" id="typewriter-text"></span>
+        <section class="story-section">
+            <div class="story-image">
+                <img src="../foto/linkedin-profile.png" alt="Profilová fotka" />
+            </div>
+            <div class="story-copy">
+                <h2>Coding Through a Marketer's Eyes</h2>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <h3>How I Can Help You</h3>
+                        <p>Whether you need quick MVP validation, automation of routine admin work, API connections between systems, or a smart website that drives results. I design solutions that are simple to use but technically ready to grow with your business.</p>
+                    </div>
                 </div>
-                <p>Marketing zevnitř + AI nástroje, které si sama stavím a nasazuju. Podívejte se, co jsem postavila, nebo mi napište.</p>
-                <div class="hero-links">
-                    <p class="hero-link-line">Jste náborář? Mrkněte na <a href="projekty.html">Projekty</a> a <a href="o-mne.html">O mě</a>.</p>
-                    <p class="hero-link-line">Hledáte řešení pro firmu? Podívejte se na <a href="sluzby.html">Služby</a>.</p>
+                <div class="story-actions">
+                    <a href="https://calendly.com/martina-dohnalova/30min" class="cta-btn" target="_blank" rel="noopener noreferrer">Book a Consultation</a>
+                </div>
+            </div>
+        </section>
+
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0;">
+
+        <section id="sluzby" class="services-section">
+            <h2>From Modern Websites to Smart AI Automation</h2>
+            <p class="subheading">Follow the path we can take together — from the first conversation to AI running in your day-to-day operations.</p>
+
+            <div class="journey-map" id="journeyMap">
+                <div class="journey-node">
+                    <span class="journey-dot"></span>
+                    <div class="journey-line-track"></div>
+                    <div class="journey-line-fill"></div>
+                    <div class="journey-card journey-card-static">
+                        <h3>0. Free consultation (30 min)</h3>
+                        <p>We'll go through your business processes, plan the steps, and set goals — so I know exactly where I can help most.</p>
+                    </div>
+                </div>
+
+                <div class="journey-node">
+                    <span class="journey-dot"></span>
+                    <div class="journey-line-track"></div>
+                    <div class="journey-line-fill"></div>
+                    <p class="journey-branch-question">Do you already have a website or online store?</p>
+                    <div class="journey-toggle" role="group" aria-label="Do you already have a website or online store?">
+                        <button class="journey-toggle-btn active" data-branch="has" aria-pressed="true">Yes, I do</button>
+                        <button class="journey-toggle-btn" data-branch="none" aria-pressed="false">No, I don't</button>
+                    </div>
+                    <div class="journey-branch-panels">
+                        <div class="journey-branch-panel active" data-branch-panel="has">
+                            <div class="journey-card is-open">
+                                <button class="journey-card-toggle" aria-expanded="true" aria-controls="jbody-1a">
+                                    <h3>1a. Analysis of your current setup</h3>
+                                    <svg class="journey-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+                                </button>
+                                <div class="journey-card-body" id="jbody-1a">
+                                    <div class="journey-card-body-inner">
+                                        <p>I'll look at how your website or store performs today and find where you're losing customers or time.</p>
+                                        <div class="journey-subcards">
+                                            <div class="journey-subcard">
+                                                <h4>Outdated / slow</h4>
+                                                <p>I'll design how to modernize and speed it up.</p>
+                                            </div>
+                                            <div class="journey-subcard">
+                                                <h4>Modern, working well</h4>
+                                                <p>Your foundation is solid — let's move straight to automation and AI.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="journey-branch-panel" data-branch-panel="none">
+                            <div class="journey-card is-open">
+                                <button class="journey-card-toggle" aria-expanded="true" aria-controls="jbody-1b">
+                                    <h3>1b. We'll build it from scratch</h3>
+                                    <svg class="journey-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+                                </button>
+                                <div class="journey-card-body" id="jbody-1b">
+                                    <div class="journey-card-body-inner">
+                                        <p>I'll build a Shoptet store, or a fast website using AI tools — whatever your business needs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journey-node">
+                    <span class="journey-dot"></span>
+                    <div class="journey-line-track"></div>
+                    <div class="journey-line-fill"></div>
+                    <span class="journey-transition-label">Let's clean up the mess</span>
+                    <div class="journey-card journey-card-static">
+                        <h3>2. A modern, working foundation</h3>
+                        <p>Whether we got here by modernizing or building from scratch, we now have a solid foundation ready for automation and AI.</p>
+                    </div>
+                </div>
+
+                <div class="journey-node">
+                    <span class="journey-dot"></span>
+                    <div class="journey-line-track"></div>
+                    <div class="journey-line-fill"></div>
+                    <div class="journey-pair">
+                        <div class="journey-card journey-card-static">
+                            <h3>Process Automation</h3>
+                            <p>I'll connect your systems, remove manual work, and bring order to your data and routine tasks.</p>
+                        </div>
+                        <div class="journey-card journey-card-static">
+                            <h3>Web AI Applications</h3>
+                            <p>I'll add smart features straight into your website — reports, text generation, one-click data analysis.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journey-node">
+                    <span class="journey-dot"></span>
+                    <div class="journey-line-track"></div>
+                    <div class="journey-line-fill"></div>
+                    <div class="journey-card journey-card-static">
+                        <h3>3. AI Tools &amp; Systems</h3>
+                        <p>I'll deploy AI assistants and automations directly into your daily operations.</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- MINIMALISTICKÁ REAKTIVNÍ ANIMACE -->
-            <div class="hero-animation-wrapper">
-                <canvas id="ai-canvas"></canvas>
-            </div>
+            <p class="journey-note">Every business is at a different stage — some only need step 1, others can jump straight to step 3. These aren't a mandatory sequence, just a map of how we could work together. We can start wherever makes sense for you.</p>
+        </section>
+
+
+        <hr>
+
+        <section id="konzultace" class="reservation-section">
+            <h2>Let's discuss your business</h2>
+            <p style="color: #555; margin-bottom: 2rem; font-size: 1.1rem;">Is there a process slowing you down? Need a website, a micro-app, or an AI partner? Pick a time for a no-obligation consultation and let's look at how to make things more efficient.</p>
+            <a href="https://calendly.com/martina-dohnalova/30min" class="cta-btn" target="_blank" rel="noopener noreferrer">Book a Consultation</a>
         </section>
 
     </main>
 
     <footer>
-        <div>&copy; 2026 Martina . Všechna práva vyhrazena.</div>
+        <div>&copy; 2026 Martina . All rights reserved.</div>
         <div class="links"><a href="https://github.com/mdohnalova" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/martina-dohnalova111" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
     </footer>
 
-    <div class="cookies-banner" id="cookiesBanner" role="region" aria-label="Informace o cookies">
+    <div class="cookies-banner" id="cookiesBanner" role="region" aria-label="Cookies information">
         <div class="cookies-inner">
             <div class="cookies-message">
                 <span class="cookies-icon" aria-hidden="true">🍪</span>
-                <p class="cookies-text">Tento web využívá nezbytná technická cookies pro zajištění správného fungování platformy. S vaším souhlasem budeme používat také anonymní analytická cookies, která nám pomáhají optimalizovat uživatelské prostředí v souladu s nařízením GDPR.</p>
+                <p class="cookies-text">🍪 We use essential technical cookies to ensure this website functions properly. With your consent, we also use anonymous analytics cookies to improve user experience in compliance with GDPR.</p>
             </div>
             <div class="cookies-actions">
                 <div class="cookies-buttons">
-                    <button class="cookies-accept" id="cookiesAccept" type="button">Přijmout vše</button>
-                    <button class="cookies-reject" id="cookiesReject" type="button">Odmítnout</button>
+                    <button class="cookies-accept" id="cookiesAccept" type="button">Accept All</button>
+                    <button class="cookies-reject" id="cookiesReject" type="button">Decline</button>
                 </div>
-                <a href="javascript:void(0)" id="openGdprModal" class="cookies-gdpr-link">Zásady ochrany osobních údajů (GDPR)</a>
+                <a href="javascript:void(0)" id="openGdprModal" class="cookies-gdpr-link">Privacy Policy (GDPR)</a>
             </div>
         </div>
     </div>
@@ -1108,28 +1229,28 @@
     <div id="gdprModal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); backdrop-filter: blur(4px); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 1rem;">
         <div style="background: #fff; padding: 2.5rem; border-radius: 16px; max-width: 650px; width: 100%; max-height: 85vh; overflow-y: auto; box-shadow: 0 20px 50px rgba(0,0,0,0.15); position: relative;">
             <button id="closeGdprModal" style="position: absolute; top: 1.5rem; right: 1.5rem; background: transparent; border: none; font-size: 1.5rem; cursor: pointer; color: #6f6b68;">&times;</button>
-            <h3 style="margin-bottom: 1.5rem; font-size: 1.6rem; color: #2c2a29;">Zásady ochrany osobních údajů (GDPR)</h3>
-            <p style="font-size: 0.95rem; color: #494644; margin-bottom: 1rem; line-height: 1.6;">Ochrana osobních údajů a bezpečnost dat je základním pilířem poskytovaných služeb a řešení. Tyto zásady popisují způsob shromažďování, zpracování a zabezpečení informací při návštěvě a používání tohoto webu.</p>
+            <h3 style="margin-bottom: 1.5rem; font-size: 1.6rem; color: #2c2a29;">Privacy Policy (GDPR)</h3>
+            <p style="font-size: 0.95rem; color: #494644; margin-bottom: 1rem; line-height: 1.6;">Data protection and information security are core principles of the services and solutions provided. This policy explains how information is collected, processed, and protected when visiting and using this website.</p>
             <ul style="display: flex; flex-direction: column; gap: 0.8rem; margin: 1rem 0; padding-left: 1.2rem; font-size: 0.92rem; color: #494644;">
-                <li><strong>Správce osobních údajů:</strong> Martina Dohnalová, provozovatel webové prezentace, se sídlem v České republice. Kontaktní e-mail: martina.dohnalova@centrum.cz.</li>
-                <li><strong>Účel zpracování dat:</strong> Údaje (jméno, e-mail, specifikace poptávky) poskytnuté prostřednictvím kontaktního e-mailu (stránka Kontakt) nebo externího rezervačního systému Calendly (stránky Služby a Kontakt) jsou zpracovávány výhradně za účelem vyřízení poptávky, přípravy technického návrhu nebo realizace nezávazné konzultace.</li>
-                <li><strong>Právní základ:</strong> Zpracování osobních údajů probíhá na základě oprávněného zájmu pro účely komunikace s potenciálními klienty a provedení opatření před uzavřením smluvního vztahu na žádost subjektu údajů.</li>
-                <li><strong>Doba uchování a sdílení dat:</strong> Kontaktní údaje jsou uchovávány pouze po dobu nezbytně nutnou k vyřízení komunikace, maximálně však po dobu 6 měsíců od posledního kontaktu, nedojde-li k navázání spolupráce. Data jsou striktně důvěrná, nejsou poskytována třetím stranám ani využívána pro hromadné marketingové kampaně.</li>
-                <li><strong>Soubory cookies:</strong> Webová stránka standardně využívá výhradně technická cookies nezbytná pro zajištění základních funkcí (např. uložení stavu této lišty). Pokročilé analytické nástroje se aktivují pouze v případě udělení explicitního souhlasu uživatele.</li>
-                <li><strong>Práva subjektů údajů:</strong> Dle nařízení GDPR má každý uživatel právo požadovat přístup k osobním údajům, jejich opravu, omezení zpracování, výmaz nebo vznést námitku proti zpracování. Uplatnění práv je možné prostřednictvím uvedeného kontaktního e-mailu.</li>
+                <li><strong>Data Controller:</strong> Martina Dohnalová, website operator based in the Czech Republic. Contact email: martina.dohnalova@centrum.cz.</li>
+                <li><strong>Purpose of Processing:</strong> Data (name, email, request details) submitted via the contact email (Contact page) or the external booking system Calendly (Services and Contact pages) is processed solely to handle inquiries, prepare technical proposals, or deliver a non-binding consultation.</li>
+                <li><strong>Legal Basis:</strong> Personal data is processed based on legitimate interest for communication with prospective clients and to take pre-contractual steps at the data subject's request.</li>
+                <li><strong>Retention and Data Sharing:</strong> Contact data is retained only for the time necessary to handle communication, for a maximum of 6 months from the last contact unless cooperation is established. Data is treated as confidential, is not shared with third parties, and is not used for mass marketing campaigns.</li>
+                <li><strong>Cookies:</strong> The website primarily uses technical cookies required for core functionality (for example, saving the state of this cookie banner). Advanced analytics tools are activated only with explicit user consent.</li>
+                <li><strong>Data Subject Rights:</strong> Under GDPR, each user has the right to request access, correction, restriction, deletion, or object to processing of personal data. These rights can be exercised via the contact email above.</li>
             </ul>
-            <p style="font-size: 0.85rem; color: #8f8a85;">Poslední aktualizace: červen 2026.</p>
+            <p style="font-size: 0.85rem; color: #8f8a85;">Last updated: June 2026.</p>
         </div>
     </div>
 
     <script>
-        // 0z. Cesta ke spolupráci — interaktivní mapa kroků
+        // 0z. Path to collaboration — interactive step map
         (function () {
             const map = document.getElementById('journeyMap');
             if (!map) return;
             const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-            // Accordion karty
+            // Accordion cards
             map.querySelectorAll('.journey-card-toggle').forEach((btn) => {
                 btn.addEventListener('click', () => {
                     const card = btn.closest('.journey-card');
@@ -1138,7 +1259,7 @@
                 });
             });
 
-            // Přepínač Mám / Nemám web
+            // Yes / No branch toggle
             const toggleBtns = map.querySelectorAll('.journey-toggle-btn');
             toggleBtns.forEach((btn) => {
                 btn.addEventListener('click', () => {
@@ -1172,7 +1293,7 @@
             }
         })();
 
-        // 0a. Mobilní hamburger menu
+        // 0a. Mobile hamburger menu
         const navToggle = document.getElementById('navToggle');
         const mainNav = document.getElementById('mainNav');
         if (navToggle && mainNav) {
@@ -1215,7 +1336,7 @@
         };
 
         // 2. Typewriter efekt
-        const words = ["AI automatizace.", "weby a e-shopy.", "AI aplikace.", "mikro systémy.", "AI agenty."];
+        const words = ["AI automation.", "websites and e-shops.", "AI apps.", "micro-systems.", "AI agents."];
         let i = 0; let timer;
 
         function typingEffect() {
@@ -1271,7 +1392,7 @@
             currentToolSlide(nextIdx);
         }
 
-        // 3c. Slider ukázek práce (s automatickým otáčením)
+        // 3c. Case studies slider (with autoplay)
         let currentCaseIdx = 0;
         let caseAutoTimer;
         function currentCaseSlide(index) {
@@ -1314,7 +1435,7 @@
             if (!aiPanel || !aiLauncher) return;
             const open = typeof forceState === 'boolean' ? forceState : !aiPanel.classList.contains('open');
             aiPanel.classList.toggle('open', open);
-            // Launcher se při otevření panelu schová (ikonka "se přesune" do hlavičky panelu vlevo nahoře).
+            // Launcher hides when the panel opens (the icon "moves" into the panel header instead).
             aiLauncher.classList.toggle('is-hidden', open);
             aiLauncher.setAttribute('aria-expanded', String(open));
             if (open) {
@@ -1402,9 +1523,9 @@
                 const historyForRequest = aiChatHistory.slice(-12);
                 aiChatHistory.push({ role: 'user', content: message });
 
-                const loadingBubble = appendAiMessage('assistant', 'Přemýšlím...', true);
+                const loadingBubble = appendAiMessage('assistant', 'Thinking...', true);
                 const wakeupTimer = setTimeout(() => {
-                    if (loadingBubble) loadingBubble.textContent = 'Server se probouzí (bezplatný hosting), může to chvíli trvat…';
+                    if (loadingBubble) loadingBubble.textContent = 'Server is waking up (free hosting), this may take a moment…';
                 }, 4000);
 
                 try {
@@ -1413,7 +1534,7 @@
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ message: message, history: historyForRequest })
                     });
-                    if (!response.ok) throw new Error('Server vrátil chybu: ' + response.status);
+                    if (!response.ok) throw new Error('Server returned an error: ' + response.status);
                     const data = await response.json();
                     clearTimeout(wakeupTimer);
                     loadingBubble.remove();
@@ -1422,7 +1543,7 @@
                 } catch (error) {
                     clearTimeout(wakeupTimer);
                     loadingBubble.remove();
-                    appendAiMessage('assistant', 'Omlouvám se, asistent momentálně neodpovídá. Zkuste to prosím za chvíli znovu, nebo mě kontaktujte přímo přes konzultaci zdarma.', false);
+                    appendAiMessage('assistant', "Sorry, the assistant isn't responding right now. Please try again shortly, or reach out directly via the free consultation.", false);
                 } finally {
                     aiChatInput.disabled = false;
                     aiChatSend.disabled = false;

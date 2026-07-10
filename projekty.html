@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martina | Webové stránky, AI & Mikro systémy</title>
+    <title>Martina | Projekty — AI laboratoř & portfolio</title>
     <style>
         :root {
             --bg-color: #fcfbfa;
@@ -1054,7 +1054,7 @@
                 <a href="o-mne.html">O mě</a>
                 <a href="kontakt.html">Kontakt</a>
             </nav>
-            <a href="en/index.html" class="lang-switcher">EN</a>
+            <a href="en/projects.html" class="lang-switcher">EN</a>
             <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mainNav">
                 <span></span><span></span><span></span>
             </button>
@@ -1062,23 +1062,193 @@
     </header>
 
     <main>
-        <!-- HERO SEKCE (DVOU-SLOUPCOVÁ S MINIMALISTICKOU AI NEURONOVOU SÍTÍ) -->
-        <section class="hero-container">
-            <div class="hero">
-                <h1>Šetřím váš čas, kapacitu a peníze.</h1>
-                <div class="subtitle-typewriter">
-                    Navrhuji a kóduji pro vás <span class="typewriter" id="typewriter-text"></span>
+        <section id="nastroje" class="tools-section">
+            <span class="lab-badge">PROJEKTY &amp; VÝVOJ</span>
+            <h2>Moje interní AI laboratoř</h2>
+            <p class="sekce-laborator-podnadpis" style="color: #444; max-width: 700px;">
+                Ukázky systémů a automatizací, které jsem vyvinula pro vlastní efektivitu a denně mi šetří hodiny času.
+            </p>
+            <p style="margin-top: 1rem; padding: 1rem 1.2rem; border-left: 3px solid #7A9A82; background: #f6f3f0; border-radius: 0 8px 8px 0; color: #3f3d3b; max-width: 950px;">
+                💡 Poznámka k architektuře: Tyhle aplikace jsou funkční ukázky (proof-of-concept) na modelových datech, ne na reálných datech klientů. Ukazují princip a architekturu — validaci výstupů AI, ochranu proti prompt injection, GDPR anonymizaci — na kterých bych stavěla i větší řešení včetně napojení na firemní systémy, pokud by to konkrétní zakázka vyžadovala.
+            </p>
+
+            <div class="tools-slider-wrapper">
+                <button class="slider-arrow slider-arrow-prev" onclick="moveSlider(-1)" aria-label="Předchozí projekt">&#8249;</button>
+                <button class="slider-arrow slider-arrow-next" onclick="moveSlider(1)" aria-label="Další projekt">&#8250;</button>
+                <div class="tools-slider">
+                <div class="tools-slider-track" id="toolsSliderTrack">
+                    <article class="tool-slide project-card">
+                        <div class="tool-copy project-content">
+                            <h3>AI Logistics Data Engine (Scalable PoC)</h3>
+                            <p class="subtitle">Funkční technologický koncept logistického dispečinku navržený pro eliminaci finančních ztrát ze zpožděných zásilek.</p>
+                            <p class="project-story">Roky jsem stála za marketingovými kampaněmi od nápadu po spuštění — plánování, kreativa, focení, reklamy. Jenže sebelepší kampaň je k ničemu, když si zákazník balíček nakonec nevyzvedne, nebo se vrácená zásilka odhalí až pozdě. Do každého balíčku jsme dávali kuponovou kartičku s 10% slevou v naději, že se zákazník vrátí — stálo to tisk i čas, a často to přišlo vniveč, protože balíček stejně nikdo nevyzvedl. Došlo mi, že je chytřejší zachytit problém dřív: když balíček leží na výdejním místě moc dlouho nevyzvednutý, poslat zákazníkovi připomínku s menší pobídkou, než na něj úplně zapomene; a když dopravce nahlásí poškození zásilky, vědět to okamžitě, aby mohl jít nový balíček a omluva dřív, než si zákazník začne stěžovat. Na téhle logice stojí dashboard, který jsem postavila.</p>
+                            <p>Funkční technologický koncept logistického dispečinku navržený pro eliminaci finančních ztrát ze zpožděných zásilek. Tento mikro-systém funguje samostatně pro menší e-shopy (sledování balíků, detekce poškození, automatické notifikace), ale jeho architektura je plně připravena na enterprise integraci s podnikovým ERP (Helios) a pokročilé krizové scénáře.</p>
+                            <ul class="project-features">
+                                <li>🎯 Včas odhalím rizikové objednávky.</li>
+                                <li>💰 Mám přehled o potenciálních ztrátách.</li>
+                                <li>📢 Automatizuji notifikace pro zákazníky při riziku vratky nebo poškození.</li>
+                            </ul>
+                            <div class="tool-actions">
+                                <a href="https://ai-logistics-command-center-7pl2ctmvivxpmldjafhh3x.streamlit.app/" target="_blank" rel="noopener noreferrer" class="cta-btn">Otevřít živé demo (PoC)</a>
+                                <a href="https://github.com/mdohnalova/ai-logistics-command-center" target="_blank" rel="noopener noreferrer" class="outline-btn">Prohlédnout kód na GitHubu</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="tool-slide project-card">
+                        <div class="tool-copy project-content">
+                            <h3>AI E-Commerce Enricher</h3>
+                            <p class="subtitle">Urychluje mi práci s produktovými daty a SEO texty.</p>
+                            <p>Vyvinula jsem si tento nástroj pro vlastní workflow s e-shopem, abych rychle vyčistila produktová data a připravila je pro prodej i vyhledávání. Mám tak strojově připravené texty a strukturovaná data bez zbytečného ručního přepisování.</p>
+                            <ul class="project-features">
+                                <li>🧹 Vyčistím balast a nečistá data skoro automaticky.</li>
+                                <li>✍️ Vygeneruji popisky a SEO texty během několika sekund.</li>
+                                <li>🔍 Mám připravená klíčová slova pro okamžité použití.</li>
+                            </ul>
+                            <div class="tool-actions">
+                                <a href="https://ai-ecommerce-enricher-2vwepjcswpw9rkxmjnvugo.streamlit.app/" target="_blank" rel="noopener noreferrer" class="cta-btn">Otevřít živé demo (PoC)</a>
+                                <a href="https://github.com/mdohnalova/ai-ecommerce-enricher" target="_blank" rel="noopener noreferrer" class="outline-btn">Prohlédnout kód na GitHubu</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="tool-slide project-card">
+                        <div class="tool-copy project-content">
+                            <h3>Magyar Mail Automation App (PoC)</h3>
+                            <p class="subtitle">Automatizované agilní řešení pro expanzi e-shopů na zahraniční trhy.</p>
+                            <p>Automatizované agilní řešení pro expanzi e-shopů na zahraniční trhy. Odstraňuje bariéru v zákaznické podpoře bez nutnosti okamžitě najímat drahé rodilé mluvčí. Kombinuje LLM analýzu sentimentu s přesným překladem a stoprocentní kontrolou operátora (Human-in-the-loop).</p>
+                            <ul class="project-features">
+                                <li>🇭🇺 Přečtu si a shrnu každou zprávu hned v jednom místě.</li>
+                                <li>🎛️ Vytvářím odpovědi v různých tonech a šetřím si zdlouhavé přepisování.</li>
+                                <li>📧 Mám okamžitý přístup k odeslání zprávy do e-mailu.</li>
+                            </ul>
+                            <div class="tool-actions">
+                                <a href="https://magyar-mail-automation.vercel.app" target="_blank" rel="noopener noreferrer" class="cta-btn">Otevřít živé demo (PoC)</a>
+                                <a href="https://github.com/mdohnalova/magyar-mail-automation" target="_blank" rel="noopener noreferrer" class="outline-btn">Prohlédnout kód na GitHubu</a>
+                            </div>
+                            <p class="project-note">Živé demo je chráněné přístupovým kódem (kvůli ochraně API rozpočtu) — napište mi a pošlu ho.</p>
+                        </div>
+                    </article>
+                    <article class="tool-slide project-card">
+                        <div class="tool-copy project-content">
+                            <h3>AI Helpdesk Copilot</h3>
+                            <p class="subtitle">🚧 Ve vývoji — chytrý asistent zákaznického servisu pro třídění tiketů a detekci urgentních stížností.</p>
+                            <p>Koncept asistenta, který bude třídit příchozí tikety podle priority a nálady zákazníka a navrhovat hotovou odpověď. Appku aktuálně dolaďuji před nasazením — pracovní verzi kódu najdete na GitHubu.</p>
+                            <ul class="project-features">
+                                <li>🎯 Cíl: zpracovat příchozí zprávy během pár sekund.</li>
+                                <li>🚨 Cíl: rychleji odhalit kritické tikety.</li>
+                                <li>💼 Cíl: konzistentní tón komunikace napříč týmem.</li>
+                            </ul>
+                            <div class="tool-actions">
+                                <a href="https://github.com/mdohnalova/helpdesk-copilot" target="_blank" rel="noopener noreferrer" class="outline-btn">Prohlédnout kód na GitHubu</a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-                <p>Marketing zevnitř + AI nástroje, které si sama stavím a nasazuju. Podívejte se, co jsem postavila, nebo mi napište.</p>
-                <div class="hero-links">
-                    <p class="hero-link-line">Jste náborář? Mrkněte na <a href="projekty.html">Projekty</a> a <a href="o-mne.html">O mě</a>.</p>
-                    <p class="hero-link-line">Hledáte řešení pro firmu? Podívejte se na <a href="sluzby.html">Služby</a>.</p>
                 </div>
             </div>
+            <div class="tools-dots">
+                <button class="tool-dot active" data-index="0" onclick="currentToolSlide(0)" aria-label="Slide 1"></button>
+                <button class="tool-dot" data-index="1" onclick="currentToolSlide(1)" aria-label="Slide 2"></button>
+                <button class="tool-dot" data-index="2" onclick="currentToolSlide(2)" aria-label="Slide 3"></button>
+                <button class="tool-dot" data-index="3" onclick="currentToolSlide(3)" aria-label="Slide 4"></button>
+            </div>
+        </section>
 
-            <!-- MINIMALISTICKÁ REAKTIVNÍ ANIMACE -->
-            <div class="hero-animation-wrapper">
-                <canvas id="ai-canvas"></canvas>
+
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0;">
+
+        <section id="ukazka-prace" class="case-studies-section">
+            <span class="lab-badge">PORTFOLIO</span>
+            <h2>Ukázka práce napříč obory</h2>
+            <p class="subheading">E-shop, cestování, gastronomie, veřejná správa i zdravotnictví — různá zadání, stejný důraz na jasnost a výsledek.</p>
+            <div class="tools-slider-wrapper">
+                <button class="slider-arrow slider-arrow-prev" onclick="moveCaseSlider(-1)" aria-label="Předchozí ukázka">&#8249;</button>
+                <button class="slider-arrow slider-arrow-next" onclick="moveCaseSlider(1)" aria-label="Další ukázka">&#8250;</button>
+                <div class="tools-slider">
+                    <div class="tools-slider-track" id="caseSliderTrack">
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">E-shop</span>
+                                        <span class="case-status live">🟢 Živý e-shop</span>
+                                    </div>
+                                    <h3>Lucky Skorts</h3>
+                                    <p>Od prázdné domény po první objednávku. Postavila jsem e-shop, který prodává, ne jen vypadá hezky — jasná nabídka, důvěryhodné detaily, žádné zbytečné kroky mezi zákazníkem a košíkem.</p>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="foto/luckyskorts-1.png" alt="Lucky Skorts – úvodní stránka e-shopu">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">Cestovní portál</span>
+                                        <span class="case-status dev">🚧 Ve vývoji</span>
+                                    </div>
+                                    <h3>Autem do Chorvatska</h3>
+                                    <p>Web, který musí přesvědčit hned na první scroll, jinak návštěvník zavře kartu a jede jinam. Trasy, ubytování i tipy přehledně na jednom místě, stavěné tak, aby na ně dobře sedlo i vyhledávání.</p>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="foto/autemdochorvatska-1.jpg" alt="Autem do Chorvatska – úvodní stránka">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">Gastronomie</span>
+                                        <span class="case-status concept">💡 Koncepční návrh</span>
+                                    </div>
+                                    <h3>Atelier 27</h3>
+                                    <p>Restaurace, kam lidé chodí na drahé večeře, potřebuje web, který vypadá stejně draze. Tmavá, elegantní atmosféra prodává zážitek dřív, než host vůbec usedne ke stolu.</p>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="foto/atelier27-1.jpg" alt="Atelier 27 – úvodní stránka restaurace">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">Veřejná správa</span>
+                                        <span class="case-status concept">💡 Koncepční návrh</span>
+                                    </div>
+                                    <h3>Horská Lhota</h3>
+                                    <p>Obecní web, který nefrustruje. Úřední hodiny, hlášení rozhlasu i formulář najde občan na dva kliky — místo bludiště podstránek, na které jsme si u úřadů bohužel zvykli.</p>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="foto/horskalhota.jpg" alt="Horská Lhota – web obce">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">Zdravotnictví</span>
+                                        <span class="case-status concept">💡 Koncepční návrh</span>
+                                    </div>
+                                    <h3>Vltava Clinic</h3>
+                                    <p>Web, který má pacienta uklidnit ještě dřív, než vejde do dveří. Klidná paleta, jasně popsaná péče a objednání na pár kliknutí — přesně to, co soukromá ordinace potřebuje k důvěře.</p>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="foto/vltavaclinic.jpg" alt="Vltava Clinic – úvodní stránka ordinace">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="case-dots">
+                <button class="case-dot active" data-index="0" onclick="currentCaseSlide(0)" aria-label="Slide 1"></button>
+                <button class="case-dot" data-index="1" onclick="currentCaseSlide(1)" aria-label="Slide 2"></button>
+                <button class="case-dot" data-index="2" onclick="currentCaseSlide(2)" aria-label="Slide 3"></button>
+                <button class="case-dot" data-index="3" onclick="currentCaseSlide(3)" aria-label="Slide 4"></button>
+                <button class="case-dot" data-index="4" onclick="currentCaseSlide(4)" aria-label="Slide 5"></button>
             </div>
         </section>
 

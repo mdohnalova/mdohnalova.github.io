@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martina | Webové stránky, AI & Mikro systémy</title>
+    <title>Martina | Projects — AI lab & portfolio</title>
     <style>
         :root {
             --bg-color: #fcfbfa;
@@ -1021,9 +1021,9 @@
 
     <div id="scroll-indicator"></div>
 
-    <button class="ai-assistant-launcher" id="aiAssistantLauncher" type="button" aria-label="Otevřít AI asistenta" aria-expanded="false" aria-controls="aiChatPanel">
+    <button class="ai-assistant-launcher" id="aiAssistantLauncher" type="button" aria-label="Open AI assistant" aria-expanded="false" aria-controls="aiChatPanel">
         <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        <span class="btn-label">Poradí vám AI asistent</span>
+        <span class="btn-label">AI Assistant</span>
     </button>
 
     <aside class="ai-chat-panel" id="aiChatPanel" aria-live="polite">
@@ -1032,16 +1032,16 @@
                 <span class="ai-chat-icon-badge" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                 </span>
-                <span>AI Asistent</span>
+                <span>AI Assistant</span>
             </div>
-            <button class="ai-chat-close" id="aiChatClose" type="button" aria-label="Zavřít AI asistenta">×</button>
+            <button class="ai-chat-close" id="aiChatClose" type="button" aria-label="Close AI assistant">×</button>
         </div>
         <div class="ai-chat-messages" id="aiChatMessages">
-            <div class="ai-chat-msg assistant">Ahoj! Jsem AI asistent Martiny. Zeptejte se mě na cokoliv o jejích zkušenostech, dovednostech nebo projektech.</div>
+            <div class="ai-chat-msg assistant">Hi! I'm Martina's AI assistant. Ask me anything about her experience, skills, or projects.</div>
         </div>
         <form class="ai-chat-input-row" id="aiChatForm">
-            <textarea class="ai-chat-input" id="aiChatInput" placeholder="Napište zprávu..." rows="1" maxlength="500" required></textarea>
-            <button type="submit" class="ai-chat-send" id="aiChatSend">Odeslat</button>
+            <textarea class="ai-chat-input" id="aiChatInput" placeholder="Type a message..." rows="1" maxlength="500" required></textarea>
+            <button type="submit" class="ai-chat-send" id="aiChatSend">Send</button>
         </form>
     </aside>
 
@@ -1049,58 +1049,228 @@
         <a href="index.html" class="logo">Martina .</a>
         <div class="header-right">
             <nav id="mainNav">
-                <a href="sluzby.html">Služby</a>
-                <a href="projekty.html">Projekty</a>
-                <a href="o-mne.html">O mě</a>
-                <a href="kontakt.html">Kontakt</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
             </nav>
-            <a href="en/index.html" class="lang-switcher">EN</a>
-            <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mainNav">
+            <a href="../projekty.html" class="lang-switcher">CZ</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </header>
 
     <main>
-        <!-- HERO SEKCE (DVOU-SLOUPCOVÁ S MINIMALISTICKOU AI NEURONOVOU SÍTÍ) -->
-        <section class="hero-container">
-            <div class="hero">
-                <h1>Šetřím váš čas, kapacitu a peníze.</h1>
-                <div class="subtitle-typewriter">
-                    Navrhuji a kóduji pro vás <span class="typewriter" id="typewriter-text"></span>
+        <section id="nastroje" class="tools-section">
+            <span class="lab-badge">PROJECTS &amp; DEVELOPMENT</span>
+            <h2>My Internal AI Laboratory</h2>
+            <p class="sekce-laborator-podnadpis" style="color: #444; max-width: 700px;">
+                Demos of systems and automations I built for my own efficiency, saving me hours of work every day.
+            </p>
+            <p style="margin-top: 1rem; padding: 1rem 1.2rem; border-left: 3px solid #7A9A82; background: #f6f3f0; border-radius: 0 8px 8px 0; color: #3f3d3b; max-width: 950px;">
+                💡 Architecture note: The apps shown here are functional proof-of-concept demos built on sample data, not real client data. They demonstrate the underlying principles and architecture — AI output validation, prompt-injection protection, GDPR anonymization — that I would build on for larger solutions, including integration with company systems like an ERP, if a specific project required it.
+            </p>
+
+            <div class="tools-slider-wrapper">
+                <button class="slider-arrow slider-arrow-prev" onclick="moveSlider(-1)" aria-label="Previous project">&#8249;</button>
+                <button class="slider-arrow slider-arrow-next" onclick="moveSlider(1)" aria-label="Next project">&#8250;</button>
+                <div class="tools-slider">
+                <div class="tools-slider-track" id="toolsSliderTrack">
+                    <article class="tool-slide project-card">
+                        <div class="tool-copy project-content">
+                            <h3>AI Logistics Data Engine (Scalable PoC)</h3>
+                            <p class="subtitle">A functional technology concept for a logistics dispatch system, designed to eliminate financial losses from delayed shipments.</p>
+                            <p class="project-story">For years I was behind marketing campaigns from idea to launch — planning, creative, photoshoots, ads. But a good campaign is worthless if the package never gets picked up, or a return goes unnoticed until it's too late. We used to drop a 10% discount card into every package, hoping it would bring the customer back — it cost printing and time, and was often wasted on packages that never even got collected. I realized it would be smarter to catch the problem earlier: if a package sits too long at a pickup point uncollected, send the customer a reminder with a small incentive before they forget about it entirely; if a carrier flags a package as damaged in transit, know immediately, so a replacement and an apology can go out before the customer has to complain. That's the logic behind the dashboard I built.</p>
+                            <p>A functional technology concept for a logistics dispatch system, designed to eliminate financial losses from delayed shipments. This micro-system works standalone for smaller e-shops (package tracking, damage detection, automatic notifications), but its architecture is fully prepared for enterprise integration with a company ERP (Helios) and advanced crisis scenarios.</p>
+                            <ul class="project-features">
+                                <li>🎯 Flags risky orders early.</li>
+                                <li>💰 Gives visibility into potential losses.</li>
+                                <li>📢 Automates customer notifications for return or damage risk.</li>
+                            </ul>
+                            <div class="tool-actions">
+                                <a href="https://ai-logistics-command-center-7pl2ctmvivxpmldjafhh3x.streamlit.app/" target="_blank" rel="noopener noreferrer" class="cta-btn">Open Live Demo (PoC)</a>
+                                <a href="https://github.com/mdohnalova/ai-logistics-command-center" target="_blank" rel="noopener noreferrer" class="outline-btn">View Code on GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="tool-slide project-card">
+                        <div class="tool-copy project-content">
+                            <h3>AI E-Commerce Enricher</h3>
+                            <p class="subtitle">Speeds up my work with product data and SEO copy.</p>
+                            <p>I built this tool for my own e-shop workflow, to quickly clean up product data and prepare it for sale and search.</p>
+                            <ul class="project-features">
+                                <li>🧹 Cleans up clutter and messy data almost automatically.</li>
+                                <li>✍️ Generates descriptions and SEO copy in seconds.</li>
+                                <li>🔍 Has keywords ready for immediate use.</li>
+                            </ul>
+                            <div class="tool-actions">
+                                <a href="https://ai-ecommerce-enricher-2vwepjcswpw9rkxmjnvugo.streamlit.app/" target="_blank" rel="noopener noreferrer" class="cta-btn">Open Live Demo (PoC)</a>
+                                <a href="https://github.com/mdohnalova/ai-ecommerce-enricher" target="_blank" rel="noopener noreferrer" class="outline-btn">View Code on GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="tool-slide project-card">
+                        <div class="tool-copy project-content">
+                            <h3>Magyar Mail Automation App (PoC)</h3>
+                            <p class="subtitle">Automated agile solution for e-shops expanding into foreign markets.</p>
+                            <p>Automated agile solution for e-shops expanding into foreign markets. Removes the customer-support barrier without needing to hire expensive native speakers right away. Combines LLM sentiment analysis with accurate translation and full operator control (human-in-the-loop).</p>
+                            <ul class="project-features">
+                                <li>🇭🇺 Reads and summarizes every message in one place.</li>
+                                <li>🎛️ Drafts replies in different tones, saving tedious rewriting.</li>
+                                <li>📧 Instant access to send the message by email.</li>
+                            </ul>
+                            <div class="tool-actions">
+                                <a href="https://magyar-mail-automation.vercel.app" target="_blank" rel="noopener noreferrer" class="cta-btn">Open Live Demo (PoC)</a>
+                                <a href="https://github.com/mdohnalova/magyar-mail-automation" target="_blank" rel="noopener noreferrer" class="outline-btn">View Code on GitHub</a>
+                            </div>
+                            <p class="project-note">The live demo is protected by an access code (to protect the API budget) — get in touch and I'll send it over.</p>
+                        </div>
+                    </article>
+                    <article class="tool-slide project-card">
+                        <div class="tool-copy project-content">
+                            <h3>AI Helpdesk Copilot</h3>
+                            <p class="subtitle">🚧 In development — a smart customer service assistant for ticket sorting and urgent complaint detection.</p>
+                            <p>A concept assistant that will sort incoming tickets by priority and customer mood and suggest a ready-made reply. Currently fine-tuning before deployment — working code is on GitHub.</p>
+                            <ul class="project-features">
+                                <li>🎯 Goal: process incoming messages within seconds.</li>
+                                <li>🚨 Goal: detect critical tickets faster.</li>
+                                <li>💼 Goal: consistent tone of communication across the team.</li>
+                            </ul>
+                            <div class="tool-actions">
+                                <a href="https://github.com/mdohnalova/helpdesk-copilot" target="_blank" rel="noopener noreferrer" class="outline-btn">View Code on GitHub</a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-                <p>Marketing zevnitř + AI nástroje, které si sama stavím a nasazuju. Podívejte se, co jsem postavila, nebo mi napište.</p>
-                <div class="hero-links">
-                    <p class="hero-link-line">Jste náborář? Mrkněte na <a href="projekty.html">Projekty</a> a <a href="o-mne.html">O mě</a>.</p>
-                    <p class="hero-link-line">Hledáte řešení pro firmu? Podívejte se na <a href="sluzby.html">Služby</a>.</p>
                 </div>
             </div>
+            <div class="tools-dots">
+                <button class="tool-dot active" data-index="0" onclick="currentToolSlide(0)" aria-label="Slide 1"></button>
+                <button class="tool-dot" data-index="1" onclick="currentToolSlide(1)" aria-label="Slide 2"></button>
+                <button class="tool-dot" data-index="2" onclick="currentToolSlide(2)" aria-label="Slide 3"></button>
+                <button class="tool-dot" data-index="3" onclick="currentToolSlide(3)" aria-label="Slide 4"></button>
+            </div>
+        </section>
 
-            <!-- MINIMALISTICKÁ REAKTIVNÍ ANIMACE -->
-            <div class="hero-animation-wrapper">
-                <canvas id="ai-canvas"></canvas>
+
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0;">
+
+        <section id="ukazka-prace" class="case-studies-section">
+            <span class="lab-badge">PORTFOLIO</span>
+            <h2>Work across industries</h2>
+            <p class="subheading">E-commerce, travel, gastronomy, public administration, and healthcare — different briefs, the same focus on clarity and results.</p>
+            <div class="tools-slider-wrapper">
+                <button class="slider-arrow slider-arrow-prev" onclick="moveCaseSlider(-1)" aria-label="Previous case study">&#8249;</button>
+                <button class="slider-arrow slider-arrow-next" onclick="moveCaseSlider(1)" aria-label="Next case study">&#8250;</button>
+                <div class="tools-slider">
+                    <div class="tools-slider-track" id="caseSliderTrack">
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">E-commerce</span>
+                                        <span class="case-status live">🟢 Live e-shop</span>
+                                    </div>
+                                    <h3>Lucky Skorts</h3>
+                                    <p>From empty domain to first order. I built an e-shop that sells, not just looks good — a clear offer, trustworthy details, and no unnecessary steps between the customer and checkout.</p>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="../foto/luckyskorts-1.png" alt="Lucky Skorts – e-shop homepage">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">Travel portal</span>
+                                        <span class="case-status dev">🚧 In development</span>
+                                    </div>
+                                    <h3>Autem do Chorvatska</h3>
+                                    <p>A site that has to convince on the first scroll, or the visitor closes the tab and moves on. Routes, accommodation, and tips in one clear place, built to work well with search too.</p>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="../foto/autemdochorvatska-1.jpg" alt="Autem do Chorvatska – homepage">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">Gastronomy</span>
+                                        <span class="case-status concept">💡 Concept design</span>
+                                    </div>
+                                    <h3>Atelier 27</h3>
+                                    <p>A restaurant where people go for expensive dinners needs a website that looks just as expensive. Dark, elegant styling sells the experience before the guest even sits down.</p>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="../foto/atelier27-1.jpg" alt="Atelier 27 – restaurant homepage">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">Public administration</span>
+                                        <span class="case-status concept">💡 Concept design</span>
+                                    </div>
+                                    <h3>Horská Lhota</h3>
+                                    <p>A municipal website that doesn't frustrate. Office hours, announcements, and a form in two clicks — instead of the link-maze we've all come to expect from town-hall sites.</p>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="../foto/horskalhota.jpg" alt="Horská Lhota – municipal website">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">Healthcare</span>
+                                        <span class="case-status concept">💡 Concept design</span>
+                                    </div>
+                                    <h3>Vltava Clinic</h3>
+                                    <p>A website meant to calm the patient before they even walk through the door. A calm palette, clearly described care, and booking in a few clicks — exactly what a private clinic needs to build trust.</p>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="../foto/vltavaclinic.jpg" alt="Vltava Clinic – clinic homepage">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="case-dots">
+                <button class="case-dot active" data-index="0" onclick="currentCaseSlide(0)" aria-label="Slide 1"></button>
+                <button class="case-dot" data-index="1" onclick="currentCaseSlide(1)" aria-label="Slide 2"></button>
+                <button class="case-dot" data-index="2" onclick="currentCaseSlide(2)" aria-label="Slide 3"></button>
+                <button class="case-dot" data-index="3" onclick="currentCaseSlide(3)" aria-label="Slide 4"></button>
+                <button class="case-dot" data-index="4" onclick="currentCaseSlide(4)" aria-label="Slide 5"></button>
             </div>
         </section>
 
     </main>
 
     <footer>
-        <div>&copy; 2026 Martina . Všechna práva vyhrazena.</div>
+        <div>&copy; 2026 Martina . All rights reserved.</div>
         <div class="links"><a href="https://github.com/mdohnalova" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/martina-dohnalova111" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
     </footer>
 
-    <div class="cookies-banner" id="cookiesBanner" role="region" aria-label="Informace o cookies">
+    <div class="cookies-banner" id="cookiesBanner" role="region" aria-label="Cookies information">
         <div class="cookies-inner">
             <div class="cookies-message">
                 <span class="cookies-icon" aria-hidden="true">🍪</span>
-                <p class="cookies-text">Tento web využívá nezbytná technická cookies pro zajištění správného fungování platformy. S vaším souhlasem budeme používat také anonymní analytická cookies, která nám pomáhají optimalizovat uživatelské prostředí v souladu s nařízením GDPR.</p>
+                <p class="cookies-text">🍪 We use essential technical cookies to ensure this website functions properly. With your consent, we also use anonymous analytics cookies to improve user experience in compliance with GDPR.</p>
             </div>
             <div class="cookies-actions">
                 <div class="cookies-buttons">
-                    <button class="cookies-accept" id="cookiesAccept" type="button">Přijmout vše</button>
-                    <button class="cookies-reject" id="cookiesReject" type="button">Odmítnout</button>
+                    <button class="cookies-accept" id="cookiesAccept" type="button">Accept All</button>
+                    <button class="cookies-reject" id="cookiesReject" type="button">Decline</button>
                 </div>
-                <a href="javascript:void(0)" id="openGdprModal" class="cookies-gdpr-link">Zásady ochrany osobních údajů (GDPR)</a>
+                <a href="javascript:void(0)" id="openGdprModal" class="cookies-gdpr-link">Privacy Policy (GDPR)</a>
             </div>
         </div>
     </div>
@@ -1108,28 +1278,28 @@
     <div id="gdprModal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); backdrop-filter: blur(4px); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 1rem;">
         <div style="background: #fff; padding: 2.5rem; border-radius: 16px; max-width: 650px; width: 100%; max-height: 85vh; overflow-y: auto; box-shadow: 0 20px 50px rgba(0,0,0,0.15); position: relative;">
             <button id="closeGdprModal" style="position: absolute; top: 1.5rem; right: 1.5rem; background: transparent; border: none; font-size: 1.5rem; cursor: pointer; color: #6f6b68;">&times;</button>
-            <h3 style="margin-bottom: 1.5rem; font-size: 1.6rem; color: #2c2a29;">Zásady ochrany osobních údajů (GDPR)</h3>
-            <p style="font-size: 0.95rem; color: #494644; margin-bottom: 1rem; line-height: 1.6;">Ochrana osobních údajů a bezpečnost dat je základním pilířem poskytovaných služeb a řešení. Tyto zásady popisují způsob shromažďování, zpracování a zabezpečení informací při návštěvě a používání tohoto webu.</p>
+            <h3 style="margin-bottom: 1.5rem; font-size: 1.6rem; color: #2c2a29;">Privacy Policy (GDPR)</h3>
+            <p style="font-size: 0.95rem; color: #494644; margin-bottom: 1rem; line-height: 1.6;">Data protection and information security are core principles of the services and solutions provided. This policy explains how information is collected, processed, and protected when visiting and using this website.</p>
             <ul style="display: flex; flex-direction: column; gap: 0.8rem; margin: 1rem 0; padding-left: 1.2rem; font-size: 0.92rem; color: #494644;">
-                <li><strong>Správce osobních údajů:</strong> Martina Dohnalová, provozovatel webové prezentace, se sídlem v České republice. Kontaktní e-mail: martina.dohnalova@centrum.cz.</li>
-                <li><strong>Účel zpracování dat:</strong> Údaje (jméno, e-mail, specifikace poptávky) poskytnuté prostřednictvím kontaktního e-mailu (stránka Kontakt) nebo externího rezervačního systému Calendly (stránky Služby a Kontakt) jsou zpracovávány výhradně za účelem vyřízení poptávky, přípravy technického návrhu nebo realizace nezávazné konzultace.</li>
-                <li><strong>Právní základ:</strong> Zpracování osobních údajů probíhá na základě oprávněného zájmu pro účely komunikace s potenciálními klienty a provedení opatření před uzavřením smluvního vztahu na žádost subjektu údajů.</li>
-                <li><strong>Doba uchování a sdílení dat:</strong> Kontaktní údaje jsou uchovávány pouze po dobu nezbytně nutnou k vyřízení komunikace, maximálně však po dobu 6 měsíců od posledního kontaktu, nedojde-li k navázání spolupráce. Data jsou striktně důvěrná, nejsou poskytována třetím stranám ani využívána pro hromadné marketingové kampaně.</li>
-                <li><strong>Soubory cookies:</strong> Webová stránka standardně využívá výhradně technická cookies nezbytná pro zajištění základních funkcí (např. uložení stavu této lišty). Pokročilé analytické nástroje se aktivují pouze v případě udělení explicitního souhlasu uživatele.</li>
-                <li><strong>Práva subjektů údajů:</strong> Dle nařízení GDPR má každý uživatel právo požadovat přístup k osobním údajům, jejich opravu, omezení zpracování, výmaz nebo vznést námitku proti zpracování. Uplatnění práv je možné prostřednictvím uvedeného kontaktního e-mailu.</li>
+                <li><strong>Data Controller:</strong> Martina Dohnalová, website operator based in the Czech Republic. Contact email: martina.dohnalova@centrum.cz.</li>
+                <li><strong>Purpose of Processing:</strong> Data (name, email, request details) submitted via the contact email (Contact page) or the external booking system Calendly (Services and Contact pages) is processed solely to handle inquiries, prepare technical proposals, or deliver a non-binding consultation.</li>
+                <li><strong>Legal Basis:</strong> Personal data is processed based on legitimate interest for communication with prospective clients and to take pre-contractual steps at the data subject's request.</li>
+                <li><strong>Retention and Data Sharing:</strong> Contact data is retained only for the time necessary to handle communication, for a maximum of 6 months from the last contact unless cooperation is established. Data is treated as confidential, is not shared with third parties, and is not used for mass marketing campaigns.</li>
+                <li><strong>Cookies:</strong> The website primarily uses technical cookies required for core functionality (for example, saving the state of this cookie banner). Advanced analytics tools are activated only with explicit user consent.</li>
+                <li><strong>Data Subject Rights:</strong> Under GDPR, each user has the right to request access, correction, restriction, deletion, or object to processing of personal data. These rights can be exercised via the contact email above.</li>
             </ul>
-            <p style="font-size: 0.85rem; color: #8f8a85;">Poslední aktualizace: červen 2026.</p>
+            <p style="font-size: 0.85rem; color: #8f8a85;">Last updated: June 2026.</p>
         </div>
     </div>
 
     <script>
-        // 0z. Cesta ke spolupráci — interaktivní mapa kroků
+        // 0z. Path to collaboration — interactive step map
         (function () {
             const map = document.getElementById('journeyMap');
             if (!map) return;
             const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-            // Accordion karty
+            // Accordion cards
             map.querySelectorAll('.journey-card-toggle').forEach((btn) => {
                 btn.addEventListener('click', () => {
                     const card = btn.closest('.journey-card');
@@ -1138,7 +1308,7 @@
                 });
             });
 
-            // Přepínač Mám / Nemám web
+            // Yes / No branch toggle
             const toggleBtns = map.querySelectorAll('.journey-toggle-btn');
             toggleBtns.forEach((btn) => {
                 btn.addEventListener('click', () => {
@@ -1172,7 +1342,7 @@
             }
         })();
 
-        // 0a. Mobilní hamburger menu
+        // 0a. Mobile hamburger menu
         const navToggle = document.getElementById('navToggle');
         const mainNav = document.getElementById('mainNav');
         if (navToggle && mainNav) {
@@ -1215,7 +1385,7 @@
         };
 
         // 2. Typewriter efekt
-        const words = ["AI automatizace.", "weby a e-shopy.", "AI aplikace.", "mikro systémy.", "AI agenty."];
+        const words = ["AI automation.", "websites and e-shops.", "AI apps.", "micro-systems.", "AI agents."];
         let i = 0; let timer;
 
         function typingEffect() {
@@ -1271,7 +1441,7 @@
             currentToolSlide(nextIdx);
         }
 
-        // 3c. Slider ukázek práce (s automatickým otáčením)
+        // 3c. Case studies slider (with autoplay)
         let currentCaseIdx = 0;
         let caseAutoTimer;
         function currentCaseSlide(index) {
@@ -1314,7 +1484,7 @@
             if (!aiPanel || !aiLauncher) return;
             const open = typeof forceState === 'boolean' ? forceState : !aiPanel.classList.contains('open');
             aiPanel.classList.toggle('open', open);
-            // Launcher se při otevření panelu schová (ikonka "se přesune" do hlavičky panelu vlevo nahoře).
+            // Launcher hides when the panel opens (the icon "moves" into the panel header instead).
             aiLauncher.classList.toggle('is-hidden', open);
             aiLauncher.setAttribute('aria-expanded', String(open));
             if (open) {
@@ -1402,9 +1572,9 @@
                 const historyForRequest = aiChatHistory.slice(-12);
                 aiChatHistory.push({ role: 'user', content: message });
 
-                const loadingBubble = appendAiMessage('assistant', 'Přemýšlím...', true);
+                const loadingBubble = appendAiMessage('assistant', 'Thinking...', true);
                 const wakeupTimer = setTimeout(() => {
-                    if (loadingBubble) loadingBubble.textContent = 'Server se probouzí (bezplatný hosting), může to chvíli trvat…';
+                    if (loadingBubble) loadingBubble.textContent = 'Server is waking up (free hosting), this may take a moment…';
                 }, 4000);
 
                 try {
@@ -1413,7 +1583,7 @@
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ message: message, history: historyForRequest })
                     });
-                    if (!response.ok) throw new Error('Server vrátil chybu: ' + response.status);
+                    if (!response.ok) throw new Error('Server returned an error: ' + response.status);
                     const data = await response.json();
                     clearTimeout(wakeupTimer);
                     loadingBubble.remove();
@@ -1422,7 +1592,7 @@
                 } catch (error) {
                     clearTimeout(wakeupTimer);
                     loadingBubble.remove();
-                    appendAiMessage('assistant', 'Omlouvám se, asistent momentálně neodpovídá. Zkuste to prosím za chvíli znovu, nebo mě kontaktujte přímo přes konzultaci zdarma.', false);
+                    appendAiMessage('assistant', "Sorry, the assistant isn't responding right now. Please try again shortly, or reach out directly via the free consultation.", false);
                 } finally {
                     aiChatInput.disabled = false;
                     aiChatSend.disabled = false;
