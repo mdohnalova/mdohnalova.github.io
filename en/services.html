@@ -619,6 +619,14 @@
         .service-card p { color: #555; line-height: 1.6; }
         @media (max-width: 1100px) { .services-grid { grid-template-columns: repeat(2, minmax(220px,1fr)); } }
         @media (max-width: 760px) { .services-grid { grid-template-columns: 1fr; } }
+        .service-card-toggle { cursor: pointer; transition: box-shadow 0.25s ease, transform 0.25s ease; }
+        .service-card-toggle:hover { box-shadow: 0 16px 40px rgba(0,0,0,0.08); transform: translateY(-2px); }
+        .service-card-toggle:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 3px; }
+        .card-icon-question { background: rgba(169, 93, 69, 0.12); border-color: rgba(169, 93, 69, 0.3); color: var(--accent-color); font-size: 1.7rem; font-weight: 700; }
+        .service-card-cta { margin-top: auto; padding-top: 0.3rem; font-size: 0.85rem; font-weight: 700; color: var(--accent-color); }
+        .journey-wrapper { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.45s ease; }
+        .journey-wrapper-inner { overflow: hidden; }
+        .journey-wrapper.is-open { grid-template-rows: 1fr; }
         .journey-map { position: relative; max-width: 720px; margin: 2.5rem auto 0; }
         .journey-node { position: relative; padding-left: 2.75rem; padding-bottom: 2.25rem; opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .journey-node.is-visible { opacity: 1; transform: translateY(0); }
@@ -1101,13 +1109,17 @@
                     <h3>AI Web Applications</h3>
                     <p>Interactive web applications with built-in AI for instant data analysis, text generation, or clear one-click reports.</p>
                 </div>
-                <div class="service-card">
-                    <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8h10M7 12h6M7 16h8M6 4h12v16H6z" /></svg></div>
+                <div class="service-card service-card-toggle" id="journeyToggleBtn" role="button" tabindex="0" aria-expanded="false" aria-controls="journeyWrapper">
+                    <div class="card-icon card-icon-question">?</div>
                     <h3>Strategic Consulting</h3>
                     <p>Individual analysis of your current processes. We'll find where you're unnecessarily losing money and time, and design a meaningful way to bring in AI.</p>
+                    <span class="service-card-cta">Show the path to collaboration →</span>
                 </div>
             </div>
         </section>
+
+        <div class="journey-wrapper" id="journeyWrapper">
+        <div class="journey-wrapper-inner">
 
         <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0;">
 
@@ -1216,6 +1228,8 @@
             <p class="journey-note">Every business is at a different stage — some only need step 1, others can jump straight to step 3. These aren't a mandatory sequence, just a map of how we could work together. We can start wherever makes sense for you.</p>
         </section>
 
+        </div>
+        </div>
 
         <hr>
 
@@ -1266,6 +1280,25 @@
     </div>
 
     <script>
+        // 0y. Reveal "Path to Collaboration" after clicking the Strategic Consulting card
+        (function () {
+            const toggleBtn = document.getElementById('journeyToggleBtn');
+            const wrapper = document.getElementById('journeyWrapper');
+            if (!toggleBtn || !wrapper) return;
+            function openJourney() {
+                wrapper.classList.add('is-open');
+                toggleBtn.setAttribute('aria-expanded', 'true');
+                setTimeout(() => wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
+            }
+            toggleBtn.addEventListener('click', openJourney);
+            toggleBtn.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    openJourney();
+                }
+            });
+        })();
+
         // 0z. Path to collaboration — interactive step map
         (function () {
             const map = document.getElementById('journeyMap');
