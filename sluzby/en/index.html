@@ -997,6 +997,11 @@
 
     <div id="scroll-indicator"></div>
 
+    <!-- PLOVOUCÍ TLAČÍTKA -->
+    <a href="https://calendly.com/martina-dohnalova/30min" class="sticky-consultation-right" target="_blank" rel="noopener noreferrer" aria-label="Free Consultation">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="btn-label">Free Consultation</span>
+    </a>
 
     <button class="ai-assistant-launcher" id="aiAssistantLauncher" type="button" aria-label="Open AI assistant" aria-expanded="false" aria-controls="aiChatPanel">
         <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -1014,7 +1019,7 @@
             <button class="ai-chat-close" id="aiChatClose" type="button" aria-label="Close AI assistant">×</button>
         </div>
         <div class="ai-chat-messages" id="aiChatMessages">
-            <div class="ai-chat-msg assistant">Hi! I'm Martina's AI assistant. Ask me anything about her experience, skills, or projects.</div>
+            <div class="ai-chat-msg assistant">Hi! I'm Martina's AI assistant. Ask me anything about her services, projects, or how to start working together.</div>
         </div>
         <form class="ai-chat-input-row" id="aiChatForm">
             <textarea class="ai-chat-input" id="aiChatInput" placeholder="Type a message..." rows="1" maxlength="500" required></textarea>
@@ -1026,8 +1031,9 @@
         <div class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Martina .</div>
         <div class="header-right">
             <nav id="mainNav">
-                <a href="#nastroje">Projects</a>
-                <a href="#muj-pribeh">About</a>
+                <a href="#sluzby">Home</a>
+                <a href="#o-mne">About</a>
+                <a href="#nastroje">Laboratory</a>
                 <a href="#konzultace">Contact</a>
             </nav>
             <a href="../index.html" class="lang-switcher">CZ</a>
@@ -1041,13 +1047,13 @@
         <!-- HERO SEKCE (DVOU-SLOUPCOVÁ S MINIMALISTICKOU AI NEURONOVOU SÍTÍ) -->
         <section class="hero-container">
             <div class="hero">
-                <h1>I see a problem, learn how to fix it, and build the tool.</h1>
+                <h1>I save you time, capacity, and money.</h1>
                 <div class="subtitle-typewriter" style="white-space: normal;">
-                    Marketing from the inside + AI tools I build and deploy myself.
+                    I design and build simple solutions that work.
                 </div>
-                <p>For years I worked in e-commerce and marketing from the inside — which is exactly why I know where businesses lose the most time: communication with foreign suppliers, manual data work, tracking shipments. Over the past year I've been teaching myself to solve these problems — building and deploying AI tools that fix them. I learn fastest when I can see a real problem, not in a course.</p>
+                <p>I design and build web apps, online stores, and AI automations — first as a marketing specialist who spent years running e-commerce from the inside, and now as someone who can also code and deploy these tools herself. I connect new software with what your business already uses and cut out slow, repetitive processes.</p>
                 <div>
-                    <a href="#konzultace" class="cta-btn">GET IN TOUCH</a>
+                    <a href="#konzultace" class="cta-btn">GET A TAILORED SOLUTION</a>
                 </div>
             </div>
             
@@ -1057,18 +1063,133 @@
             </div>
         </section>
 
+        <!-- SLUŽBY -->
+        <section id="sluzby" class="services-section">
+            <h2>From Modern Websites to Smart AI Automation</h2>
+            <p class="subheading">Follow the path we can take together — from the first conversation to AI running in your day-to-day operations.</p>
+
+            <div class="journey-map" id="journeyMap">
+                <div class="journey-node">
+                    <span class="journey-dot"></span>
+                    <div class="journey-line-track"></div>
+                    <div class="journey-line-fill"></div>
+                    <div class="journey-card journey-card-static">
+                        <h3>0. Free consultation (30 min)</h3>
+                        <p>We'll go through your business processes, plan the steps, and set goals — so I know exactly where I can help most.</p>
+                    </div>
+                </div>
+
+                <div class="journey-node">
+                    <span class="journey-dot"></span>
+                    <div class="journey-line-track"></div>
+                    <div class="journey-line-fill"></div>
+                    <p class="journey-branch-question">Do you already have a website or online store?</p>
+                    <div class="journey-toggle" role="group" aria-label="Do you already have a website or online store?">
+                        <button class="journey-toggle-btn active" data-branch="has" aria-pressed="true">Yes, I do</button>
+                        <button class="journey-toggle-btn" data-branch="none" aria-pressed="false">No, I don't</button>
+                    </div>
+                    <div class="journey-branch-panels">
+                        <div class="journey-branch-panel active" data-branch-panel="has">
+                            <div class="journey-card is-open">
+                                <button class="journey-card-toggle" aria-expanded="true" aria-controls="jbody-1a">
+                                    <h3>1a. Analysis of your current setup</h3>
+                                    <svg class="journey-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+                                </button>
+                                <div class="journey-card-body" id="jbody-1a">
+                                    <div class="journey-card-body-inner">
+                                        <p>I'll look at how your website or store performs today and find where you're losing customers or time.</p>
+                                        <div class="journey-subcards">
+                                            <div class="journey-subcard">
+                                                <h4>Outdated / slow</h4>
+                                                <p>I'll design how to modernize and speed it up.</p>
+                                            </div>
+                                            <div class="journey-subcard">
+                                                <h4>Modern, working well</h4>
+                                                <p>Your foundation is solid — let's move straight to automation and AI.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="journey-branch-panel" data-branch-panel="none">
+                            <div class="journey-card is-open">
+                                <button class="journey-card-toggle" aria-expanded="true" aria-controls="jbody-1b">
+                                    <h3>1b. We'll build it from scratch</h3>
+                                    <svg class="journey-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+                                </button>
+                                <div class="journey-card-body" id="jbody-1b">
+                                    <div class="journey-card-body-inner">
+                                        <p>I'll build a Shoptet store, or a fast website using AI tools — whatever your business needs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journey-node">
+                    <span class="journey-dot"></span>
+                    <div class="journey-line-track"></div>
+                    <div class="journey-line-fill"></div>
+                    <span class="journey-transition-label">Let's clean up the mess</span>
+                    <div class="journey-card journey-card-static">
+                        <h3>2. A modern, working foundation</h3>
+                        <p>Whether we got here by modernizing or building from scratch, we now have a solid foundation ready for automation and AI.</p>
+                    </div>
+                </div>
+
+                <div class="journey-node">
+                    <span class="journey-dot"></span>
+                    <div class="journey-line-track"></div>
+                    <div class="journey-line-fill"></div>
+                    <div class="journey-pair">
+                        <div class="journey-card journey-card-static">
+                            <h3>Process Automation</h3>
+                            <p>I'll connect your systems, remove manual work, and bring order to your data and routine tasks.</p>
+                        </div>
+                        <div class="journey-card journey-card-static">
+                            <h3>Web AI Applications</h3>
+                            <p>I'll add smart features straight into your website — reports, text generation, one-click data analysis.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journey-node">
+                    <span class="journey-dot"></span>
+                    <div class="journey-line-track"></div>
+                    <div class="journey-line-fill"></div>
+                    <div class="journey-card journey-card-static">
+                        <h3>3. AI Tools &amp; Systems</h3>
+                        <p>I'll deploy AI assistants and automations directly into your daily operations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="journey-note">Every business is at a different stage — some only need step 1, others can jump straight to step 3. These aren't a mandatory sequence, just a map of how we could work together. We can start wherever makes sense for you.</p>
+        </section>
+
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0;">
+
         <!-- O MNĚ -->
         <section id="muj-pribeh" class="story-section">
             <div class="story-image">
-                <img src="../foto/linkedin-profile.png" alt="Profilová fotka" />
+                <img src="../../foto/linkedin-profile.png" alt="Profilová fotka" />
             </div>
             <div class="story-copy">
                 <h2>I come from marketing, not engineering — and that's my edge</h2>
                 <div class="about-grid">
                     <div class="about-card">
                         <h3>I come from marketing, not engineering — and that's my edge</h3>
-                        <p>For years I ran e-commerce and marketing from the inside; now I can also code and deploy AI tools and simple websites myself. My solutions today are proven concepts (PoCs) and smaller deployments — exactly what I needed to solve real problems quickly, not theoretical exercises.</p>
+                        <p>For years I ran e-commerce and marketing from the inside; now I can also code and deploy AI tools and simple websites myself. My solutions today are proven concepts (PoCs) and smaller deployments built for my own workflow — exactly what a smaller business or team needs when they want to see results fast, not wait months for an enterprise rollout.</p>
                     </div>
+                    <div class="about-card">
+                        <h3>How I Can Help You</h3>
+                        <p>Whether you need quick MVP validation, automation of routine admin work, API connections between systems, or a smart website that drives results. I design solutions that are simple to use but technically ready to grow with your business.</p>
+                    </div>
+                </div>
+                <div class="story-actions">
+                    <a href="https://calendly.com/martina-dohnalova/30min" class="cta-btn" target="_blank" rel="noopener noreferrer">Book a Consultation</a>
                 </div>
             </div>
         </section>
@@ -1096,7 +1217,7 @@
                                     <p>From empty domain to first order. I built an e-shop that sells, not just looks good — a clear offer, trustworthy details, and no unnecessary steps between the customer and checkout.</p>
                                 </div>
                                 <div class="case-slide-photo">
-                                    <img src="../foto/luckyskorts-1.png" alt="Lucky Skorts – e-shop homepage">
+                                    <img src="../../foto/luckyskorts-1.png" alt="Lucky Skorts – e-shop homepage">
                                 </div>
                             </div>
                         </div>
@@ -1111,7 +1232,7 @@
                                     <p>A site that has to convince on the first scroll, or the visitor closes the tab and moves on. Routes, accommodation, and tips in one clear place, built to work well with search too.</p>
                                 </div>
                                 <div class="case-slide-photo">
-                                    <img src="../foto/autemdochorvatska-1.jpg" alt="Autem do Chorvatska – homepage">
+                                    <img src="../../foto/autemdochorvatska-1.jpg" alt="Autem do Chorvatska – homepage">
                                 </div>
                             </div>
                         </div>
@@ -1126,7 +1247,7 @@
                                     <p>A restaurant where people go for expensive dinners needs a website that looks just as expensive. Dark, elegant styling sells the experience before the guest even sits down.</p>
                                 </div>
                                 <div class="case-slide-photo">
-                                    <img src="../foto/atelier27-1.jpg" alt="Atelier 27 – restaurant homepage">
+                                    <img src="../../foto/atelier27-1.jpg" alt="Atelier 27 – restaurant homepage">
                                 </div>
                             </div>
                         </div>
@@ -1141,7 +1262,7 @@
                                     <p>A municipal website that doesn't frustrate. Office hours, announcements, and a form in two clicks — instead of the link-maze we've all come to expect from town-hall sites.</p>
                                 </div>
                                 <div class="case-slide-photo">
-                                    <img src="../foto/horskalhota.jpg" alt="Horská Lhota – municipal website">
+                                    <img src="../../foto/horskalhota.jpg" alt="Horská Lhota – municipal website">
                                 </div>
                             </div>
                         </div>
@@ -1156,7 +1277,7 @@
                                     <p>A website meant to calm the patient before they even walk through the door. A calm palette, clearly described care, and booking in a few clicks — exactly what a private clinic needs to build trust.</p>
                                 </div>
                                 <div class="case-slide-photo">
-                                    <img src="../foto/vltavaclinic.jpg" alt="Vltava Clinic – clinic homepage">
+                                    <img src="../../foto/vltavaclinic.jpg" alt="Vltava Clinic – clinic homepage">
                                 </div>
                             </div>
                         </div>
@@ -1194,7 +1315,6 @@
                         <div class="tool-copy project-content">
                             <h3>AI Logistics Data Engine (Scalable PoC)</h3>
                             <p class="subtitle">A functional technology concept for a logistics dispatch system, designed to eliminate financial losses from delayed shipments.</p>
-                            <p>For years I was behind marketing campaigns from idea to launch — planning, creative, photoshoots, ads. But a good campaign is worthless if the package never gets picked up, or a return goes unnoticed until it's too late. We used to drop a 10% discount card into every package, hoping it would bring the customer back — it cost printing and time, and was often wasted on packages that never even got collected. I realized it would be smarter to catch the problem earlier: if a package sits too long at a pickup point uncollected, send the customer a reminder with a small incentive before they forget about it entirely; if a carrier flags a package as damaged in transit, know immediately, so a replacement and an apology can go out before the customer has to complain. That's the logic behind the dashboard I built.</p>
                             <p>A functional technology concept for a logistics dispatch system, designed to eliminate financial losses from delayed shipments. This micro-system works standalone for smaller e-shops (package tracking, damage detection, automatic notifications), but its architecture is fully prepared for enterprise integration with a company ERP (Helios) and advanced crisis scenarios.</p>
                             <ul class="project-features">
                                 <li>🎯 Flags risky orders early.</li>
@@ -1269,9 +1389,9 @@
 
         <!-- REZERVAČNÍ BLOK -->
         <section id="konzultace" class="reservation-section">
-            <h2>Let's connect</h2>
-            <p style="color: #555; margin-bottom: 2rem; font-size: 1.1rem;">Looking for someone who can bridge marketing with AI and automation? I'd love to talk about an open position.</p>
-            <a href="mailto:martina.dohnalova@centrum.cz" class="cta-btn">Get in touch</a>
+            <h2>Let's discuss your business</h2>
+            <p style="color: #555; margin-bottom: 2rem; font-size: 1.1rem;">Is there a process slowing you down? Need a website, a micro-app, or an AI partner? Pick a time for a no-obligation consultation and let's look at how to make things more efficient.</p>
+            <a href="https://calendly.com/martina-dohnalova/30min" class="cta-btn" target="_blank" rel="noopener noreferrer">Book a Consultation</a>
         </section>
 
         <hr>
@@ -1288,20 +1408,20 @@
 
         <div class="infinite-gallery">
             <div class="marquee-track">
-                <img src="../foto/duna.JPG" alt="Dune photo">
-                <img src="../foto/hora.JPG" alt="Mountain photo">
-                <img src="../foto/les.JPG" alt="Forest photo">
-                <img src="../foto/moře.JPG" alt="Sea photo">
-                <img src="../foto/řeka.JPG" alt="River photo">
-                <img src="../foto/jezero.JPG" alt="Lake photo">
-                <img src="../foto/lodě.JPG" alt="Boats photo">
-                <img src="../foto/duna.JPG" alt="Dune photo">
-                <img src="../foto/hora.JPG" alt="Mountain photo">
-                <img src="../foto/les.JPG" alt="Forest photo">
-                <img src="../foto/moře.JPG" alt="Sea photo">
-                <img src="../foto/řeka.JPG" alt="River photo">
-                <img src="../foto/jezero.JPG" alt="Lake photo">
-                <img src="../foto/lodě.JPG" alt="Boats photo">
+                <img src="../../foto/duna.JPG" alt="Dune photo">
+                <img src="../../foto/hora.JPG" alt="Mountain photo">
+                <img src="../../foto/les.JPG" alt="Forest photo">
+                <img src="../../foto/moře.JPG" alt="Sea photo">
+                <img src="../../foto/řeka.JPG" alt="River photo">
+                <img src="../../foto/jezero.JPG" alt="Lake photo">
+                <img src="../../foto/lodě.JPG" alt="Boats photo">
+                <img src="../../foto/duna.JPG" alt="Dune photo">
+                <img src="../../foto/hora.JPG" alt="Mountain photo">
+                <img src="../../foto/les.JPG" alt="Forest photo">
+                <img src="../../foto/moře.JPG" alt="Sea photo">
+                <img src="../../foto/řeka.JPG" alt="River photo">
+                <img src="../../foto/jezero.JPG" alt="Lake photo">
+                <img src="../../foto/lodě.JPG" alt="Boats photo">
             </div>
         </div>
     </main>
@@ -1345,6 +1465,55 @@
     </div>
 
     <script>
+        // 0z. Path to collaboration — interactive step map
+        (function () {
+            const map = document.getElementById('journeyMap');
+            if (!map) return;
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // Accordion cards
+            map.querySelectorAll('.journey-card-toggle').forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const card = btn.closest('.journey-card');
+                    const isOpen = card.classList.toggle('is-open');
+                    btn.setAttribute('aria-expanded', String(isOpen));
+                });
+            });
+
+            // Yes / No branch toggle
+            const toggleBtns = map.querySelectorAll('.journey-toggle-btn');
+            toggleBtns.forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const branch = btn.dataset.branch;
+                    toggleBtns.forEach((b) => {
+                        b.classList.toggle('active', b === btn);
+                        b.setAttribute('aria-pressed', String(b === btn));
+                    });
+                    map.querySelectorAll('.journey-branch-panel').forEach((panel) => {
+                        const active = panel.dataset.branchPanel === branch;
+                        panel.classList.toggle('active', active);
+                        panel.setAttribute('aria-hidden', String(!active));
+                    });
+                });
+            });
+
+            // Scroll reveal (IntersectionObserver)
+            const nodes = map.querySelectorAll('.journey-node');
+            if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+                nodes.forEach((node) => node.classList.add('is-visible'));
+            } else {
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.25, rootMargin: '0px 0px -10% 0px' });
+                nodes.forEach((node) => revealObserver.observe(node));
+            }
+        })();
+
         // 0a. Mobile hamburger menu
         const navToggle = document.getElementById('navToggle');
         const mainNav = document.getElementById('mainNav');
