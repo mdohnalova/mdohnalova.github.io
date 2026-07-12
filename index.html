@@ -1004,6 +1004,19 @@
         .hero-links a { color: var(--accent-color); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(169,93,69,0.35); padding-bottom: 1px; }
         .hero-links a:hover { border-bottom-color: var(--accent-color); }
 
+        /* Proc prave ja - homepage */
+        .why-me-section { margin-top: 4rem; }
+        .why-me-section h2 { font-size: 2rem; font-weight: 600; max-width: 780px; margin-bottom: 0.5rem; }
+        .why-me-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+        @media (max-width: 900px) { .why-me-grid { grid-template-columns: 1fr; } }
+
+        /* Tech stack - homepage */
+        .tech-stack-section { margin-top: 4rem; }
+        .tech-stack-section h2 { font-size: 2rem; font-weight: 400; margin: 0.5rem 0 0.5rem; }
+        .tech-stack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 3rem; margin-top: 2rem; }
+        .tech-stack-group h3 { font-size: 1rem; font-weight: 700; color: var(--accent-color); margin-bottom: 0.9rem; text-transform: uppercase; letter-spacing: 0.04em; }
+        @media (max-width: 700px) { .tech-stack-grid { grid-template-columns: 1fr; } }
+
         /* AI nastroje - O me */
         .ai-tools-section { margin-top: 4rem; }
         .ai-tools-section h2 { font-size: 2rem; font-weight: 400; margin: 0.5rem 0 1.5rem; }
@@ -1059,7 +1072,6 @@
         <a href="index.html" class="logo">Martina .</a>
         <div class="header-right">
             <nav id="mainNav">
-                <a href="sluzby.html">Služby</a>
                 <a href="projekty.html">Projekty</a>
                 <a href="o-mne.html">O mě</a>
                 <a href="kontakt.html">Kontakt</a>
@@ -1075,20 +1087,80 @@
         <!-- HERO SEKCE (DVOU-SLOUPCOVÁ S MINIMALISTICKOU AI NEURONOVOU SÍTÍ) -->
         <section class="hero-container">
             <div class="hero">
-                <h1>Šetřím váš čas, kapacitu a peníze.</h1>
-                <div class="subtitle-typewriter">
-                    Navrhuji a kóduji pro vás <span class="typewriter" id="typewriter-text"></span>
-                </div>
-                <p>Marketing zevnitř + AI nástroje, které si sama stavím a nasazuju. Podívejte se, co jsem postavila, nebo mi napište.</p>
-                <div class="hero-links">
-                    <p class="hero-link-line">Jste náborář? Mrkněte na <a href="projekty.html">Projekty</a> a <a href="o-mne.html">O mě</a>.</p>
-                    <p class="hero-link-line">Hledáte řešení pro firmu? Podívejte se na <a href="sluzby.html">Služby</a>.</p>
-                </div>
+                <h1>Nápady měním v kód. Pomocí AI.</h1>
+                <p>Stavím funkční automatizace a nástroje pro e-commerce. Spojuju marketingové myšlení s moderním AI-assisted vývojem (vibecoding) — pomocí velkých jazykových modelů a AI vývojářských agentů rychle navrhnu, naprogramuju a nasadím aplikace, které e-shopům hned usnadní práci s daty, logistikou nebo zákaznickou podporou.</p>
             </div>
 
             <!-- MINIMALISTICKÁ REAKTIVNÍ ANIMACE -->
             <div class="hero-animation-wrapper">
                 <canvas id="ai-canvas"></canvas>
+            </div>
+        </section>
+
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0;">
+
+        <!-- PROČ PRÁVĚ JÁ -->
+        <section class="why-me-section">
+            <h2>Mám byznysové zadání — a díky AI si k němu sama napíšu kód.</h2>
+            <div class="why-me-grid">
+                <div class="service-card">
+                    <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" /></svg></div>
+                    <h3>AI jako akcelerátor</h3>
+                    <p>Nečekám na vývojářský tým. Vezmu Claude Code, Lovable nebo VS Code a postavím funkční prototyp (PoC) v řádu dní.</p>
+                </div>
+                <div class="service-card">
+                    <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h2l2.4 12.4a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.6L21 8H6" /><circle cx="9" cy="20" r="1" /><circle cx="18" cy="20" r="1" /></svg></div>
+                    <h3>Zkušenost z e-commerce praxe</h3>
+                    <p>Vím, jak v praxi bolí špatná produktová data, ruční přepisování e-mailů ze zahraničních trhů nebo chaos v logistice — protože jsem to sama řešila. Navrhuji řešení pro problémy, které znám zevnitř.</p>
+                </div>
+                <div class="service-card">
+                    <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5l-8-3z" /></svg></div>
+                    <h3>Důraz na bezpečné nasazení</h3>
+                    <p>Kóduji s pomocí AI, ale architekturu si hlídám sama: validace dat přes Pydantic, anonymizace citlivých údajů, ochrana proti prompt injection.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0;">
+
+        <!-- TECH STACK -->
+        <section class="tech-stack-section">
+            <span class="lab-badge">STACK</span>
+            <h2>Tech stack</h2>
+            <div class="tech-stack-grid">
+                <div class="tech-stack-group">
+                    <h3>AI vývoj</h3>
+                    <div class="ai-tools-grid">
+                        <div class="ai-tool-chip">Claude Code</div>
+                        <div class="ai-tool-chip">GPT-4o</div>
+                        <div class="ai-tool-chip">Lovable.com</div>
+                        <div class="ai-tool-chip">Cursor / VS Code</div>
+                    </div>
+                </div>
+                <div class="tech-stack-group">
+                    <h3>Backend &amp; integrace</h3>
+                    <div class="ai-tools-grid">
+                        <div class="ai-tool-chip">Python (Streamlit, Pydantic, LLM API)</div>
+                        <div class="ai-tool-chip">Make (integrační scénáře)</div>
+                    </div>
+                </div>
+                <div class="tech-stack-group">
+                    <h3>Frontend &amp; web</h3>
+                    <div class="ai-tools-grid">
+                        <div class="ai-tool-chip">JavaScript / TypeScript</div>
+                        <div class="ai-tool-chip">Next.js</div>
+                        <div class="ai-tool-chip">Vercel</div>
+                        <div class="ai-tool-chip">Shoptet (customizace šablon)</div>
+                    </div>
+                </div>
+                <div class="tech-stack-group">
+                    <h3>Data &amp; bezpečnost</h3>
+                    <div class="ai-tools-grid">
+                        <div class="ai-tool-chip">GDPR anonymizační vrstvy</div>
+                        <div class="ai-tool-chip">Validace vstupů</div>
+                        <div class="ai-tool-chip">Ochrana proti prompt injection</div>
+                    </div>
+                </div>
             </div>
         </section>
 

@@ -1004,6 +1004,19 @@
         .hero-links a { color: var(--accent-color); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(169,93,69,0.35); padding-bottom: 1px; }
         .hero-links a:hover { border-bottom-color: var(--accent-color); }
 
+        /* Proc prave ja - homepage */
+        .why-me-section { margin-top: 4rem; }
+        .why-me-section h2 { font-size: 2rem; font-weight: 600; max-width: 780px; margin-bottom: 0.5rem; }
+        .why-me-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+        @media (max-width: 900px) { .why-me-grid { grid-template-columns: 1fr; } }
+
+        /* Tech stack - homepage */
+        .tech-stack-section { margin-top: 4rem; }
+        .tech-stack-section h2 { font-size: 2rem; font-weight: 400; margin: 0.5rem 0 0.5rem; }
+        .tech-stack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 3rem; margin-top: 2rem; }
+        .tech-stack-group h3 { font-size: 1rem; font-weight: 700; color: var(--accent-color); margin-bottom: 0.9rem; text-transform: uppercase; letter-spacing: 0.04em; }
+        @media (max-width: 700px) { .tech-stack-grid { grid-template-columns: 1fr; } }
+
         /* AI nastroje - O me */
         .ai-tools-section { margin-top: 4rem; }
         .ai-tools-section h2 { font-size: 2rem; font-weight: 400; margin: 0.5rem 0 1.5rem; }
@@ -1059,7 +1072,6 @@
         <a href="index.html" class="logo">Martina .</a>
         <div class="header-right">
             <nav id="mainNav">
-                <a href="services.html">Services</a>
                 <a href="projects.html">Projects</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
@@ -1075,20 +1087,80 @@
         <!-- HERO SEKCE (DVOU-SLOUPCOVÁ S MINIMALISTICKOU AI NEURONOVOU SÍTÍ) -->
         <section class="hero-container">
             <div class="hero">
-                <h1>I save you time, capacity, and money.</h1>
-                <div class="subtitle-typewriter">
-                    I design and code for you <span class="typewriter" id="typewriter-text"></span>
-                </div>
-                <p>Marketing from the inside + AI tools I build and deploy myself. Take a look at what I've built, or get in touch.</p>
-                <div class="hero-links">
-                    <p class="hero-link-line">Here as a recruiter? Check out <a href="projects.html">Projects</a> and <a href="about.html">About me</a>.</p>
-                    <p class="hero-link-line">Looking for a business solution? See <a href="services.html">Services</a>.</p>
-                </div>
+                <h1>I turn ideas into code. With AI.</h1>
+                <p>I build functional automations and tools for e-commerce. I combine marketing thinking with modern AI-assisted development (vibecoding) — using large language models and AI dev agents, I can quickly design, code, and ship apps that instantly make e-shops' work with data, logistics, or customer support easier.</p>
             </div>
 
             <!-- MINIMALISTICKÁ REAKTIVNÍ ANIMACE -->
             <div class="hero-animation-wrapper">
                 <canvas id="ai-canvas"></canvas>
+            </div>
+        </section>
+
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0;">
+
+        <!-- WHY ME -->
+        <section class="why-me-section">
+            <h2>I bring the business brief — and AI helps me write the code myself.</h2>
+            <div class="why-me-grid">
+                <div class="service-card">
+                    <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" /></svg></div>
+                    <h3>AI as an accelerator</h3>
+                    <p>I don't wait on a dev team. I take Claude Code, Lovable, or VS Code and ship a working prototype (PoC) in days.</p>
+                </div>
+                <div class="service-card">
+                    <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h2l2.4 12.4a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.6L21 8H6" /><circle cx="9" cy="20" r="1" /><circle cx="18" cy="20" r="1" /></svg></div>
+                    <h3>Real e-commerce experience</h3>
+                    <p>I know exactly how much bad product data, manual email replies from foreign markets, or logistics chaos actually hurts — because I've lived it. I design solutions for problems I know from the inside.</p>
+                </div>
+                <div class="service-card">
+                    <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5l-8-3z" /></svg></div>
+                    <h3>Built with security in mind</h3>
+                    <p>I code with AI, but I own the architecture myself: data validation through Pydantic, anonymizing sensitive data, protection against prompt injection.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0;">
+
+        <!-- TECH STACK -->
+        <section class="tech-stack-section">
+            <span class="lab-badge">STACK</span>
+            <h2>Tech Stack</h2>
+            <div class="tech-stack-grid">
+                <div class="tech-stack-group">
+                    <h3>AI Development</h3>
+                    <div class="ai-tools-grid">
+                        <div class="ai-tool-chip">Claude Code</div>
+                        <div class="ai-tool-chip">GPT-4o</div>
+                        <div class="ai-tool-chip">Lovable.com</div>
+                        <div class="ai-tool-chip">Cursor / VS Code</div>
+                    </div>
+                </div>
+                <div class="tech-stack-group">
+                    <h3>Backend &amp; Integrations</h3>
+                    <div class="ai-tools-grid">
+                        <div class="ai-tool-chip">Python (Streamlit, Pydantic, LLM API)</div>
+                        <div class="ai-tool-chip">Make (integration scenarios)</div>
+                    </div>
+                </div>
+                <div class="tech-stack-group">
+                    <h3>Frontend &amp; Web</h3>
+                    <div class="ai-tools-grid">
+                        <div class="ai-tool-chip">JavaScript / TypeScript</div>
+                        <div class="ai-tool-chip">Next.js</div>
+                        <div class="ai-tool-chip">Vercel</div>
+                        <div class="ai-tool-chip">Shoptet (template customization)</div>
+                    </div>
+                </div>
+                <div class="tech-stack-group">
+                    <h3>Data &amp; Security</h3>
+                    <div class="ai-tools-grid">
+                        <div class="ai-tool-chip">GDPR anonymization layers</div>
+                        <div class="ai-tool-chip">Input validation</div>
+                        <div class="ai-tool-chip">Prompt-injection protection</div>
+                    </div>
+                </div>
             </div>
         </section>
 
