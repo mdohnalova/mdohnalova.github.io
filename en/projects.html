@@ -1446,8 +1446,9 @@
         }
         if (document.getElementById('typewriter-text')) { typingEffect(); }
 
-        // 3b. Slider AI nástrojů
+        // 3b. AI-lab project slider (with autoplay)
         let currentToolIdx = 0;
+        let toolAutoTimer;
         function currentToolSlide(index) {
             currentToolIdx = index;
             const track = document.getElementById('toolsSliderTrack');
@@ -1467,6 +1468,18 @@
             const nextIdx = (currentToolIdx + step + total) % total;
             currentToolSlide(nextIdx);
         }
+
+        function startToolAutoplay() {
+            clearInterval(toolAutoTimer);
+            toolAutoTimer = setInterval(() => moveSlider(1), 6000);
+        }
+
+        const toolSliderWrapperEl = document.querySelector('#nastroje .tools-slider-wrapper');
+        if (toolSliderWrapperEl) {
+            toolSliderWrapperEl.addEventListener('mouseenter', () => clearInterval(toolAutoTimer));
+            toolSliderWrapperEl.addEventListener('mouseleave', startToolAutoplay);
+        }
+        startToolAutoplay();
 
         // 3c. Case studies slider (with autoplay)
         let currentCaseIdx = 0;
