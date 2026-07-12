@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martina | Projekty — AI laboratoř & portfolio</title>
+    <title>Martina | Portfolio — digitální produkty a UX studie</title>
     <style>
         :root {
             --bg-color: #fcfbfa;
@@ -1074,11 +1074,10 @@
         <a href="index.html" class="logo">Martina .</a>
         <div class="header-right">
             <nav id="mainNav">
-                <a href="projekty.html">Projekty</a>
-                <a href="o-mne.html">O mě</a>
+                <a href="portfolio.html">Portfolio</a>
                 <a href="kontakt.html">Kontakt</a>
             </nav>
-            <a href="en/projects.html" class="lang-switcher">EN</a>
+            <a href="en/portfolio.html" class="lang-switcher">EN</a>
             <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mainNav">
                 <span></span><span></span><span></span>
             </button>
@@ -1086,135 +1085,164 @@
     </header>
 
     <main>
-        <section id="nastroje" class="tools-section">
-            <span class="lab-badge">PROJEKTY &amp; VÝVOJ</span>
-            <h2>Moje interní AI laboratoř</h2>
-            <p class="sekce-laborator-podnadpis" style="color: #444; max-width: 700px;">
-                Ukázky systémů a automatizací, které jsem vyvinula pro vlastní efektivitu a denně mi šetří hodiny času.
-                <button type="button" class="info-icon-btn" id="archNoteToggle" aria-expanded="false" aria-controls="archNoteWrapper" aria-label="Poznámka k architektuře">i</button>
-            </p>
-            <div class="arch-note-wrapper" id="archNoteWrapper">
-                <div class="arch-note-wrapper-inner">
-                    <p style="margin-top: 1rem; padding: 1rem 1.2rem; border-left: 3px solid #7A9A82; background: #f6f3f0; border-radius: 0 8px 8px 0; color: #3f3d3b; max-width: 950px;">
-                        💡 Poznámka k architektuře: Tyhle aplikace jsou funkční ukázky (proof-of-concept) na modelových datech, ne na reálných datech klientů. Ukazují princip a architekturu — validaci výstupů AI, ochranu proti prompt injection, GDPR anonymizaci — na kterých bych stavěla i větší řešení včetně napojení na firemní systémy, pokud by to konkrétní zakázka vyžadovala.
-                    </p>
-                </div>
-            </div>
-
+        <section id="ukazka-prace" class="case-studies-section">
+            <span class="lab-badge">PORTFOLIO</span>
+            <h2>Digitální produkty s důrazem na konverzi a UX</h2>
+            <p class="subheading">Od kompletního spuštění vlastního e-shopu po detailní koncepční studie. Propojuji čistou vizuální identitu s funkční informační architekturou.</p>
             <div class="tools-slider-wrapper">
-                <button class="slider-arrow slider-arrow-prev" onclick="moveSlider(-1)" aria-label="Předchozí projekt">&#8249;</button>
-                <button class="slider-arrow slider-arrow-next" onclick="moveSlider(1)" aria-label="Další projekt">&#8250;</button>
+                <button class="slider-arrow slider-arrow-prev" onclick="moveCaseSlider(-1)" aria-label="Předchozí ukázka">&#8249;</button>
+                <button class="slider-arrow slider-arrow-next" onclick="moveCaseSlider(1)" aria-label="Další ukázka">&#8250;</button>
                 <div class="tools-slider">
-                <div class="tools-slider-track" id="toolsSliderTrack">
-                    <article class="tool-slide project-card">
-                        <div class="tool-copy project-content">
-                            <h3>Systém efektivní logistiky (SEL)</h3>
-                            <p class="subtitle">Sleduje stav zásilek v reálném čase a upozorní mě na problém dřív, než se z něj stane ztracená objednávka.</p>
-                            <div class="card-problem">
-                                <span class="card-label">Problém</span>
-                                <p>Zákazník si nevyzvedne balíček, nebo dopravce nahlásí poškození — a firma se to dozví, až si zákazník začne stěžovat. Nikdo nemá čas ručně hlídat stovky zásilek, jestli u některé něco nehrozí.</p>
-                            </div>
-                            <div class="card-solution">
-                                <span class="card-label">Řešení</span>
-                                <p>Postavila jsem dashboard, který hlídá stav všech zásilek za mě. Když balíček leží na výdejně moc dlouho, systém sám připraví slevový kód na připomínku. Když dopravce nahlásí poškození, jedním kliknutím založím náhradní zásilku i omluvnou slevu — a nic se neodešle, dokud to sama neschválím.</p>
-                            </div>
-                            <p class="project-note">Proof of concept na vzorových datech zásilek — napojení na reálného dopravce zatím čeká na příležitost.</p>
-                            <span class="card-benefits-label">Klíčové přínosy</span>
-                            <ul class="project-features">
-                                <li>🎯 Rizikové zásilky vidím na první pohled, ne rozeseté v tabulkách dopravců.</li>
-                                <li>🎟️ Připomínkový i omluvný kód mám hotový na klik, ne ručně v Excelu.</li>
-                                <li>📦 Poškozenou zásilku i omluvu zákazníkovi vyřídím za pár vteřin.</li>
-                                <li>✅ Nic neodejde bez mého schválení — komunikaci se zákazníkem mám plně pod kontrolou.</li>
-                            </ul>
-                            <div class="tool-actions">
-                                <a href="https://ai-logistics-command-center-7pl2ctmvivxpmldjafhh3x.streamlit.app/" target="_blank" rel="noopener noreferrer" class="cta-btn">Otevřít živé demo (PoC)</a>
-                                <a href="https://github.com/mdohnalova/ai-logistics-command-center" target="_blank" rel="noopener noreferrer" class="outline-btn">Prohlédnout kód na GitHubu</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="tool-slide project-card">
-                        <div class="tool-copy project-content">
-                            <h3>Čistič dat</h3>
-                            <p class="subtitle">Čistí mi názvy produktů od nesmyslů a generuje texty popisků.</p>
-                            <div class="card-problem">
-                                <span class="card-label">Problém</span>
-                                <p>Export produktů ze starého e-shopu je plný marketingového balastu — "#1 PRODEJ!", slevové procenta přímo v názvu, prokloněné výplňové fráze. Ruční přepis stovek položek do nového systému by zabral dny.</p>
-                            </div>
-                            <div class="card-solution">
-                                <span class="card-label">Řešení</span>
-                                <p>Nástroj nejdřív mechanicky vyčistí název od symbolů, pořadí a slevových frází, pak ho ještě jednou projede AI, která dohledá zbylé nesrovnalosti a k tomu vygeneruje prodejní popisek a tři klíčová slova pro SEO. Do AI jde jen název a popis, nikdy skladové nebo cenové údaje.</p>
-                            </div>
-                            <span class="card-benefits-label">Klíčové přínosy</span>
-                            <ul class="project-features">
-                                <li>🧹 Balast z názvů zmizí automaticky, bez ručního přepisování.</li>
-                                <li>✍️ Popisek a SEO klíčová slova mám hotové za pár vteřin na produkt.</li>
-                                <li>🔒 Do AI putuje jen text názvu a popisu — citlivá data se nikam neposílají.</li>
-                                <li>📋 Výsledky si před exportem ještě upravím v tabulce.</li>
-                            </ul>
-                            <div class="tool-actions">
-                                <a href="https://ai-ecommerce-enricher-2vwepjcswpw9rkxmjnvugo.streamlit.app/" target="_blank" rel="noopener noreferrer" class="cta-btn">Otevřít živé demo (PoC)</a>
-                                <a href="https://github.com/mdohnalova/ai-ecommerce-enricher" target="_blank" rel="noopener noreferrer" class="outline-btn">Prohlédnout kód na GitHubu</a>
+                    <div class="tools-slider-track" id="caseSliderTrack">
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">E-shop</span>
+                                        <span class="case-status live">🟢 Živý e-shop</span>
+                                    </div>
+                                    <h3>Lucky Skorts</h3>
+                                    <div class="card-problem">
+                                        <span class="card-label">Zadání</span>
+                                        <p>Vybudovat vlastní e-commerce značku a postavit konverzní e-shop na zelené louce – od nákupu domény přes logistiku až po první objednávku.</p>
+                                    </div>
+                                    <div class="card-solution">
+                                        <span class="card-label">Řešení</span>
+                                        <p>Plně funkční e-shop s čistým nákupním procesem, optimalizovanou mobilní verzí a přehlednou strukturou, která odbourává bariéry mezi košíkem a platbou.</p>
+                                    </div>
+                                    <span class="card-benefits-label">Klíčové přínosy</span>
+                                    <ul class="project-features">
+                                        <li>🛒 Optimalizovaný checkout proces pro maximální konverzní poměr.</li>
+                                        <li>📱 Plná responzivita s prioritou na mobile-first nakupování.</li>
+                                        <li>⚡ Rychlé načítání a čistá produktová hierarchie.</li>
+                                    </ul>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="foto/luckyskorts-1.png" alt="Lucky Skorts – úvodní stránka e-shopu">
+                                </div>
                             </div>
                         </div>
-                    </article>
-                    <article class="tool-slide project-card">
-                        <div class="tool-copy project-content">
-                            <h3>Maďarské maily</h3>
-                            <p class="subtitle">Pomáhá mi rozumět maďarským e-mailům a odpovídat na ně v maďarštině, i když maďarsky neumím.</p>
-                            <div class="card-problem">
-                                <span class="card-label">Problém</span>
-                                <p>Maďarsky neumím, ale objednávky ze zahraničí chodí i odtud. Najmout rodilého mluvčího jen na občasnou e-mailovou komunikaci se nevyplatí, a googlování překladů věta po větě je pomalé a nespolehlivé.</p>
-                            </div>
-                            <div class="card-solution">
-                                <span class="card-label">Řešení</span>
-                                <p>Vložím maďarský e-mail, systém ho přeloží a AI mi navrhne odpověď česky i s odhadem tónu zprávy (formální, naléhavá, přátelská, stížnost). Odpověď si podle potřeby upravím a nechám přegenerovat v jiném tónu, a až jsem spokojená, nechám ji přeložit zpět do maďarštiny — nic se neodešle automaticky, jen si ji zkopíruju do e-mailu.</p>
-                            </div>
-                            <span class="card-benefits-label">Klíčové přínosy</span>
-                            <ul class="project-features">
-                                <li>🇭🇺 Maďarskému e-mailu rozumím okamžitě, bez slovníku a bez rodilého mluvčího.</li>
-                                <li>🎛️ Odpověď si nechám navrhnout v tónu, který sedí k situaci.</li>
-                                <li>✍️ Finální text si vždycky sama upravím, než ho pošlu — AI mi jen připraví návrh.</li>
-                                <li>📤 Hotovou maďarskou odpověď zkopíruju rovnou do e-mailu na pár kliknutí.</li>
-                            </ul>
-                            <div class="tool-actions">
-                                <a href="https://magyar-mail-automation.vercel.app" target="_blank" rel="noopener noreferrer" class="cta-btn">Otevřít živé demo (PoC)</a>
-                                <a href="https://github.com/mdohnalova/magyar-mail-automation" target="_blank" rel="noopener noreferrer" class="outline-btn">Prohlédnout kód na GitHubu</a>
-                            </div>
-                            <p class="project-note">Živé demo je chráněné přístupovým kódem (kvůli ochraně API rozpočtu) — napište mi a pošlu ho.</p>
-                        </div>
-                    </article>
-                    <article class="tool-slide project-card">
-                        <div class="tool-copy project-content">
-                            <h3>Parťák na zákaznickou linku</h3>
-                            <p class="subtitle">🚧 Zatím ve výrobě.</p>
-                            <div class="card-problem">
-                                <span class="card-label">Problém</span>
-                                <p>Podpora dostává desítky zpráv denně a musí ručně poznat, co je urgentní stížnost, co je jen dotaz na skladovost, a v jakém tónu na to odpovědět. Bez systému se snadno stane, že rozzlobený zákazník čeká ve frontě stejně dlouho jako běžný dotaz.</p>
-                            </div>
-                            <div class="card-solution">
-                                <span class="card-label">Řešení</span>
-                                <p>AI každou příchozí zprávu roztřídí podle typu, priority a nálady zákazníka a rovnou navrhne odpověď. Operátor pak vidí přehlednou frontu seřazenou podle priority, může si vybrat tiket, upravit navrženou odpověď a teprve pak ji odeslat.</p>
-                            </div>
-                            <span class="card-benefits-label">Klíčové přínosy</span>
-                            <ul class="project-features">
-                                <li>🎯 Každá zpráva je automaticky zařazená podle typu i priority, bez ručního třídění.</li>
-                                <li>🚨 Naštvaný zákazník nebo urgentní stížnost se neztratí mezi běžnými dotazy.</li>
-                                <li>✍️ Odpověď mám hotovou jako návrh, jen ji doladím a odešlu.</li>
-                                <li>📊 Přehled o rychlosti zpracování a náladě zákazníků mám na jednom místě.</li>
-                            </ul>
-                            <div class="tool-actions">
-                                <a href="https://github.com/mdohnalova/helpdesk-copilot" target="_blank" rel="noopener noreferrer" class="outline-btn">Prohlédnout kód na GitHubu</a>
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">Cestovní průvodce</span>
+                                        <span class="case-status dev">🚧 Ve vývoji</span>
+                                    </div>
+                                    <h3>Autem do Chorvatska</h3>
+                                    <div class="card-problem">
+                                        <span class="card-label">Zadání</span>
+                                        <p>Vytvořit obsahový portál s vysokou informační hodnotou optimalizovaný pro affiliate marketing a partnerské konverze.</p>
+                                    </div>
+                                    <div class="card-solution">
+                                        <span class="card-label">Řešení</span>
+                                        <p>Přehledná architektura sdružující složitá data (trasy, ubytování, poplatky) do intuitivních celků s přirozeně integrovanými konverzními prvky.</p>
+                                    </div>
+                                    <span class="card-benefits-label">Klíčové přínosy</span>
+                                    <ul class="project-features">
+                                        <li>🗺️ Strategické řazení obsahu bez rizika informačního přesycení uživatele.</li>
+                                        <li>💰 UX navržené pro přirozený proklik na partnerské prodeje (ubytování, pojištění).</li>
+                                        <li>🎨 Vzdušný, moderní design budující okamžitou důvěryhodnost.</li>
+                                    </ul>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="foto/autemdochorvatska-1.jpg" alt="Autem do Chorvatska – úvodní stránka">
+                                </div>
                             </div>
                         </div>
-                    </article>
-                </div>
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">Gastronomie</span>
+                                        <span class="case-status concept">💡 Koncepční návrh</span>
+                                    </div>
+                                    <h3>Atelier 27</h3>
+                                    <div class="card-problem">
+                                        <span class="card-label">Vlastní UX koncept</span>
+                                        <p>Navrhnout prémiovou webovou prezentaci pro zážitkovou restauraci, která musí vizuálně komunikovat vysokou úroveň služeb a exkluzivitu.</p>
+                                    </div>
+                                    <div class="card-solution">
+                                        <span class="card-label">Řešení</span>
+                                        <p>Koncepční UI/UX studie postavená na tmavé, elegantní atmosféře s vysokým důrazem na okamžitou a bezproblémovou rezervaci stolu.</p>
+                                    </div>
+                                    <span class="card-benefits-label">Hlavní prvky</span>
+                                    <ul class="project-features">
+                                        <li>🍷 Temný, luxusní vizuální styl prodávající zážitek ještě před návštěvou.</li>
+                                        <li>📅 Prioritní rezervační flow navržené primárně pro mobilní zařízení.</li>
+                                        <li>🍽️ Čistá a snadno čitelná struktura menu a degustačních večerů.</li>
+                                    </ul>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="foto/atelier27-1.jpg" alt="Atelier 27 – úvodní stránka restaurace">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">Veřejná správa</span>
+                                        <span class="case-status concept">💡 Koncepční návrh</span>
+                                    </div>
+                                    <h3>Horská Lhota</h3>
+                                    <div class="card-problem">
+                                        <span class="card-label">Vlastní UX koncept</span>
+                                        <p>Transformovat chaotický a nepřehledný obecní web do moderní platformy, která občana zbytečně nefrustruje úředním jazykem.</p>
+                                    </div>
+                                    <div class="card-solution">
+                                        <span class="card-label">Řešení</span>
+                                        <p>Koncepční návrh zaměřený na rychlé odbavení nejčastějších životních situací a okamžitou dostupnost úředních hodin a hlášení rozhlasu.</p>
+                                    </div>
+                                    <span class="card-benefits-label">Hlavní prvky</span>
+                                    <ul class="project-features">
+                                        <li>🏛️ Informační architektura orientovaná na potřeby občana (řešení situací na 2 kliknutí).</li>
+                                        <li>📢 Výrazné a přehledné krizové a informační centrum obce.</li>
+                                        <li>🌿 Čistý, přívětivý vizuál podporující lokalitu a komunitní život.</li>
+                                    </ul>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="foto/horskalhota.jpg" alt="Horská Lhota – web obce">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">Zdravotnictví</span>
+                                        <span class="case-status concept">💡 Koncepční návrh</span>
+                                    </div>
+                                    <h3>Vltava Clinic</h3>
+                                    <div class="card-problem">
+                                        <span class="card-label">Vlastní UX koncept</span>
+                                        <p>Vytvořit digitální tvář soukromé lékařské kliniky, která kombinuje profesionální odbornost s pocitem lidského a klidného přístupu.</p>
+                                    </div>
+                                    <div class="card-solution">
+                                        <span class="card-label">Řešení</span>
+                                        <p>UI/UX studie zaměřená na maximální transparentnost (přehledné ceníky, medailonky lékařů) a intuitivní objednání na konzultaci.</p>
+                                    </div>
+                                    <span class="card-benefits-label">Hlavní prvky</span>
+                                    <ul class="project-features">
+                                        <li>🩺 Čistá, uklidňující barevná paleta budující důvěru pacientů.</li>
+                                        <li>⏱️ Odstranění bariér při objednávání (jasná výzva k akci na pár kliknutí).</li>
+                                        <li>👩‍⚕️ Přehledná prezentace lékařských specializací a ordinačních hodin.</li>
+                                    </ul>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="foto/vltavaclinic.jpg" alt="Vltava Clinic – úvodní stránka ordinace">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="tools-dots">
-                <button class="tool-dot active" data-index="0" onclick="currentToolSlide(0)" aria-label="Slide 1"></button>
-                <button class="tool-dot" data-index="1" onclick="currentToolSlide(1)" aria-label="Slide 2"></button>
-                <button class="tool-dot" data-index="2" onclick="currentToolSlide(2)" aria-label="Slide 3"></button>
-                <button class="tool-dot" data-index="3" onclick="currentToolSlide(3)" aria-label="Slide 4"></button>
+            <div class="case-dots">
+                <button class="case-dot active" data-index="0" onclick="currentCaseSlide(0)" aria-label="Slide 1"></button>
+                <button class="case-dot" data-index="1" onclick="currentCaseSlide(1)" aria-label="Slide 2"></button>
+                <button class="case-dot" data-index="2" onclick="currentCaseSlide(2)" aria-label="Slide 3"></button>
+                <button class="case-dot" data-index="3" onclick="currentCaseSlide(3)" aria-label="Slide 4"></button>
+                <button class="case-dot" data-index="4" onclick="currentCaseSlide(4)" aria-label="Slide 5"></button>
             </div>
         </section>
 

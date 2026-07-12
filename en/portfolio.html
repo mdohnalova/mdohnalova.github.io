@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martina | Projects — AI lab & portfolio</title>
+    <title>Martina | Portfolio — digital products and UX studies</title>
     <style>
         :root {
             --bg-color: #fcfbfa;
@@ -1074,11 +1074,10 @@
         <a href="index.html" class="logo">Martina .</a>
         <div class="header-right">
             <nav id="mainNav">
-                <a href="projects.html">Projects</a>
-                <a href="about.html">About</a>
+                <a href="portfolio.html">Portfolio</a>
                 <a href="contact.html">Contact</a>
             </nav>
-            <a href="../projekty.html" class="lang-switcher">CZ</a>
+            <a href="../portfolio.html" class="lang-switcher">CZ</a>
             <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
                 <span></span><span></span><span></span>
             </button>
@@ -1086,137 +1085,167 @@
     </header>
 
     <main>
-        <section id="nastroje" class="tools-section">
-            <span class="lab-badge">PROJECTS &amp; DEVELOPMENT</span>
-            <h2>My Internal AI Laboratory</h2>
-            <p class="sekce-laborator-podnadpis" style="color: #444; max-width: 700px;">
-                Demos of systems and automations I built for my own efficiency, saving me hours of work every day.
-                <button type="button" class="info-icon-btn" id="archNoteToggle" aria-expanded="false" aria-controls="archNoteWrapper" aria-label="Architecture note">i</button>
-            </p>
-            <div class="arch-note-wrapper" id="archNoteWrapper">
-                <div class="arch-note-wrapper-inner">
-                    <p style="margin-top: 1rem; padding: 1rem 1.2rem; border-left: 3px solid #7A9A82; background: #f6f3f0; border-radius: 0 8px 8px 0; color: #3f3d3b; max-width: 950px;">
-                        💡 Architecture note: The apps shown here are functional proof-of-concept demos built on sample data, not real client data. They demonstrate the underlying principles and architecture — AI output validation, prompt-injection protection, GDPR anonymization — that I would build on for larger solutions, including integration with company systems like an ERP, if a specific project required it.
-                    </p>
-                </div>
-            </div>
-
+        <section id="ukazka-prace" class="case-studies-section">
+            <span class="lab-badge">PORTFOLIO</span>
+            <h2>Digital Products Built for Conversion and UX</h2>
+            <p class="subheading">From launching my own e-shop from scratch to detailed concept studies. I connect a clean visual identity with functional information architecture.</p>
             <div class="tools-slider-wrapper">
-                <button class="slider-arrow slider-arrow-prev" onclick="moveSlider(-1)" aria-label="Previous project">&#8249;</button>
-                <button class="slider-arrow slider-arrow-next" onclick="moveSlider(1)" aria-label="Next project">&#8250;</button>
+                <button class="slider-arrow slider-arrow-prev" onclick="moveCaseSlider(-1)" aria-label="Previous case study">&#8249;</button>
+                <button class="slider-arrow slider-arrow-next" onclick="moveCaseSlider(1)" aria-label="Next case study">&#8250;</button>
                 <div class="tools-slider">
-                <div class="tools-slider-track" id="toolsSliderTrack">
-                    <article class="tool-slide project-card">
-                        <div class="tool-copy project-content">
-                            <h3>Efficient Logistics System (ELS)</h3>
-                            <p class="subtitle">Tracks shipment status in real time and flags a problem before it turns into a lost order.</p>
-                            <div class="card-problem">
-                                <span class="card-label">Problem</span>
-                                <p>A customer never picks up their package, or a carrier reports damage — and the business only finds out once the customer starts complaining. Nobody has time to manually check hundreds of shipments for what's at risk.</p>
-                            </div>
-                            <div class="card-solution">
-                                <span class="card-label">Solution</span>
-                                <p>I built a dashboard that watches every shipment's status for me. When a package sits at a pickup point too long, it prepares a discount-code reminder automatically. When a carrier reports damage, one click sets up a replacement shipment and an apology discount — and nothing goes out until I approve it myself.</p>
-                            </div>
-                            <p class="project-note">Proof of concept built on sample shipment data — real carrier integration is still waiting for the right opportunity.</p>
-                            <span class="card-benefits-label">Key Benefits</span>
-                            <ul class="project-features">
-                                <li>🎯 Risky shipments show up in one queue, not scattered across carrier spreadsheets.</li>
-                                <li>🎟️ Reminder and apology codes are ready with a click, not typed by hand in Excel.</li>
-                                <li>📦 A damaged shipment and its customer apology are handled in seconds.</li>
-                                <li>✅ Nothing goes out without my approval — I stay in full control of customer communication.</li>
-                            </ul>
-                            <div class="tool-actions">
-                                <a href="https://ai-logistics-command-center-7pl2ctmvivxpmldjafhh3x.streamlit.app/" target="_blank" rel="noopener noreferrer" class="cta-btn">Open Live Demo (PoC)</a>
-                                <a href="https://github.com/mdohnalova/ai-logistics-command-center" target="_blank" rel="noopener noreferrer" class="outline-btn">View Code on GitHub</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="tool-slide project-card">
-                        <div class="tool-copy project-content">
-                            <h3>Data Cleaner</h3>
-                            <p class="subtitle">Cleans up nonsense in product names and generates description copy for me.</p>
-                            <div class="card-problem">
-                                <span class="card-label">Problem</span>
-                                <p>A product export from an old e-shop is full of marketing clutter — "#1 BEST SELLER!", discount percentages baked into the name, declined filler phrases. Manually rewriting hundreds of listings for the new platform would take days.</p>
-                            </div>
-                            <div class="card-solution">
-                                <span class="card-label">Solution</span>
-                                <p>The tool first mechanically strips symbols, ranking prefixes, and discount phrases from the name, then runs it through AI once more to catch what the rules missed — generating a sales description plus three SEO keywords along the way. Only the name and description ever reach the AI, never stock or price data.</p>
-                            </div>
-                            <span class="card-benefits-label">Key Benefits</span>
-                            <ul class="project-features">
-                                <li>🧹 Clutter disappears from product names automatically, no manual rewriting.</li>
-                                <li>✍️ A description and SEO keywords are ready in seconds per product.</li>
-                                <li>🔒 Only the name and description text reach the AI — sensitive data never leaves the sheet.</li>
-                                <li>📋 I can still fine-tune every result in a table before exporting.</li>
-                            </ul>
-                            <div class="tool-actions">
-                                <a href="https://ai-ecommerce-enricher-2vwepjcswpw9rkxmjnvugo.streamlit.app/" target="_blank" rel="noopener noreferrer" class="cta-btn">Open Live Demo (PoC)</a>
-                                <a href="https://github.com/mdohnalova/ai-ecommerce-enricher" target="_blank" rel="noopener noreferrer" class="outline-btn">View Code on GitHub</a>
+                    <div class="tools-slider-track" id="caseSliderTrack">
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">E-commerce</span>
+                                        <span class="case-status live">🟢 Live e-shop</span>
+                                    </div>
+                                    <h3>Lucky Skorts</h3>
+                                    <div class="card-problem">
+                                        <span class="card-label">Brief</span>
+                                        <p>Build a standalone e-commerce brand and launch a conversion-focused e-shop from scratch – from buying the domain through logistics to the first order.</p>
+                                    </div>
+                                    <div class="card-solution">
+                                        <span class="card-label">Solution</span>
+                                        <p>A fully functional e-shop with a clean checkout flow, an optimized mobile experience, and a clear structure that removes friction between the cart and payment.</p>
+                                    </div>
+                                    <span class="card-benefits-label">Key Benefits</span>
+                                    <ul class="project-features">
+                                        <li>🛒 Optimized checkout flow for maximum conversion rate.</li>
+                                        <li>📱 Fully responsive, mobile-first shopping experience.</li>
+                                        <li>⚡ Fast load times and a clean product hierarchy.</li>
+                                    </ul>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="../foto/luckyskorts-1.png" alt="Lucky Skorts – e-shop homepage">
+                                </div>
                             </div>
                         </div>
-                    </article>
-                    <article class="tool-slide project-card">
-                        <div class="tool-copy project-content">
-                            <h3>Hungarian Mail</h3>
-                            <p class="subtitle">Helps me understand Hungarian emails and reply in Hungarian, even though I don't speak the language.</p>
-                            <div class="card-problem">
-                                <span class="card-label">Problem</span>
-                                <p>I don't speak Hungarian, but orders from Hungary still come in. Hiring a native speaker just for occasional email traffic isn't worth it, and translating sentence by sentence in Google Translate is slow and unreliable.</p>
-                            </div>
-                            <div class="card-solution">
-                                <span class="card-label">Solution</span>
-                                <p>I paste in the Hungarian email, the app translates it, and AI drafts a Czech reply along with a read on the message's tone (formal, urgent, friendly, complaint). I can tweak the reply or regenerate it in a different tone, and once I'm happy with it, I translate it back into Hungarian — nothing sends automatically, I just copy it into my email.</p>
-                            </div>
-                            <span class="card-benefits-label">Key Benefits</span>
-                            <ul class="project-features">
-                                <li>🇭🇺 I understand a Hungarian email instantly, no dictionary and no native speaker needed.</li>
-                                <li>🎛️ I can have the reply drafted in whatever tone fits the situation.</li>
-                                <li>✍️ I always edit the final text myself before sending — AI only prepares the draft.</li>
-                                <li>📤 The finished Hungarian reply copies straight into my email in a couple of clicks.</li>
-                            </ul>
-                            <div class="tool-actions">
-                                <a href="https://magyar-mail-automation.vercel.app" target="_blank" rel="noopener noreferrer" class="cta-btn">Open Live Demo (PoC)</a>
-                                <a href="https://github.com/mdohnalova/magyar-mail-automation" target="_blank" rel="noopener noreferrer" class="outline-btn">View Code on GitHub</a>
-                            </div>
-                            <p class="project-note">The live demo is protected by an access code (to protect the API budget) — get in touch and I'll send it over.</p>
-                        </div>
-                    </article>
-                    <article class="tool-slide project-card">
-                        <div class="tool-copy project-content">
-                            <h3>Customer Support Sidekick</h3>
-                            <p class="subtitle">🚧 Still in the works.</p>
-                            <div class="card-problem">
-                                <span class="card-label">Problem</span>
-                                <p>Support gets dozens of messages a day and has to manually figure out what's an urgent complaint versus a routine stock question, and what tone to reply in. Without a system, an angry customer can end up waiting in the same queue as a routine question.</p>
-                            </div>
-                            <div class="card-solution">
-                                <span class="card-label">Solution</span>
-                                <p>AI sorts every incoming message by type, priority, and customer mood, and drafts a reply right away. The operator sees a clear, priority-sorted queue, picks a ticket, edits the suggested reply, and only then sends it.</p>
-                            </div>
-                            <span class="card-benefits-label">Key Benefits</span>
-                            <ul class="project-features">
-                                <li>🎯 Every message is automatically categorized by type and priority, no manual sorting.</li>
-                                <li>🚨 An angry customer or urgent complaint doesn't get lost among routine questions.</li>
-                                <li>✍️ A reply draft is ready to go — I just fine-tune it and send.</li>
-                                <li>📊 Processing speed and customer sentiment are visible in one place.</li>
-                            </ul>
-                            <div class="tool-actions">
-                                <a href="https://github.com/mdohnalova/helpdesk-copilot" target="_blank" rel="noopener noreferrer" class="outline-btn">View Code on GitHub</a>
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">Travel Guide</span>
+                                        <span class="case-status dev">🚧 In development</span>
+                                    </div>
+                                    <h3>Autem do Chorvatska</h3>
+                                    <div class="card-problem">
+                                        <span class="card-label">Brief</span>
+                                        <p>Build a high-value content portal optimized for affiliate marketing and partner conversions.</p>
+                                    </div>
+                                    <div class="card-solution">
+                                        <span class="card-label">Solution</span>
+                                        <p>A clear architecture that pulls together complex data (routes, accommodation, fees) into intuitive groups, with conversion elements woven in naturally.</p>
+                                    </div>
+                                    <span class="card-benefits-label">Key Benefits</span>
+                                    <ul class="project-features">
+                                        <li>🗺️ Content ordered strategically without overwhelming the reader.</li>
+                                        <li>💰 UX designed to naturally drive clicks to partner sales (accommodation, insurance).</li>
+                                        <li>🎨 An airy, modern design that builds instant trust.</li>
+                                    </ul>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="../foto/autemdochorvatska-1.jpg" alt="Autem do Chorvatska – homepage">
+                                </div>
                             </div>
                         </div>
-                    </article>
-                </div>
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">Gastronomy</span>
+                                        <span class="case-status concept">💡 Concept design</span>
+                                    </div>
+                                    <h3>Atelier 27</h3>
+                                    <div class="card-problem">
+                                        <span class="card-label">Self-directed UX concept</span>
+                                        <p>Design a premium web presence for a fine-dining restaurant that has to visually communicate a high level of service and exclusivity.</p>
+                                    </div>
+                                    <div class="card-solution">
+                                        <span class="card-label">Solution</span>
+                                        <p>A concept UI/UX study built on a dark, elegant atmosphere with a strong focus on quick, frictionless table booking.</p>
+                                    </div>
+                                    <span class="card-benefits-label">Key Elements</span>
+                                    <ul class="project-features">
+                                        <li>🍷 A dark, luxurious visual style that sells the experience before the visit.</li>
+                                        <li>📅 A booking flow designed mobile-first as the top priority.</li>
+                                        <li>🍽️ A clean, easy-to-read menu and tasting-evening structure.</li>
+                                    </ul>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="../foto/atelier27-1.jpg" alt="Atelier 27 – restaurant homepage">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">Public Administration</span>
+                                        <span class="case-status concept">💡 Concept design</span>
+                                    </div>
+                                    <h3>Horská Lhota</h3>
+                                    <div class="card-problem">
+                                        <span class="card-label">Self-directed UX concept</span>
+                                        <p>Transform a chaotic, hard-to-navigate municipal website into a modern platform that doesn't frustrate residents with bureaucratic language.</p>
+                                    </div>
+                                    <div class="card-solution">
+                                        <span class="card-label">Solution</span>
+                                        <p>A concept focused on quickly resolving the most common resident tasks and instant access to office hours and public announcements.</p>
+                                    </div>
+                                    <span class="card-benefits-label">Key Elements</span>
+                                    <ul class="project-features">
+                                        <li>🏛️ Information architecture built around resident needs (tasks solved in 2 clicks).</li>
+                                        <li>📢 A prominent, clear announcements and information center for the town.</li>
+                                        <li>🌿 A clean, welcoming visual style that supports local community life.</li>
+                                    </ul>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="../foto/horskalhota.jpg" alt="Horská Lhota – municipal website">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">Healthcare</span>
+                                        <span class="case-status concept">💡 Concept design</span>
+                                    </div>
+                                    <h3>Vltava Clinic</h3>
+                                    <div class="card-problem">
+                                        <span class="card-label">Self-directed UX concept</span>
+                                        <p>Create the digital face of a private medical clinic that combines professional expertise with a calm, human feel.</p>
+                                    </div>
+                                    <div class="card-solution">
+                                        <span class="card-label">Solution</span>
+                                        <p>A UI/UX study focused on maximum transparency (clear pricing, doctor profiles) and intuitive consultation booking.</p>
+                                    </div>
+                                    <span class="card-benefits-label">Key Elements</span>
+                                    <ul class="project-features">
+                                        <li>🩺 A clean, calming color palette that builds patient trust.</li>
+                                        <li>⏱️ Removed friction in booking (a clear call to action in a few clicks).</li>
+                                        <li>👩‍⚕️ A clear presentation of medical specializations and office hours.</li>
+                                    </ul>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="../foto/vltavaclinic.jpg" alt="Vltava Clinic – clinic homepage">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="tools-dots">
-                <button class="tool-dot active" data-index="0" onclick="currentToolSlide(0)" aria-label="Slide 1"></button>
-                <button class="tool-dot" data-index="1" onclick="currentToolSlide(1)" aria-label="Slide 2"></button>
-                <button class="tool-dot" data-index="2" onclick="currentToolSlide(2)" aria-label="Slide 3"></button>
-                <button class="tool-dot" data-index="3" onclick="currentToolSlide(3)" aria-label="Slide 4"></button>
+            <div class="case-dots">
+                <button class="case-dot active" data-index="0" onclick="currentCaseSlide(0)" aria-label="Slide 1"></button>
+                <button class="case-dot" data-index="1" onclick="currentCaseSlide(1)" aria-label="Slide 2"></button>
+                <button class="case-dot" data-index="2" onclick="currentCaseSlide(2)" aria-label="Slide 3"></button>
+                <button class="case-dot" data-index="3" onclick="currentCaseSlide(3)" aria-label="Slide 4"></button>
+                <button class="case-dot" data-index="4" onclick="currentCaseSlide(4)" aria-label="Slide 5"></button>
             </div>
         </section>
+
     </main>
 
     <footer>
