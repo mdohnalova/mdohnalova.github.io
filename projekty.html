@@ -1021,6 +1021,15 @@
         /* Projekty - story odstavec u AI Logistics karty + poznamka pod tlacitky */
         .project-story { background: #f6f3f0; border-left: 3px solid var(--accent-color); padding: 1rem 1.2rem; border-radius: 0 8px 8px 0; margin-bottom: 1.3rem; font-size: 0.92rem; line-height: 1.6; color: #3f3d3b; }
         .project-note { font-size: 0.85rem; color: #7f7b78; margin-top: 0.8rem; }
+        .card-label { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.4rem; }
+        .card-problem, .card-solution { padding: 0.9rem 1.1rem; border-radius: 0 8px 8px 0; margin-bottom: 1rem; }
+        .card-problem { background: #fdf5f2; border-left: 3px solid #e06c53; }
+        .card-problem .card-label { color: #c2462d; }
+        .card-problem p { margin: 0; font-size: 0.92rem; line-height: 1.55; color: #4a3a37; }
+        .card-solution { background: #f2f7f3; border-left: 3px solid #7A9A82; }
+        .card-solution .card-label { color: #4a7a58; }
+        .card-solution p { margin: 0; font-size: 0.92rem; line-height: 1.55; color: #3a453d; }
+        .card-benefits-label { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #8a8580; margin-bottom: 0.7rem; }
         .info-icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid #7A9A82; background: #fff; color: #7A9A82; font-size: 0.8rem; font-weight: 700; font-style: italic; font-family: Georgia, serif; cursor: pointer; vertical-align: middle; margin-left: 0.5rem; padding: 0; line-height: 1; transition: background 0.2s ease, color 0.2s ease; }
         .info-icon-btn:hover { background: #7A9A82; color: #fff; }
         .info-icon-btn:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 2px; }
@@ -1101,11 +1110,21 @@
                         <div class="tool-copy project-content">
                             <h3>Systém efektivní logistiky (SEL)</h3>
                             <p class="subtitle">Sleduje stav zásilek v reálném čase a upozorní mě na problém dřív, než se z něj stane ztracená objednávka.</p>
+                            <div class="card-problem">
+                                <span class="card-label">Problém</span>
+                                <p>Zákazník si nevyzvedne balíček, nebo dopravce nahlásí poškození — a firma se to dozví, až si zákazník začne stěžovat. Nikdo nemá čas ručně hlídat stovky zásilek, jestli u některé něco nehrozí.</p>
+                            </div>
+                            <div class="card-solution">
+                                <span class="card-label">Řešení</span>
+                                <p>Postavila jsem dashboard, který hlídá stav všech zásilek za mě. Když balíček leží na výdejně moc dlouho, systém sám připraví slevový kód na připomínku. Když dopravce nahlásí poškození, jedním kliknutím založím náhradní zásilku i omluvnou slevu — a nic se neodešle, dokud to sama neschválím.</p>
+                            </div>
                             <p class="project-note">Proof of concept na vzorových datech zásilek — napojení na reálného dopravce zatím čeká na příležitost.</p>
+                            <span class="card-benefits-label">Klíčové přínosy</span>
                             <ul class="project-features">
-                                <li>🎯 Včas odhalím rizikové objednávky.</li>
-                                <li>💰 Mám přehled o potenciálních ztrátách.</li>
-                                <li>📢 Automatizuji notifikace pro zákazníky při riziku vratky nebo poškození.</li>
+                                <li>🎯 Rizikové zásilky vidím na první pohled, ne rozeseté v tabulkách dopravců.</li>
+                                <li>🎟️ Připomínkový i omluvný kód mám hotový na klik, ne ručně v Excelu.</li>
+                                <li>📦 Poškozenou zásilku i omluvu zákazníkovi vyřídím za pár vteřin.</li>
+                                <li>✅ Nic neodejde bez mého schválení — komunikaci se zákazníkem mám plně pod kontrolou.</li>
                             </ul>
                             <div class="tool-actions">
                                 <a href="https://ai-logistics-command-center-7pl2ctmvivxpmldjafhh3x.streamlit.app/" target="_blank" rel="noopener noreferrer" class="cta-btn">Otevřít živé demo (PoC)</a>
@@ -1117,10 +1136,20 @@
                         <div class="tool-copy project-content">
                             <h3>Čistič dat</h3>
                             <p class="subtitle">Čistí mi názvy produktů od nesmyslů a generuje texty popisků.</p>
+                            <div class="card-problem">
+                                <span class="card-label">Problém</span>
+                                <p>Export produktů ze starého e-shopu je plný marketingového balastu — "#1 PRODEJ!", slevové procenta přímo v názvu, prokloněné výplňové fráze. Ruční přepis stovek položek do nového systému by zabral dny.</p>
+                            </div>
+                            <div class="card-solution">
+                                <span class="card-label">Řešení</span>
+                                <p>Nástroj nejdřív mechanicky vyčistí název od symbolů, pořadí a slevových frází, pak ho ještě jednou projede AI, která dohledá zbylé nesrovnalosti a k tomu vygeneruje prodejní popisek a tři klíčová slova pro SEO. Do AI jde jen název a popis, nikdy skladové nebo cenové údaje.</p>
+                            </div>
+                            <span class="card-benefits-label">Klíčové přínosy</span>
                             <ul class="project-features">
-                                <li>🧹 Vyčistím balast a nečistá data skoro automaticky.</li>
-                                <li>✍️ Vygeneruji popisky a SEO texty během několika sekund.</li>
-                                <li>🔍 Mám připravená klíčová slova pro okamžité použití.</li>
+                                <li>🧹 Balast z názvů zmizí automaticky, bez ručního přepisování.</li>
+                                <li>✍️ Popisek a SEO klíčová slova mám hotové za pár vteřin na produkt.</li>
+                                <li>🔒 Do AI putuje jen text názvu a popisu — citlivá data se nikam neposílají.</li>
+                                <li>📋 Výsledky si před exportem ještě upravím v tabulce.</li>
                             </ul>
                             <div class="tool-actions">
                                 <a href="https://ai-ecommerce-enricher-2vwepjcswpw9rkxmjnvugo.streamlit.app/" target="_blank" rel="noopener noreferrer" class="cta-btn">Otevřít živé demo (PoC)</a>
@@ -1131,11 +1160,21 @@
                     <article class="tool-slide project-card">
                         <div class="tool-copy project-content">
                             <h3>Maďarské maily</h3>
-                            <p class="subtitle">Pomáhá mi s vyřizováním e-mailové komunikace, a to nejen v maďarštině.</p>
+                            <p class="subtitle">Pomáhá mi rozumět maďarským e-mailům a odpovídat na ně v maďarštině, i když maďarsky neumím.</p>
+                            <div class="card-problem">
+                                <span class="card-label">Problém</span>
+                                <p>Maďarsky neumím, ale objednávky ze zahraničí chodí i odtud. Najmout rodilého mluvčího jen na občasnou e-mailovou komunikaci se nevyplatí, a googlování překladů věta po větě je pomalé a nespolehlivé.</p>
+                            </div>
+                            <div class="card-solution">
+                                <span class="card-label">Řešení</span>
+                                <p>Vložím maďarský e-mail, systém ho přeloží a AI mi navrhne odpověď česky i s odhadem tónu zprávy (formální, naléhavá, přátelská, stížnost). Odpověď si podle potřeby upravím a nechám přegenerovat v jiném tónu, a až jsem spokojená, nechám ji přeložit zpět do maďarštiny — nic se neodešle automaticky, jen si ji zkopíruju do e-mailu.</p>
+                            </div>
+                            <span class="card-benefits-label">Klíčové přínosy</span>
                             <ul class="project-features">
-                                <li>🇭🇺 Přečtu si a shrnu každou zprávu hned v jednom místě.</li>
-                                <li>🎛️ Vytvářím odpovědi v různých tonech a šetřím si zdlouhavé přepisování.</li>
-                                <li>📧 Mám okamžitý přístup k odeslání zprávy do e-mailu.</li>
+                                <li>🇭🇺 Maďarskému e-mailu rozumím okamžitě, bez slovníku a bez rodilého mluvčího.</li>
+                                <li>🎛️ Odpověď si nechám navrhnout v tónu, který sedí k situaci.</li>
+                                <li>✍️ Finální text si vždycky sama upravím, než ho pošlu — AI mi jen připraví návrh.</li>
+                                <li>📤 Hotovou maďarskou odpověď zkopíruju rovnou do e-mailu na pár kliknutí.</li>
                             </ul>
                             <div class="tool-actions">
                                 <a href="https://magyar-mail-automation.vercel.app" target="_blank" rel="noopener noreferrer" class="cta-btn">Otevřít živé demo (PoC)</a>
@@ -1148,10 +1187,20 @@
                         <div class="tool-copy project-content">
                             <h3>Parťák na zákaznickou linku</h3>
                             <p class="subtitle">🚧 Zatím ve výrobě.</p>
+                            <div class="card-problem">
+                                <span class="card-label">Problém</span>
+                                <p>Podpora dostává desítky zpráv denně a musí ručně poznat, co je urgentní stížnost, co je jen dotaz na skladovost, a v jakém tónu na to odpovědět. Bez systému se snadno stane, že rozzlobený zákazník čeká ve frontě stejně dlouho jako běžný dotaz.</p>
+                            </div>
+                            <div class="card-solution">
+                                <span class="card-label">Řešení</span>
+                                <p>AI každou příchozí zprávu roztřídí podle typu, priority a nálady zákazníka a rovnou navrhne odpověď. Operátor pak vidí přehlednou frontu seřazenou podle priority, může si vybrat tiket, upravit navrženou odpověď a teprve pak ji odeslat.</p>
+                            </div>
+                            <span class="card-benefits-label">Klíčové přínosy</span>
                             <ul class="project-features">
-                                <li>🎯 Cíl: zpracovat příchozí zprávy během pár sekund.</li>
-                                <li>🚨 Cíl: rychleji odhalit kritické tikety.</li>
-                                <li>💼 Cíl: konzistentní tón komunikace napříč týmem.</li>
+                                <li>🎯 Každá zpráva je automaticky zařazená podle typu i priority, bez ručního třídění.</li>
+                                <li>🚨 Naštvaný zákazník nebo urgentní stížnost se neztratí mezi běžnými dotazy.</li>
+                                <li>✍️ Odpověď mám hotovou jako návrh, jen ji doladím a odešlu.</li>
+                                <li>📊 Přehled o rychlosti zpracování a náladě zákazníků mám na jednom místě.</li>
                             </ul>
                             <div class="tool-actions">
                                 <a href="https://github.com/mdohnalova/helpdesk-copilot" target="_blank" rel="noopener noreferrer" class="outline-btn">Prohlédnout kód na GitHubu</a>

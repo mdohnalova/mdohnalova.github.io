@@ -1021,6 +1021,15 @@
         /* Projekty - story odstavec u AI Logistics karty + poznamka pod tlacitky */
         .project-story { background: #f6f3f0; border-left: 3px solid var(--accent-color); padding: 1rem 1.2rem; border-radius: 0 8px 8px 0; margin-bottom: 1.3rem; font-size: 0.92rem; line-height: 1.6; color: #3f3d3b; }
         .project-note { font-size: 0.85rem; color: #7f7b78; margin-top: 0.8rem; }
+        .card-label { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.4rem; }
+        .card-problem, .card-solution { padding: 0.9rem 1.1rem; border-radius: 0 8px 8px 0; margin-bottom: 1rem; }
+        .card-problem { background: #fdf5f2; border-left: 3px solid #e06c53; }
+        .card-problem .card-label { color: #c2462d; }
+        .card-problem p { margin: 0; font-size: 0.92rem; line-height: 1.55; color: #4a3a37; }
+        .card-solution { background: #f2f7f3; border-left: 3px solid #7A9A82; }
+        .card-solution .card-label { color: #4a7a58; }
+        .card-solution p { margin: 0; font-size: 0.92rem; line-height: 1.55; color: #3a453d; }
+        .card-benefits-label { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #8a8580; margin-bottom: 0.7rem; }
         .info-icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid #7A9A82; background: #fff; color: #7A9A82; font-size: 0.8rem; font-weight: 700; font-style: italic; font-family: Georgia, serif; cursor: pointer; vertical-align: middle; margin-left: 0.5rem; padding: 0; line-height: 1; transition: background 0.2s ease, color 0.2s ease; }
         .info-icon-btn:hover { background: #7A9A82; color: #fff; }
         .info-icon-btn:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 2px; }
@@ -1101,11 +1110,21 @@
                         <div class="tool-copy project-content">
                             <h3>Efficient Logistics System (ELS)</h3>
                             <p class="subtitle">Tracks shipment status in real time and flags a problem before it turns into a lost order.</p>
+                            <div class="card-problem">
+                                <span class="card-label">Problem</span>
+                                <p>A customer never picks up their package, or a carrier reports damage — and the business only finds out once the customer starts complaining. Nobody has time to manually check hundreds of shipments for what's at risk.</p>
+                            </div>
+                            <div class="card-solution">
+                                <span class="card-label">Solution</span>
+                                <p>I built a dashboard that watches every shipment's status for me. When a package sits at a pickup point too long, it prepares a discount-code reminder automatically. When a carrier reports damage, one click sets up a replacement shipment and an apology discount — and nothing goes out until I approve it myself.</p>
+                            </div>
                             <p class="project-note">Proof of concept built on sample shipment data — real carrier integration is still waiting for the right opportunity.</p>
+                            <span class="card-benefits-label">Key Benefits</span>
                             <ul class="project-features">
-                                <li>🎯 Flags risky orders early.</li>
-                                <li>💰 Gives visibility into potential losses.</li>
-                                <li>📢 Automates customer notifications for return or damage risk.</li>
+                                <li>🎯 Risky shipments show up in one queue, not scattered across carrier spreadsheets.</li>
+                                <li>🎟️ Reminder and apology codes are ready with a click, not typed by hand in Excel.</li>
+                                <li>📦 A damaged shipment and its customer apology are handled in seconds.</li>
+                                <li>✅ Nothing goes out without my approval — I stay in full control of customer communication.</li>
                             </ul>
                             <div class="tool-actions">
                                 <a href="https://ai-logistics-command-center-7pl2ctmvivxpmldjafhh3x.streamlit.app/" target="_blank" rel="noopener noreferrer" class="cta-btn">Open Live Demo (PoC)</a>
@@ -1117,10 +1136,20 @@
                         <div class="tool-copy project-content">
                             <h3>Data Cleaner</h3>
                             <p class="subtitle">Cleans up nonsense in product names and generates description copy for me.</p>
+                            <div class="card-problem">
+                                <span class="card-label">Problem</span>
+                                <p>A product export from an old e-shop is full of marketing clutter — "#1 BEST SELLER!", discount percentages baked into the name, declined filler phrases. Manually rewriting hundreds of listings for the new platform would take days.</p>
+                            </div>
+                            <div class="card-solution">
+                                <span class="card-label">Solution</span>
+                                <p>The tool first mechanically strips symbols, ranking prefixes, and discount phrases from the name, then runs it through AI once more to catch what the rules missed — generating a sales description plus three SEO keywords along the way. Only the name and description ever reach the AI, never stock or price data.</p>
+                            </div>
+                            <span class="card-benefits-label">Key Benefits</span>
                             <ul class="project-features">
-                                <li>🧹 Cleans up clutter and messy data almost automatically.</li>
-                                <li>✍️ Generates descriptions and SEO copy in seconds.</li>
-                                <li>🔍 Has keywords ready for immediate use.</li>
+                                <li>🧹 Clutter disappears from product names automatically, no manual rewriting.</li>
+                                <li>✍️ A description and SEO keywords are ready in seconds per product.</li>
+                                <li>🔒 Only the name and description text reach the AI — sensitive data never leaves the sheet.</li>
+                                <li>📋 I can still fine-tune every result in a table before exporting.</li>
                             </ul>
                             <div class="tool-actions">
                                 <a href="https://ai-ecommerce-enricher-2vwepjcswpw9rkxmjnvugo.streamlit.app/" target="_blank" rel="noopener noreferrer" class="cta-btn">Open Live Demo (PoC)</a>
@@ -1131,11 +1160,21 @@
                     <article class="tool-slide project-card">
                         <div class="tool-copy project-content">
                             <h3>Hungarian Mail</h3>
-                            <p class="subtitle">Helps me handle email communication — not just in Hungarian.</p>
+                            <p class="subtitle">Helps me understand Hungarian emails and reply in Hungarian, even though I don't speak the language.</p>
+                            <div class="card-problem">
+                                <span class="card-label">Problem</span>
+                                <p>I don't speak Hungarian, but orders from Hungary still come in. Hiring a native speaker just for occasional email traffic isn't worth it, and translating sentence by sentence in Google Translate is slow and unreliable.</p>
+                            </div>
+                            <div class="card-solution">
+                                <span class="card-label">Solution</span>
+                                <p>I paste in the Hungarian email, the app translates it, and AI drafts a Czech reply along with a read on the message's tone (formal, urgent, friendly, complaint). I can tweak the reply or regenerate it in a different tone, and once I'm happy with it, I translate it back into Hungarian — nothing sends automatically, I just copy it into my email.</p>
+                            </div>
+                            <span class="card-benefits-label">Key Benefits</span>
                             <ul class="project-features">
-                                <li>🇭🇺 Reads and summarizes every message in one place.</li>
-                                <li>🎛️ Drafts replies in different tones, saving tedious rewriting.</li>
-                                <li>📧 Instant access to send the message by email.</li>
+                                <li>🇭🇺 I understand a Hungarian email instantly, no dictionary and no native speaker needed.</li>
+                                <li>🎛️ I can have the reply drafted in whatever tone fits the situation.</li>
+                                <li>✍️ I always edit the final text myself before sending — AI only prepares the draft.</li>
+                                <li>📤 The finished Hungarian reply copies straight into my email in a couple of clicks.</li>
                             </ul>
                             <div class="tool-actions">
                                 <a href="https://magyar-mail-automation.vercel.app" target="_blank" rel="noopener noreferrer" class="cta-btn">Open Live Demo (PoC)</a>
@@ -1148,10 +1187,20 @@
                         <div class="tool-copy project-content">
                             <h3>Customer Support Sidekick</h3>
                             <p class="subtitle">🚧 Still in the works.</p>
+                            <div class="card-problem">
+                                <span class="card-label">Problem</span>
+                                <p>Support gets dozens of messages a day and has to manually figure out what's an urgent complaint versus a routine stock question, and what tone to reply in. Without a system, an angry customer can end up waiting in the same queue as a routine question.</p>
+                            </div>
+                            <div class="card-solution">
+                                <span class="card-label">Solution</span>
+                                <p>AI sorts every incoming message by type, priority, and customer mood, and drafts a reply right away. The operator sees a clear, priority-sorted queue, picks a ticket, edits the suggested reply, and only then sends it.</p>
+                            </div>
+                            <span class="card-benefits-label">Key Benefits</span>
                             <ul class="project-features">
-                                <li>🎯 Goal: process incoming messages within seconds.</li>
-                                <li>🚨 Goal: detect critical tickets faster.</li>
-                                <li>💼 Goal: consistent tone of communication across the team.</li>
+                                <li>🎯 Every message is automatically categorized by type and priority, no manual sorting.</li>
+                                <li>🚨 An angry customer or urgent complaint doesn't get lost among routine questions.</li>
+                                <li>✍️ A reply draft is ready to go — I just fine-tune it and send.</li>
+                                <li>📊 Processing speed and customer sentiment are visible in one place.</li>
                             </ul>
                             <div class="tool-actions">
                                 <a href="https://github.com/mdohnalova/helpdesk-copilot" target="_blank" rel="noopener noreferrer" class="outline-btn">View Code on GitHub</a>
