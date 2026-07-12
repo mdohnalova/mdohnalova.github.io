@@ -976,7 +976,7 @@
         .case-studies-section h2 { font-size: 2rem; font-weight: 400; margin-bottom: 0.35rem; }
         .case-studies-section .subheading { color: #444; max-width: 700px; margin-top: 0.6rem; margin-bottom: 2rem; }
         .case-slide { flex: 0 0 100%; }
-        .case-slide-inner { display: flex; align-items: stretch; height: 420px; border-radius: 14px; overflow: hidden; border: 1px solid #e8e4e0; background: #fff; }
+        .case-slide-inner { display: flex; align-items: stretch; min-height: 420px; border-radius: 14px; overflow: hidden; border: 1px solid #e8e4e0; background: #fff; }
         .case-slide-text { flex: 0 0 42%; max-width: 42%; display: flex; flex-direction: column; justify-content: center; padding: 2.5rem 2.2rem; background: #fff; }
         .case-slide-photo { flex: 1; min-width: 0; background: #f6f3f0; display: flex; align-items: center; justify-content: center; overflow: hidden; }
         .case-slide-photo img { width: 100%; height: 100%; object-fit: contain; display: block; }
@@ -1004,18 +1004,28 @@
         .hero-links a { color: var(--accent-color); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(169,93,69,0.35); padding-bottom: 1px; }
         .hero-links a:hover { border-bottom-color: var(--accent-color); }
 
-        /* Proc prave ja - homepage */
-        .why-me-section { margin-top: 4rem; }
-        .why-me-section h2 { font-size: 2rem; font-weight: 600; max-width: 780px; margin-bottom: 0.5rem; }
-        .why-me-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
-        @media (max-width: 900px) { .why-me-grid { grid-template-columns: 1fr; } }
-
         /* Tech stack - homepage */
         .tech-stack-section { margin-top: 4rem; }
         .tech-stack-section h2 { font-size: 2rem; font-weight: 400; margin: 0.5rem 0 0.5rem; }
-        .tech-stack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 3rem; margin-top: 2rem; }
-        .tech-stack-group h3 { font-size: 1rem; font-weight: 700; color: var(--accent-color); margin-bottom: 0.9rem; text-transform: uppercase; letter-spacing: 0.04em; }
+        .tech-stack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem 3rem; margin-top: 2rem; }
+        .tech-stack-group h3 { font-size: 1rem; font-weight: 700; color: var(--accent-color); margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.04em; }
+        .tech-stack-group-note { font-size: 0.85rem; color: #8a8580; margin-bottom: 1rem; }
+        .tech-item-list { display: flex; flex-direction: column; gap: 0.9rem; }
+        .tech-item { background: #fff; border: 1px solid #e8e4e0; border-radius: 10px; padding: 0.9rem 1.1rem; }
+        .tech-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; color: #2c2a29; }
+        .tech-item p { font-size: 0.87rem; color: #555; line-height: 1.5; margin: 0; }
         @media (max-width: 700px) { .tech-stack-grid { grid-template-columns: 1fr; } }
+
+        /* Problem/Reseni bloky - Portfolio karty */
+        .card-label { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.4rem; }
+        .card-problem, .card-solution { padding: 0.9rem 1.1rem; border-radius: 0 8px 8px 0; margin-bottom: 1rem; }
+        .card-problem { background: #fdf5f2; border-left: 3px solid #e06c53; }
+        .card-problem .card-label { color: #c2462d; }
+        .card-problem p { margin: 0; font-size: 0.92rem; line-height: 1.55; color: #4a3a37; }
+        .card-solution { background: #f2f7f3; border-left: 3px solid #7A9A82; }
+        .card-solution .card-label { color: #4a7a58; }
+        .card-solution p { margin: 0; font-size: 0.92rem; line-height: 1.55; color: #3a453d; }
+        .card-benefits-label { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #8a8580; margin-bottom: 0.7rem; }
 
         /* AI nastroje - O me */
         .ai-tools-section { margin-top: 4rem; }
@@ -1087,37 +1097,16 @@
         <!-- HERO SEKCE (DVOU-SLOUPCOVÁ S MINIMALISTICKOU AI NEURONOVOU SÍTÍ) -->
         <section class="hero-container">
             <div class="hero">
-                <h1>Od nápadu po kód. Pomocí AI.</h1>
-                <p>Stavím funkční automatizace a nástroje pro e-commerce. Spojuju marketingové myšlení s moderním AI-assisted vývojem (vibecoding) — pomocí velkých jazykových modelů a AI vývojářských agentů rychle navrhnu, naprogramuju a nasadím aplikace, které e-shopům hned usnadní práci s daty, logistikou nebo zákaznickou podporou.</p>
+                <h1>Šetřím váš čas, kapacitu a peníze.</h1>
+                <div class="subtitle-typewriter">
+                    Navrhuji a kóduji pro vás <span class="typewriter" id="typewriter-text"></span>
+                </div>
+                <p>Propojuji e-commerce myšlení s moderním AI-assisted vývojem. Hledám příležitost v týmu, kde mohu stavět interní mikro systémy a automatizace, které firmám usnadní práci s daty, logistikou nebo zákaznickou podporou.</p>
             </div>
 
             <!-- MINIMALISTICKÁ REAKTIVNÍ ANIMACE -->
             <div class="hero-animation-wrapper">
                 <canvas id="ai-canvas"></canvas>
-            </div>
-        </section>
-
-        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0;">
-
-        <!-- PROČ PRÁVĚ JÁ -->
-        <section class="why-me-section">
-            <h2>Mám byznysové zadání — a díky AI si k němu sama napíšu kód.</h2>
-            <div class="why-me-grid">
-                <div class="service-card">
-                    <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" /></svg></div>
-                    <h3>AI jako akcelerátor</h3>
-                    <p>Nečekám na vývojářský tým. Vezmu Claude Code, Lovable nebo VS Code a postavím funkční prototyp (PoC) v řádu dní.</p>
-                </div>
-                <div class="service-card">
-                    <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h2l2.4 12.4a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.6L21 8H6" /><circle cx="9" cy="20" r="1" /><circle cx="18" cy="20" r="1" /></svg></div>
-                    <h3>Zkušenost z e-commerce praxe</h3>
-                    <p>Vím, jak v praxi bolí špatná produktová data, ruční přepisování e-mailů ze zahraničních trhů nebo chaos v logistice — protože jsem to sama řešila. Navrhuji řešení pro problémy, které znám zevnitř.</p>
-                </div>
-                <div class="service-card">
-                    <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5l-8-3z" /></svg></div>
-                    <h3>Důraz na bezpečné nasazení</h3>
-                    <p>Kóduji s pomocí AI, ale architekturu si hlídám sama: validace dat přes Pydantic, anonymizace citlivých údajů, ochrana proti prompt injection.</p>
-                </div>
             </div>
         </section>
 
@@ -1129,36 +1118,71 @@
             <h2>Tech stack</h2>
             <div class="tech-stack-grid">
                 <div class="tech-stack-group">
-                    <h3>AI vývoj</h3>
-                    <div class="ai-tools-grid">
-                        <div class="ai-tool-chip">Claude Code</div>
-                        <div class="ai-tool-chip">GPT-4o</div>
-                        <div class="ai-tool-chip">Lovable.com</div>
-                        <div class="ai-tool-chip">Cursor / VS Code</div>
+                    <h3>AI-Assisted vývoj</h3>
+                    <p class="tech-stack-group-note">Nástroje pro efektivitu</p>
+                    <div class="tech-item-list">
+                        <div class="tech-item">
+                            <h4>Claude Code &amp; VS Code</h4>
+                            <p>Primární vývojové prostředí pro rychlé psaní čistého kódu.</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>LLM Chaty</h4>
+                            <p>Doplňkoví AI asistenti pro refaktorování a konzultaci architektury v reálném čase.</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Lovable.com</h4>
+                            <p>Rychlé prototypování plnohodnotných aplikací.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="tech-stack-group">
-                    <h3>Backend &amp; integrace</h3>
-                    <div class="ai-tools-grid">
-                        <div class="ai-tool-chip">Python (Streamlit, Pydantic, LLM API)</div>
-                        <div class="ai-tool-chip">Make (integrační scénáře)</div>
+                    <h3>Frontend &amp; e-commerce</h3>
+                    <p class="tech-stack-group-note">Kde se kód potkává s UX</p>
+                    <div class="tech-item-list">
+                        <div class="tech-item">
+                            <h4>JavaScript &amp; TypeScript</h4>
+                            <p>Stavební kameny mých webových aplikací.</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Next.js &amp; Vercel</h4>
+                            <p>Pro rychlé, bezpečné a skvěle optimalizované webové projekty.</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Shoptet</h4>
+                            <p>Úpravy a pokročilá customizace e-shopových šablon na míru.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="tech-stack-group">
-                    <h3>Frontend &amp; web</h3>
-                    <div class="ai-tools-grid">
-                        <div class="ai-tool-chip">JavaScript / TypeScript</div>
-                        <div class="ai-tool-chip">Next.js</div>
-                        <div class="ai-tool-chip">Vercel</div>
-                        <div class="ai-tool-chip">Shoptet (customizace šablon)</div>
+                    <h3>Backend &amp; data</h3>
+                    <p class="tech-stack-group-note">Logika a integrace</p>
+                    <div class="tech-item-list">
+                        <div class="tech-item">
+                            <h4>Python (Streamlit, Pydantic)</h4>
+                            <p>Rychlé budování datových a AI aplikací s čistým UI.</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Anthropic Claude &amp; Groq/Llama</h4>
+                            <p>LLM modely, které reálně nasazuji v kódu svých aplikací.</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Make.com</h4>
+                            <p>Nástroj pro automatizace – aktuálně se cíleně učím, zatím bez produkčního nasazení.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="tech-stack-group">
-                    <h3>Data &amp; bezpečnost</h3>
-                    <div class="ai-tools-grid">
-                        <div class="ai-tool-chip">GDPR anonymizační vrstvy</div>
-                        <div class="ai-tool-chip">Validace vstupů</div>
-                        <div class="ai-tool-chip">Ochrana proti prompt injection</div>
+                    <h3>Bezpečnost &amp; spolehlivost AI</h3>
+                    <p class="tech-stack-group-note">Produkční standardy</p>
+                    <div class="tech-item-list">
+                        <div class="tech-item">
+                            <h4>GDPR anonymizace</h4>
+                            <p>Filtrování a ochrana osobních dat před odesláním do LLM API.</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>LLM Guardrails</h4>
+                            <p>Ochrana proti prompt injection a validace AI vstupů/výstupů.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1166,21 +1190,165 @@
 
         <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0;">
 
-        <section class="story-section">
-            <div class="story-image">
-                <img src="foto/linkedin-profile.png" alt="Profilová fotka" />
-            </div>
-            <div class="story-copy">
-                <h2>Kódování očima marketéra</h2>
-                <div class="about-grid">
-                    <div class="about-card">
-                        <h3>Co si nesu do týmu</h3>
-                        <p>Umím rychle proměnit byznysové zadání ve funkční prototyp — ať jde o interní nástroj, automatizaci nebo webovou aplikaci. Rozumím byznysu i technické realizaci zároveň, takže nepotřebuju dlouhé zaškolování do kontextu.</p>
+        <!-- PORTFOLIO -->
+        <section id="portfolio" class="case-studies-section">
+            <span class="lab-badge">PORTFOLIO</span>
+            <h2>Digitální produkty s důrazem na konverzi a UX</h2>
+            <p class="subheading">Od kompletního spuštění vlastního e-shopu po detailní koncepční studie. Propojuji čistou vizuální identitu s funkční informační architekturou.</p>
+            <div class="tools-slider-wrapper">
+                <button class="slider-arrow slider-arrow-prev" onclick="moveCaseSlider(-1)" aria-label="Předchozí ukázka">&#8249;</button>
+                <button class="slider-arrow slider-arrow-next" onclick="moveCaseSlider(1)" aria-label="Další ukázka">&#8250;</button>
+                <div class="tools-slider">
+                    <div class="tools-slider-track" id="caseSliderTrack">
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">E-shop</span>
+                                        <span class="case-status live">🟢 Živý e-shop</span>
+                                    </div>
+                                    <h3>Lucky Skorts</h3>
+                                    <div class="card-problem">
+                                        <span class="card-label">Zadání</span>
+                                        <p>Vybudovat vlastní e-commerce značku a postavit konverzní e-shop na zelené louce – od nákupu domény přes logistiku až po první objednávku.</p>
+                                    </div>
+                                    <div class="card-solution">
+                                        <span class="card-label">Řešení</span>
+                                        <p>Plně funkční e-shop s čistým nákupním procesem, optimalizovanou mobilní verzí a přehlednou strukturou, která odbourává bariéry mezi košíkem a platbou.</p>
+                                    </div>
+                                    <span class="card-benefits-label">Klíčové přínosy</span>
+                                    <ul class="project-features">
+                                        <li>🛒 Optimalizovaný checkout proces pro maximální konverzní poměr.</li>
+                                        <li>📱 Plná responzivita s prioritou na mobile-first nakupování.</li>
+                                        <li>⚡ Rychlé načítání a čistá produktová hierarchie.</li>
+                                    </ul>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="foto/luckyskorts-1.png" alt="Lucky Skorts – úvodní stránka e-shopu">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">Cestovní průvodce</span>
+                                        <span class="case-status dev">🚧 Ve vývoji</span>
+                                    </div>
+                                    <h3>Autem do Chorvatska</h3>
+                                    <div class="card-problem">
+                                        <span class="card-label">Zadání</span>
+                                        <p>Vytvořit obsahový portál s vysokou informační hodnotou optimalizovaný pro affiliate marketing a partnerské konverze.</p>
+                                    </div>
+                                    <div class="card-solution">
+                                        <span class="card-label">Řešení</span>
+                                        <p>Přehledná architektura sdružující složitá data (trasy, ubytování, poplatky) do intuitivních celků s přirozeně integrovanými konverzními prvky.</p>
+                                    </div>
+                                    <span class="card-benefits-label">Klíčové přínosy</span>
+                                    <ul class="project-features">
+                                        <li>🗺️ Strategické řazení obsahu bez rizika informačního přesycení uživatele.</li>
+                                        <li>💰 UX navržené pro přirozený proklik na partnerské prodeje (ubytování, pojištění).</li>
+                                        <li>🎨 Vzdušný, moderní design budující okamžitou důvěryhodnost.</li>
+                                    </ul>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="foto/autemdochorvatska-1.jpg" alt="Autem do Chorvatska – úvodní stránka">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">Gastronomie</span>
+                                        <span class="case-status concept">💡 Koncepční návrh</span>
+                                    </div>
+                                    <h3>Atelier 27</h3>
+                                    <div class="card-problem">
+                                        <span class="card-label">Vlastní UX koncept</span>
+                                        <p>Navrhnout prémiovou webovou prezentaci pro zážitkovou restauraci, která musí vizuálně komunikovat vysokou úroveň služeb a exkluzivitu.</p>
+                                    </div>
+                                    <div class="card-solution">
+                                        <span class="card-label">Řešení</span>
+                                        <p>Koncepční UI/UX studie postavená na tmavé, elegantní atmosféře s vysokým důrazem na okamžitou a bezproblémovou rezervaci stolu.</p>
+                                    </div>
+                                    <span class="card-benefits-label">Hlavní prvky</span>
+                                    <ul class="project-features">
+                                        <li>🍷 Temný, luxusní vizuální styl prodávající zážitek ještě před návštěvou.</li>
+                                        <li>📅 Prioritní rezervační flow navržené primárně pro mobilní zařízení.</li>
+                                        <li>🍽️ Čistá a snadno čitelná struktura menu a degustačních večerů.</li>
+                                    </ul>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="foto/atelier27-1.jpg" alt="Atelier 27 – úvodní stránka restaurace">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">Veřejná správa</span>
+                                        <span class="case-status concept">💡 Koncepční návrh</span>
+                                    </div>
+                                    <h3>Horská Lhota</h3>
+                                    <div class="card-problem">
+                                        <span class="card-label">Vlastní UX koncept</span>
+                                        <p>Transformovat chaotický a nepřehledný obecní web do moderní platformy, která občana zbytečně nefrustruje úředním jazykem.</p>
+                                    </div>
+                                    <div class="card-solution">
+                                        <span class="card-label">Řešení</span>
+                                        <p>Koncepční návrh zaměřený na rychlé odbavení nejčastějších životních situací a okamžitou dostupnost úředních hodin a hlášení rozhlasu.</p>
+                                    </div>
+                                    <span class="card-benefits-label">Hlavní prvky</span>
+                                    <ul class="project-features">
+                                        <li>🏛️ Informační architektura orientovaná na potřeby občana (řešení situací na 2 kliknutí).</li>
+                                        <li>📢 Výrazné a přehledné krizové a informační centrum obce.</li>
+                                        <li>🌿 Čistý, přívětivý vizuál podporující lokalitu a komunitní život.</li>
+                                    </ul>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="foto/horskalhota.jpg" alt="Horská Lhota – web obce">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">Zdravotnictví</span>
+                                        <span class="case-status concept">💡 Koncepční návrh</span>
+                                    </div>
+                                    <h3>Vltava Clinic</h3>
+                                    <div class="card-problem">
+                                        <span class="card-label">Vlastní UX koncept</span>
+                                        <p>Vytvořit digitální tvář soukromé lékařské kliniky, která kombinuje profesionální odbornost s pocitem lidského a klidného přístupu.</p>
+                                    </div>
+                                    <div class="card-solution">
+                                        <span class="card-label">Řešení</span>
+                                        <p>UI/UX studie zaměřená na maximální transparentnost (přehledné ceníky, medailonky lékařů) a intuitivní objednání na konzultaci.</p>
+                                    </div>
+                                    <span class="card-benefits-label">Hlavní prvky</span>
+                                    <ul class="project-features">
+                                        <li>🩺 Čistá, uklidňující barevná paleta budující důvěru pacientů.</li>
+                                        <li>⏱️ Odstranění bariér při objednávání (jasná výzva k akci na pár kliknutí).</li>
+                                        <li>👩‍⚕️ Přehledná prezentace lékařských specializací a ordinačních hodin.</li>
+                                    </ul>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="foto/vltavaclinic.jpg" alt="Vltava Clinic – úvodní stránka ordinace">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="story-actions">
-                    <a href="https://www.linkedin.com/in/martina-dohnalova111" class="cta-btn" target="_blank" rel="noopener noreferrer">Napište mi</a>
-                </div>
+            </div>
+            <div class="case-dots">
+                <button class="case-dot active" data-index="0" onclick="currentCaseSlide(0)" aria-label="Slide 1"></button>
+                <button class="case-dot" data-index="1" onclick="currentCaseSlide(1)" aria-label="Slide 2"></button>
+                <button class="case-dot" data-index="2" onclick="currentCaseSlide(2)" aria-label="Slide 3"></button>
+                <button class="case-dot" data-index="3" onclick="currentCaseSlide(3)" aria-label="Slide 4"></button>
+                <button class="case-dot" data-index="4" onclick="currentCaseSlide(4)" aria-label="Slide 5"></button>
             </div>
         </section>
 
@@ -1317,7 +1485,7 @@
         };
 
         // 2. Typewriter efekt
-        const words = ["AI automatizace.", "weby a e-shopy.", "AI aplikace.", "mikro systémy.", "AI agenty."];
+        const words = ["AI asistenty a agenty.", "e-commerce automatizace.", "chytré datové nástroje."];
         let i = 0; let timer;
 
         function typingEffect() {
@@ -1400,7 +1568,7 @@
             caseAutoTimer = setInterval(() => moveCaseSlider(1), 6000);
         }
 
-        const caseSliderWrapperEl = document.querySelector('#ukazka-prace .tools-slider-wrapper');
+        const caseSliderWrapperEl = document.querySelector('#portfolio .tools-slider-wrapper');
         if (caseSliderWrapperEl) {
             caseSliderWrapperEl.addEventListener('mouseenter', () => clearInterval(caseAutoTimer));
             caseSliderWrapperEl.addEventListener('mouseleave', startCaseAutoplay);

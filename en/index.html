@@ -976,7 +976,7 @@
         .case-studies-section h2 { font-size: 2rem; font-weight: 400; margin-bottom: 0.35rem; }
         .case-studies-section .subheading { color: #444; max-width: 700px; margin-top: 0.6rem; margin-bottom: 2rem; }
         .case-slide { flex: 0 0 100%; }
-        .case-slide-inner { display: flex; align-items: stretch; height: 420px; border-radius: 14px; overflow: hidden; border: 1px solid #e8e4e0; background: #fff; }
+        .case-slide-inner { display: flex; align-items: stretch; min-height: 420px; border-radius: 14px; overflow: hidden; border: 1px solid #e8e4e0; background: #fff; }
         .case-slide-text { flex: 0 0 42%; max-width: 42%; display: flex; flex-direction: column; justify-content: center; padding: 2.5rem 2.2rem; background: #fff; }
         .case-slide-photo { flex: 1; min-width: 0; background: #f6f3f0; display: flex; align-items: center; justify-content: center; overflow: hidden; }
         .case-slide-photo img { width: 100%; height: 100%; object-fit: contain; display: block; }
@@ -1004,18 +1004,28 @@
         .hero-links a { color: var(--accent-color); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(169,93,69,0.35); padding-bottom: 1px; }
         .hero-links a:hover { border-bottom-color: var(--accent-color); }
 
-        /* Proc prave ja - homepage */
-        .why-me-section { margin-top: 4rem; }
-        .why-me-section h2 { font-size: 2rem; font-weight: 600; max-width: 780px; margin-bottom: 0.5rem; }
-        .why-me-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
-        @media (max-width: 900px) { .why-me-grid { grid-template-columns: 1fr; } }
-
         /* Tech stack - homepage */
         .tech-stack-section { margin-top: 4rem; }
         .tech-stack-section h2 { font-size: 2rem; font-weight: 400; margin: 0.5rem 0 0.5rem; }
-        .tech-stack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 3rem; margin-top: 2rem; }
-        .tech-stack-group h3 { font-size: 1rem; font-weight: 700; color: var(--accent-color); margin-bottom: 0.9rem; text-transform: uppercase; letter-spacing: 0.04em; }
+        .tech-stack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem 3rem; margin-top: 2rem; }
+        .tech-stack-group h3 { font-size: 1rem; font-weight: 700; color: var(--accent-color); margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.04em; }
+        .tech-stack-group-note { font-size: 0.85rem; color: #8a8580; margin-bottom: 1rem; }
+        .tech-item-list { display: flex; flex-direction: column; gap: 0.9rem; }
+        .tech-item { background: #fff; border: 1px solid #e8e4e0; border-radius: 10px; padding: 0.9rem 1.1rem; }
+        .tech-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; color: #2c2a29; }
+        .tech-item p { font-size: 0.87rem; color: #555; line-height: 1.5; margin: 0; }
         @media (max-width: 700px) { .tech-stack-grid { grid-template-columns: 1fr; } }
+
+        /* Problem/Solution blocks - Portfolio cards */
+        .card-label { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.4rem; }
+        .card-problem, .card-solution { padding: 0.9rem 1.1rem; border-radius: 0 8px 8px 0; margin-bottom: 1rem; }
+        .card-problem { background: #fdf5f2; border-left: 3px solid #e06c53; }
+        .card-problem .card-label { color: #c2462d; }
+        .card-problem p { margin: 0; font-size: 0.92rem; line-height: 1.55; color: #4a3a37; }
+        .card-solution { background: #f2f7f3; border-left: 3px solid #7A9A82; }
+        .card-solution .card-label { color: #4a7a58; }
+        .card-solution p { margin: 0; font-size: 0.92rem; line-height: 1.55; color: #3a453d; }
+        .card-benefits-label { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #8a8580; margin-bottom: 0.7rem; }
 
         /* AI nastroje - O me */
         .ai-tools-section { margin-top: 4rem; }
@@ -1087,37 +1097,16 @@
         <!-- HERO SEKCE (DVOU-SLOUPCOVÁ S MINIMALISTICKOU AI NEURONOVOU SÍTÍ) -->
         <section class="hero-container">
             <div class="hero">
-                <h1>I turn ideas into code. With AI.</h1>
-                <p>I build functional automations and tools for e-commerce. I combine marketing thinking with modern AI-assisted development (vibecoding) — using large language models and AI dev agents, I can quickly design, code, and ship apps that instantly make e-shops' work with data, logistics, or customer support easier.</p>
+                <h1>I save you time, capacity, and money.</h1>
+                <div class="subtitle-typewriter">
+                    I design and code for you <span class="typewriter" id="typewriter-text"></span>
+                </div>
+                <p>I combine e-commerce thinking with modern AI-assisted development. I'm looking for a role on a team where I can build internal micro-systems and automations that make working with data, logistics, or customer support easier for the company.</p>
             </div>
 
             <!-- MINIMALISTICKÁ REAKTIVNÍ ANIMACE -->
             <div class="hero-animation-wrapper">
                 <canvas id="ai-canvas"></canvas>
-            </div>
-        </section>
-
-        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0;">
-
-        <!-- WHY ME -->
-        <section class="why-me-section">
-            <h2>I bring the business brief — and AI helps me write the code myself.</h2>
-            <div class="why-me-grid">
-                <div class="service-card">
-                    <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" /></svg></div>
-                    <h3>AI as an accelerator</h3>
-                    <p>I don't wait on a dev team. I take Claude Code, Lovable, or VS Code and ship a working prototype (PoC) in days.</p>
-                </div>
-                <div class="service-card">
-                    <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h2l2.4 12.4a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.6L21 8H6" /><circle cx="9" cy="20" r="1" /><circle cx="18" cy="20" r="1" /></svg></div>
-                    <h3>Real e-commerce experience</h3>
-                    <p>I know exactly how much bad product data, manual email replies from foreign markets, or logistics chaos actually hurts — because I've lived it. I design solutions for problems I know from the inside.</p>
-                </div>
-                <div class="service-card">
-                    <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5l-8-3z" /></svg></div>
-                    <h3>Built with security in mind</h3>
-                    <p>I code with AI, but I own the architecture myself: data validation through Pydantic, anonymizing sensitive data, protection against prompt injection.</p>
-                </div>
             </div>
         </section>
 
@@ -1129,36 +1118,71 @@
             <h2>Tech Stack</h2>
             <div class="tech-stack-grid">
                 <div class="tech-stack-group">
-                    <h3>AI Development</h3>
-                    <div class="ai-tools-grid">
-                        <div class="ai-tool-chip">Claude Code</div>
-                        <div class="ai-tool-chip">GPT-4o</div>
-                        <div class="ai-tool-chip">Lovable.com</div>
-                        <div class="ai-tool-chip">Cursor / VS Code</div>
+                    <h3>AI-Assisted Development</h3>
+                    <p class="tech-stack-group-note">Tools for efficiency</p>
+                    <div class="tech-item-list">
+                        <div class="tech-item">
+                            <h4>Claude Code &amp; VS Code</h4>
+                            <p>My primary development environment for writing clean code fast.</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>LLM Chats</h4>
+                            <p>Supplementary AI assistants for refactoring and real-time architecture consultation.</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Lovable.com</h4>
+                            <p>Fast prototyping of full-featured applications.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="tech-stack-group">
-                    <h3>Backend &amp; Integrations</h3>
-                    <div class="ai-tools-grid">
-                        <div class="ai-tool-chip">Python (Streamlit, Pydantic, LLM API)</div>
-                        <div class="ai-tool-chip">Make (integration scenarios)</div>
+                    <h3>Frontend &amp; E-Commerce</h3>
+                    <p class="tech-stack-group-note">Where code meets UX</p>
+                    <div class="tech-item-list">
+                        <div class="tech-item">
+                            <h4>JavaScript &amp; TypeScript</h4>
+                            <p>The building blocks of my web applications.</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Next.js &amp; Vercel</h4>
+                            <p>For fast, secure, and well-optimized web projects.</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Shoptet</h4>
+                            <p>Custom edits and advanced customization of e-shop templates.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="tech-stack-group">
-                    <h3>Frontend &amp; Web</h3>
-                    <div class="ai-tools-grid">
-                        <div class="ai-tool-chip">JavaScript / TypeScript</div>
-                        <div class="ai-tool-chip">Next.js</div>
-                        <div class="ai-tool-chip">Vercel</div>
-                        <div class="ai-tool-chip">Shoptet (template customization)</div>
+                    <h3>Backend &amp; Data</h3>
+                    <p class="tech-stack-group-note">Logic and integrations</p>
+                    <div class="tech-item-list">
+                        <div class="tech-item">
+                            <h4>Python (Streamlit, Pydantic)</h4>
+                            <p>Fast-building data and AI applications with a clean UI.</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Anthropic Claude &amp; Groq/Llama</h4>
+                            <p>LLM models I actually deploy in the code of my applications.</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Make.com</h4>
+                            <p>Automation tool – currently learning it deliberately, not yet used in production.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="tech-stack-group">
-                    <h3>Data &amp; Security</h3>
-                    <div class="ai-tools-grid">
-                        <div class="ai-tool-chip">GDPR anonymization layers</div>
-                        <div class="ai-tool-chip">Input validation</div>
-                        <div class="ai-tool-chip">Prompt-injection protection</div>
+                    <h3>AI Security &amp; Reliability</h3>
+                    <p class="tech-stack-group-note">Production standards</p>
+                    <div class="tech-item-list">
+                        <div class="tech-item">
+                            <h4>GDPR Anonymization</h4>
+                            <p>Filtering and protecting personal data before it's sent to an LLM API.</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>LLM Guardrails</h4>
+                            <p>Protection against prompt injection and validation of AI inputs/outputs.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1166,21 +1190,165 @@
 
         <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 4rem 0;">
 
-        <section class="story-section">
-            <div class="story-image">
-                <img src="../foto/linkedin-profile.png" alt="Profilová fotka" />
-            </div>
-            <div class="story-copy">
-                <h2>Coding Through a Marketer's Eyes</h2>
-                <div class="about-grid">
-                    <div class="about-card">
-                        <h3>What I Bring to a Team</h3>
-                        <p>I can turn a business brief into a working prototype fast — whether it's an internal tool, an automation, or a web app. I understand both the business side and the technical execution, so there's no long ramp-up needed.</p>
+        <!-- PORTFOLIO -->
+        <section id="portfolio" class="case-studies-section">
+            <span class="lab-badge">PORTFOLIO</span>
+            <h2>Digital Products Built for Conversion and UX</h2>
+            <p class="subheading">From launching my own e-shop from scratch to detailed concept studies. I connect a clean visual identity with functional information architecture.</p>
+            <div class="tools-slider-wrapper">
+                <button class="slider-arrow slider-arrow-prev" onclick="moveCaseSlider(-1)" aria-label="Previous case study">&#8249;</button>
+                <button class="slider-arrow slider-arrow-next" onclick="moveCaseSlider(1)" aria-label="Next case study">&#8250;</button>
+                <div class="tools-slider">
+                    <div class="tools-slider-track" id="caseSliderTrack">
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">E-commerce</span>
+                                        <span class="case-status live">🟢 Live e-shop</span>
+                                    </div>
+                                    <h3>Lucky Skorts</h3>
+                                    <div class="card-problem">
+                                        <span class="card-label">Brief</span>
+                                        <p>Build a standalone e-commerce brand and launch a conversion-focused e-shop from scratch – from buying the domain through logistics to the first order.</p>
+                                    </div>
+                                    <div class="card-solution">
+                                        <span class="card-label">Solution</span>
+                                        <p>A fully functional e-shop with a clean checkout flow, an optimized mobile experience, and a clear structure that removes friction between the cart and payment.</p>
+                                    </div>
+                                    <span class="card-benefits-label">Key Benefits</span>
+                                    <ul class="project-features">
+                                        <li>🛒 Optimized checkout flow for maximum conversion rate.</li>
+                                        <li>📱 Fully responsive, mobile-first shopping experience.</li>
+                                        <li>⚡ Fast load times and a clean product hierarchy.</li>
+                                    </ul>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="../foto/luckyskorts-1.png" alt="Lucky Skorts – e-shop homepage">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">Travel Guide</span>
+                                        <span class="case-status dev">🚧 In development</span>
+                                    </div>
+                                    <h3>Autem do Chorvatska</h3>
+                                    <div class="card-problem">
+                                        <span class="card-label">Brief</span>
+                                        <p>Build a high-value content portal optimized for affiliate marketing and partner conversions.</p>
+                                    </div>
+                                    <div class="card-solution">
+                                        <span class="card-label">Solution</span>
+                                        <p>A clear architecture that pulls together complex data (routes, accommodation, fees) into intuitive groups, with conversion elements woven in naturally.</p>
+                                    </div>
+                                    <span class="card-benefits-label">Key Benefits</span>
+                                    <ul class="project-features">
+                                        <li>🗺️ Content ordered strategically without overwhelming the reader.</li>
+                                        <li>💰 UX designed to naturally drive clicks to partner sales (accommodation, insurance).</li>
+                                        <li>🎨 An airy, modern design that builds instant trust.</li>
+                                    </ul>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="../foto/autemdochorvatska-1.jpg" alt="Autem do Chorvatska – homepage">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">Gastronomy</span>
+                                        <span class="case-status concept">💡 Concept design</span>
+                                    </div>
+                                    <h3>Atelier 27</h3>
+                                    <div class="card-problem">
+                                        <span class="card-label">Self-directed UX concept</span>
+                                        <p>Design a premium web presence for a fine-dining restaurant that has to visually communicate a high level of service and exclusivity.</p>
+                                    </div>
+                                    <div class="card-solution">
+                                        <span class="card-label">Solution</span>
+                                        <p>A concept UI/UX study built on a dark, elegant atmosphere with a strong focus on quick, frictionless table booking.</p>
+                                    </div>
+                                    <span class="card-benefits-label">Key Elements</span>
+                                    <ul class="project-features">
+                                        <li>🍷 A dark, luxurious visual style that sells the experience before the visit.</li>
+                                        <li>📅 A booking flow designed mobile-first as the top priority.</li>
+                                        <li>🍽️ A clean, easy-to-read menu and tasting-evening structure.</li>
+                                    </ul>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="../foto/atelier27-1.jpg" alt="Atelier 27 – restaurant homepage">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">Public Administration</span>
+                                        <span class="case-status concept">💡 Concept design</span>
+                                    </div>
+                                    <h3>Horská Lhota</h3>
+                                    <div class="card-problem">
+                                        <span class="card-label">Self-directed UX concept</span>
+                                        <p>Transform a chaotic, hard-to-navigate municipal website into a modern platform that doesn't frustrate residents with bureaucratic language.</p>
+                                    </div>
+                                    <div class="card-solution">
+                                        <span class="card-label">Solution</span>
+                                        <p>A concept focused on quickly resolving the most common resident tasks and instant access to office hours and public announcements.</p>
+                                    </div>
+                                    <span class="card-benefits-label">Key Elements</span>
+                                    <ul class="project-features">
+                                        <li>🏛️ Information architecture built around resident needs (tasks solved in 2 clicks).</li>
+                                        <li>📢 A prominent, clear announcements and information center for the town.</li>
+                                        <li>🌿 A clean, welcoming visual style that supports local community life.</li>
+                                    </ul>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="../foto/horskalhota.jpg" alt="Horská Lhota – municipal website">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-slide">
+                            <div class="case-slide-inner">
+                                <div class="case-slide-text">
+                                    <div class="case-tags">
+                                        <span class="case-category">Healthcare</span>
+                                        <span class="case-status concept">💡 Concept design</span>
+                                    </div>
+                                    <h3>Vltava Clinic</h3>
+                                    <div class="card-problem">
+                                        <span class="card-label">Self-directed UX concept</span>
+                                        <p>Create the digital face of a private medical clinic that combines professional expertise with a calm, human feel.</p>
+                                    </div>
+                                    <div class="card-solution">
+                                        <span class="card-label">Solution</span>
+                                        <p>A UI/UX study focused on maximum transparency (clear pricing, doctor profiles) and intuitive consultation booking.</p>
+                                    </div>
+                                    <span class="card-benefits-label">Key Elements</span>
+                                    <ul class="project-features">
+                                        <li>🩺 A clean, calming color palette that builds patient trust.</li>
+                                        <li>⏱️ Removed friction in booking (a clear call to action in a few clicks).</li>
+                                        <li>👩‍⚕️ A clear presentation of medical specializations and office hours.</li>
+                                    </ul>
+                                </div>
+                                <div class="case-slide-photo">
+                                    <img src="../foto/vltavaclinic.jpg" alt="Vltava Clinic – clinic homepage">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="story-actions">
-                    <a href="https://www.linkedin.com/in/martina-dohnalova111" class="cta-btn" target="_blank" rel="noopener noreferrer">Get in Touch</a>
-                </div>
+            </div>
+            <div class="case-dots">
+                <button class="case-dot active" data-index="0" onclick="currentCaseSlide(0)" aria-label="Slide 1"></button>
+                <button class="case-dot" data-index="1" onclick="currentCaseSlide(1)" aria-label="Slide 2"></button>
+                <button class="case-dot" data-index="2" onclick="currentCaseSlide(2)" aria-label="Slide 3"></button>
+                <button class="case-dot" data-index="3" onclick="currentCaseSlide(3)" aria-label="Slide 4"></button>
+                <button class="case-dot" data-index="4" onclick="currentCaseSlide(4)" aria-label="Slide 5"></button>
             </div>
         </section>
 
@@ -1317,7 +1485,7 @@
         };
 
         // 2. Typewriter efekt
-        const words = ["AI automation.", "websites and e-shops.", "AI apps.", "micro-systems.", "AI agents."];
+        const words = ["AI assistants and agents.", "e-commerce automations.", "smart data tools."];
         let i = 0; let timer;
 
         function typingEffect() {
@@ -1400,7 +1568,7 @@
             caseAutoTimer = setInterval(() => moveCaseSlider(1), 6000);
         }
 
-        const caseSliderWrapperEl = document.querySelector('#ukazka-prace .tools-slider-wrapper');
+        const caseSliderWrapperEl = document.querySelector('#portfolio .tools-slider-wrapper');
         if (caseSliderWrapperEl) {
             caseSliderWrapperEl.addEventListener('mouseenter', () => clearInterval(caseAutoTimer));
             caseSliderWrapperEl.addEventListener('mouseleave', startCaseAutoplay);
